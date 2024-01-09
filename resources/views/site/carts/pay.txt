@@ -1,0 +1,8 @@
+<label class="bg-gray-50 rounded-xl mt-4 mb-2 flex items-center gap-2 p-3 cursor-pointer hover:bg-gray-100 transition-colors duration-200" for="payir">
+                <input id="payir" type="radio" name="gateway" value="payir" wire:model="gateway">
+                <img class="rounded-xl w-16" src="{{asset('site/images/payir.png')}}" alt="">
+                <div class="grid">
+                    <p class="font-semibold">پِی</p>
+                    <p class="text-xs font-medium">پرداخت به وسیله کلیه کارت های عضو شبکه شتاب</p>
+                </div>
+            </label> 

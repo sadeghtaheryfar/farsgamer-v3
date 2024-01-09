@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="farsgamer" showNewOnTargetInSync="false">
+    <serverData>
+      <paths name="farsgamer">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/farsgamer/app" local="$PROJECT_DIR$/app" web="/" />
+            <mapping deploy="/farsgamer/bootstrap" local="$PROJECT_DIR$/bootstrap" />
+            <mapping deploy="/farsgamer/config" local="$PROJECT_DIR$/config" />
+            <mapping deploy="/farsgamer/database" local="$PROJECT_DIR$/database" />
+            <mapping deploy="/public_html" local="$PROJECT_DIR$/public" />
+            <mapping deploy="/farsgamer/resources" local="$PROJECT_DIR$/resources" />
+            <mapping deploy="/farsgamer/routes" local="$PROJECT_DIR$/routes" />
+            <mapping deploy="/farsgamer/storage" local="$PROJECT_DIR$/storage" />
+            <mapping deploy="/farsgamer/tests" local="$PROJECT_DIR$/tests" />
+            <mapping deploy="/farsgamer/vendor" local="$PROJECT_DIR$/vendor" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
