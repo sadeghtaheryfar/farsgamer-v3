@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Hekmatinasser\Verta\VertaServiceProvider::class,
+//        Hekmatinasser\Verta\VertaServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -178,7 +178,7 @@ return [
         App\Providers\TelescopeServiceProvider::class,
 
     ],
-	
+
     /*
     |--------------------------------------------------------------------------
     | Class Aliases
