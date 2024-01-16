@@ -1,0 +1,7 @@
+.breadcrumb {
+  @apply flex flex-wrap items-center gap-2 text-gray2-700 text-sm;
+}
+
+.breadcrumb__link {
+  @apply hover:text-primary link-transition;
+}

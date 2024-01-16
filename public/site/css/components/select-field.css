@@ -1,0 +1,65 @@
+.select-box {
+	@apply z-0 relative select-none;
+	-webkit-user-drag: none;
+}
+/* min-w-40 */
+.select-box__head {
+	@apply z-1 cursor-pointer flex items-center;
+	@apply text-field bg-white transition-none h-12 text-gray-600;
+}
+
+.select-box__head-content {
+	@apply relative flex justify-between gap-2 items-center w-48 max-w-60;
+}
+
+.select-box__options-list {
+	@apply z-20 border border-gray2-100 border-t-0 hidden w-full pb-1 rounded-b-2xl absolute top-full bottom-auto inset-y-0 overflow-hidden bg-white max-h-72 overflow-y-auto;
+}
+
+.select-box__options-list::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+	border-radius: 99px;
+}
+.select-box__options-list::-webkit-scrollbar-track {
+	background: #F1F1F1;
+	border-radius: 99px;
+}
+.select-box__options-list::-webkit-scrollbar-thumb {
+	background: #BDBDC7;
+	border-radius: 99px;
+}
+.select-box__options-list::-webkit-scrollbar-thumb {
+	background: #808191;
+}
+
+.select-box__option {
+	@apply border-gray-50;
+}
+
+.select-box__title {
+	@apply whitespace-nowrap text-sm sm:text-base;
+}
+
+.select-box__option {
+	@apply border-b last:border-0 py-2 px-4 text-sm flex items-center hover:bg-gray-100 cursor-pointer transition-colors duration-150;
+}
+
+.select-box.open {
+	@apply z-1;
+}
+
+.select-box.open .select-box__head {
+	@apply rounded-b-none;
+}
+
+.select-box.open .select-box__options-list {
+	@apply block;
+}
+
+/* Head Icon */
+
+.select-field__icon,
+.select-box__head i {
+	@apply text-gray-500;
+}

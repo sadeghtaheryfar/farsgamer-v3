@@ -1,0 +1,301 @@
+
+
+#box-price{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+
+#txt1-box-price{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+}
+
+
+#txt2-box-price{
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    margin-top: -10px;
+}
+
+
+
+#btn1-sec-left{
+    background: #3D42DF;
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin: 2rem 0rem 0rem 0rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+
+
+#box-raido1{
+    display: flex;
+    width: 100%;
+}
+
+
+.txt-sec-left{
+    width: 100%;
+}
+
+
+.box-btn1-sec-left{
+    width: 100%;
+}
+
+
+.box1-txt2-sec-left{
+    width: 100%;
+}
+
+
+.box2-txt2-sec-left{
+    width: 100%;
+}
+
+
+#box-raido1 div{
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+
+
+:is(.inp-sec-left:focus,.inp-sec-left:hover)
+{
+    border: none;
+    outline: none;
+}
+
+
+#header-education{
+    font-weight: 500;
+    font-size: 12px;
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.item-education{
+    padding: 1rem 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #F1F1F1;
+    border-radius: 16px;
+    border-radius: 16px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+}
+
+
+
+#box-education{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+#box2-sec1{
+    background-color: white;
+    border-radius: 16px;
+    margin-top: 1rem;
+    padding: 2rem 1rem;
+}
+
+
+
+#show-box2-sec1{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 6rem;
+    z-index: 7;
+}
+
+
+
+#box-header-box2{
+    background: #F8F9FB;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.103);
+    border-radius: 8px;
+    height: 2.8rem;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+
+
+.item-header-box2{
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 8px;
+    height: 100%;
+    width: 7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #808191;
+    transition: 0.3s;
+}
+
+
+
+.item2-header-box2{
+    margin: 0rem 0.7rem;
+}
+
+
+
+.item-header-box2-active{
+    background: #3D42DF;
+    color: #FFFFFF;
+}
+
+
+
+#box3-sec1{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    border-bottom: 5px solid #F1F1F1;
+}
+
+
+#box1-box3-sec1{
+    margin-left: 5rem;
+    font-weight: 700;
+    font-size: 14px;
+    color: #374151;
+    width: 5.5rem;
+}
+
+
+#box2-box3-sec1{
+    width: 80%;
+}
+
+
+table{
+    width: 80%;
+}
+
+
+tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #F1F1F1;
+    padding: 1rem 0rem;
+}
+
+
+
+.td1-table1{
+    font-weight: 500;
+    font-size: 14px;
+    color: #808191;
+}
+
+
+
+.td2-table1{
+    font-weight: 700;
+    font-size: 14px;
+    color: #374151;
+}
+
+
+
+@media screen and (max-width : 1023px){
+    main{
+        margin-bottom: 5rem;
+    }
+
+    #sec1{
+        flex-direction: column;
+        margin: 0px;
+        background-color: white;
+    }
+
+    #box2-sec1{
+        display: none;
+    }
+
+    #slider-prudect{
+        display: none;
+    }
+
+    #detalist-prudect{
+        width: 100%;
+    }
+
+    #show-sec-right-sec1{
+        width: 100%;
+    }
+
+    #sec-right-sec1{
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #txt4-detalist-prudect{
+        display: none;
+    }
+
+    #box1-img-detalist-prudect{
+        display: none;
+    }
+
+    #sec-left-sec1{
+        width: 100%;
+        position: static;
+    }
+
+    #show-sec2-left-sec1{
+        background-color: none;
+        border: 1px solid #F1F1F1;
+        border-radius: 16px;
+        margin: 0rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #show-sec-left-sec1{
+        background-color: none;
+        border: 1px solid #F1F1F1;
+        border-radius: 16px;
+        margin: 0rem 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #sec0-main{
+        font-size: 10px;
+    }
+}

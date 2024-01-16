@@ -1,0 +1,44 @@
+@use "./modules/sass-font-face/src" as *;
+
+@layer base {
+
+  // START:: Iran Sans
+  @include font-face((
+    font-family: isans,
+    suffix: ttf woff woff2,
+    weight: (
+      "UltraLight" 100,
+      "Light" 300,
+      "Regular" 400,
+      "Medium" 500,
+      "Bold" 600,
+      "Black" 800,
+    ),
+    url: "../../fonts/isans/fd/IRANSansWeb(FaNum)_WEIGHT.SUFFIX",
+  ));
+
+  @include font-face((
+    font-family: isans-ed,
+    suffix: ttf woff woff2,
+    weight: (
+      "UltraLight" 100,
+      "Light" 300,
+      "Regular" 400,
+      "Medium" 500,
+      "Bold" 600,
+      "Black" 800,
+    ),
+    url: "../../fonts/isans/ed/IRANSansWeb(FaNum)_WEIGHT.SUFFIX",
+  ));
+  // END:: Iran Sans
+
+  // START:: Montserrat
+	@include font-face((
+    font-family: montserrat,
+    suffix: ttf,
+    weight: 100 200 300 400 500 600 700 800 900,
+    url: "../../fonts/montserrat/WEIGHT.SUFFIX",
+  ));
+  // END:: Montserrat
+
+}

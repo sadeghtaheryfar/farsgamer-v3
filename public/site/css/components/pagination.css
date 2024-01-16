@@ -1,0 +1,13 @@
+.pagination {
+  @apply flex items-center justify-center mt-8 gap-1;
+}
+
+.pagination__btn {
+  @apply w-8 h-8 rounded-xl flex items-center justify-center hover:bg-primary-deep hover:text-white focus:bg-primary-deeper focus:text-white transition-colors duration-200 ease-in-out;
+}
+
+.pagination__btn--active {
+  @apply bg-primary text-white;
+}
+
+

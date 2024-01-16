@@ -12,17 +12,22 @@
                 <i class="icon-angle-left text-xl"></i>
             </a>
         </div>
-        <div class="basic-product-slider swiper-container relative pb-8">
-            <div class="swiper-wrapper">
-                @foreach($products as $product)
-                    <div class="swiper-slide">
-                        @include('site.components.products.product-box')
-                    </div>
-                @endforeach
+        <div class="slider-prudect">
+            <div class="swiper slider-main-prudect">
+                <div class="swiper-wrapper">
+                    @foreach ($products as $product)
+                        <div class="swiper-slide">
+                            @include('site.components.products.product-box')
+                        </div>
+                    @endforeach
+                </div>
+
+                <div class="swiper-button-next swiper-button-next-prudect"></div>
+
+                <div class="swiper-button-prev swiper-button-prev-prudect"></div>
+
+                <div class="swiper-pagination swiper-pagination-prudect flex-box"></div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination bottom-0"></div>
         </div>
     </section>
 @endif

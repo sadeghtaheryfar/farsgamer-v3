@@ -1,0 +1,107 @@
+#burger {
+  @apply w-10 h-8 grid items-center p-2;
+}
+
+body.header-and-sidebar-fixed #burger,
+body.header-and-sidebar-fixed #header__logo {
+  @apply lg:hidden !important;
+}
+
+body:not(.header-and-sidebar-fixed) #burger {
+  @apply -ml-4;
+}
+
+body:not(.header-and-sidebar-fixed) #header .container-base {
+  @apply 2xl:container;
+}
+
+#burger div {
+  @apply h-0.5 duration-200 transition transform bg-gray-600;
+}
+
+#header {
+  @apply z-40 h-16 flex items-center justify-between border-b border-gray-200 bg-white lg:h-20 lg:px-4;
+}
+
+body.header-and-sidebar-fixed #header {
+  @apply fixed z-40 top-0 right-0 left-0 lg:mr-56 2xl:mr-64;
+}
+
+#sidebar {
+	height: calc(100vh - 4rem);
+  @apply fixed transform translate-x-full z-50 inset-0 top-16 bg-gray-900 bg-opacity-60 lg:top-20;
+}
+
+@media only screen and (min-width: 1024px) {
+	#sidebar {
+		height: calc(100vh - 5rem);
+	}
+}
+
+body.header-and-sidebar-fixed #sidebar {
+  @apply lg:bg-transparent;
+}
+
+#sidebar__content {
+  @apply max-w-64 bg-white w-full h-full;
+}
+
+body.header-and-sidebar-fixed #sidebar__logo {
+  @apply lg:flex !important;
+}
+
+body.header-and-sidebar-fixed #sidebar {
+  @apply lg:border-l lg:border-gray-200 lg:w-56 lg:ml-auto lg:translate-x-0 2xl:w-64;
+}
+
+body.menu-is-open {
+  @apply overflow-hidden;
+}
+
+body.menu-is-open #burger div:first-child {
+  @apply -mb-2;
+  @apply rotate-45 !important;
+}
+
+body.menu-is-open #burger div:last-child {
+  @apply -mt-2;
+  @apply -rotate-45 !important;
+}
+
+body.menu-is-open #sidebar {
+  @apply translate-x-0 !important;
+}
+
+#sidebar__scrollable-content::-webkit-scrollbar {
+  width: 0;
+}
+
+body.header-and-sidebar-fixed #main {
+  @apply container-base pt-20 pb-8 lg:pt-28 lg:pl-8 lg:pr-64 z-30 2xl:pr-72;
+}
+
+#main.main--dashboard {
+  min-height: calc(100vh - 4rem);
+}
+
+@media only screen and (min-width: 1024px) {
+  #main.main--dashboard {
+    min-height: calc(100vh - 5rem);
+  }
+}
+
+.nav-menu-item {
+  @apply flex items-center gap-3 py-3 pl-6 pr-4 rounded-xl overflow-hidden hover:text-primary;
+}
+
+.nav-menu-item--active {
+  @apply bg-primary text-white hover:text-white;
+}
+
+.nav-menu-item__icon {
+  @apply w-8 h-8 flex justify-center items-center text-lg;
+}
+
+.nav-menu-item__title {
+  @apply font-medium;
+}

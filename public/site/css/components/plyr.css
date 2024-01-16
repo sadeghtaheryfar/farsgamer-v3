@@ -1,0 +1,15 @@
+:root {
+	--plyr-color-main: #3D42DF
+}
+
+.plyr {
+	@apply max-w-3xl mx-auto;
+}
+
+video[playsinline],
+video[data-poster],
+.plyr,
+.plyr__poster,
+.plyr__video-wrapper {
+	@apply rounded-2xl overflow-hidden;
+}

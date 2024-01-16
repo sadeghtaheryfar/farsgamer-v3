@@ -1,0 +1,31 @@
+.tp-alert {
+  @apply fixed inset-0 bottom-auto z-50 p-4 grid flex-wrap gap-y-4 gap-x-8 items-center justify-between bg-red text-white lg:py-2 lg:grid-cols-12;
+}
+
+.tp-alert::before,
+.tp-alert::after {
+  content: "";
+  @apply absolute inset-0 z-0;
+}
+
+.tp-alert::before {
+  background-image: url(/svg/double-rotated-game-control.svg);
+  background-size: 4rem 3.8rem;
+  @apply opacity-30;
+}
+
+.tp-alert::after {
+  @apply bg-gray-900 bg-opacity-20;
+}
+
+.tp-alert * {
+  @apply z-1;
+}
+
+.tp-alert__message {
+  @apply text-sm lg:col-start-1 lg:col-end-11  lg:py-2;
+}
+
+.tp-alert__action {
+  @apply btn w-full max-w-40 leading-5 px-6 border-white rounded-full hover:bg-white hover:text-red focus:bg-white focus:text-red lg:col-start-11 lg:col-end-13 lg:justify-self-end lg:self-center;
+}

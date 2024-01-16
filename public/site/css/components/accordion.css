@@ -1,0 +1,114 @@
+.accordion {}
+
+.accordion-list {
+	@apply grid gap-4 w-full;
+}
+
+/* ITEM */
+.accordion-item {
+  @apply rounded-xl bg-white overflow-hidden;
+}
+
+/* ITEM LAST CHILD BUTTON COLLAPSED */
+.accordion-item:last-of-type .accordion-button.collapsed {
+	@apply border-b;
+}
+
+.accordion-collapse,
+.accordion-body {
+  @apply rounded-xl;
+}
+
+/* BUTTON */
+.accordion-button {
+  @apply rounded-xl bg-gray2-50 bg-transparent border border-gray-200 font-semibold relative flex items-center w-full py-4 pr-5 pl-16 text-right text-base;
+  overflow-anchor: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+}
+
+.accordion-button:hover {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-button {
+    transition: none;
+  }
+}
+
+/* BUTTON ANGLE */
+.accordion-button:not(.collapsed) {
+  @apply bg-light-green bg-opacity-30;
+}
+
+.accordion-button::after {
+  @apply text-primary;
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  margin-left: auto;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-button::after {
+    transition: none;
+  }
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transform: rotate(180deg) translateY(50%);
+  top: 50%;
+}
+
+.accordion-header {
+	@apply mb-0;
+}
+
+.accordion-collapse {
+  border: solid rgba(0, 0, 0, 0.125);
+  border-width: 0 1px;
+}
+
+.accordion-collapse.show {
+	@apply border-b;
+}
+
+.accordion-body {
+  @apply -mt-4 pt-8 pb-4 px-5;
+}
+
+.collapse:not(.show) {
+	@apply hidden;
+}
+
+.accordion--group {
+	@apply flex gap-5;
+}
+
+.accordion__group-header {
+	@apply h-full relative overflow-hidden grid gap-1 w-12;
+}
+
+.accordion__group-header::after {
+	content: "";
+	@apply bg-gray-300 block h-full w-0.5 mr-4 rounded-full;
+}
+
+.accordion__group-header-title {
+	@apply absolute whitespace-nowrap px-2 transform -rotate-90 origin-top-right mr-8 text-gray-500 font-semibold text-sm bg-white rounded-lg;
+}
+
+.collapsing {
+  @apply h-0 overflow-hidden;
+  transition: height 350ms easy;
+}

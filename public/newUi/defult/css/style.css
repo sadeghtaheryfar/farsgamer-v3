@@ -1,0 +1,17 @@
+#sec1{
+    background-color: white;
+    border-radius: 15px;
+    padding: 2.5rem 7.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+@media screen and (max-width : 1023px){
+    #sec1{
+        background-color: white;
+        padding: 2rem 1rem;
+        border-radius: 0px;
+    }
+}

@@ -1,0 +1,175 @@
+#sec1{
+    background-color: white;
+    border-radius: 15px;
+    padding: 0rem 0rem 2rem 0rem;
+    margin: 0rem 2rem 2rem 2rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+#box1-sec1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+:is(#item1-box1-sec1,#item2-box1-sec1)
+{
+    width: 50%;
+}
+
+
+#item2-box1-sec1{
+    padding: 5rem 3rem;
+}
+
+
+#item1-box1-sec1{
+    height: 100%;
+}
+
+
+#img1-item1-box1-sec1{
+    width: 100%;
+}
+
+
+
+.item-header-box1{
+    font-weight: 700;
+    font-size: 40px;
+    color: #000000;
+}
+
+
+
+.item1-header-box1{
+    color: #3D42DF;
+}
+
+
+#box1-item2-box1-sec1{
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+
+
+#message-box1-item2{
+    text-align: justify;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+
+
+
+#box2-sec1{
+    width: 100%;
+}
+
+
+
+#show-box2-sec1{
+    padding: 0rem 6rem;
+}
+
+
+
+.item-box2-sec1{
+    background: #F8F9FB;
+    border-radius: 16px;
+    display: flex;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+
+.header-item{
+    background: #3D42DF;
+    box-shadow: 0px 0px 20px rgba(61, 66, 223, 0.5);
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 3.3rem;
+    height: 3.3rem;
+    margin-left: 1.3rem;
+}
+
+
+
+.message-item{
+    font-weight: 400;
+    font-size: 14px;
+    color: #374151;
+    text-align: justify;
+}
+
+
+#item1-box1-sec1-m{
+    display: none;
+    min-width: 100%;
+    margin: -2rem -1rem -2rem -1rem;
+    background-color: red;
+}
+
+
+
+#img1-item1-box1-sec1-m{
+    width: 100%;
+}
+
+
+
+@media screen and (max-width : 1023px){
+    #sec1{
+        background-color: white;
+        padding: 2rem 1rem;
+        border-radius: 0px;
+        margin: 0px;
+    }
+
+    #box1-sec1{
+        flex-direction: column;
+    }
+
+    #item1-box1-sec1{
+        display: none;
+    }
+
+    #item2-box1-sec1{
+        width: auto;
+        padding: 1rem;
+    }
+
+
+    #item1-box1-sec1-m{
+        display: block;
+    }
+
+    #show-box2-sec1{
+        padding: 0rem;
+    }
+
+    .header-item{
+        font-weight: 700;
+        font-size: 14px;
+        color: #FFFFFF;
+        width: 1.8rem;
+        height: 1.8rem;
+        min-width: 1.8rem;
+        min-height: 1.8rem;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,8 @@
+.dashboard-comments-rate .br-widget a {
+	display: flex;
+}
+
+.br-theme-fontawesome-stars .br-widget a:after {
+	display: flex;
+	align-items: center;
+}

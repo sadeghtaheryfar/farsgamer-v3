@@ -1,0 +1,55 @@
+.header-widget {
+	@apply relative w-7.5 h-7.5 flex items-center justify-center transition duration-200 rounded-md hover:text-primary focus:text-primary;
+}
+
+.header-widget__icon {
+	@apply text-xl;
+}
+
+.header-widget__bobble {
+	@apply absolute -right-0.5 -top-0.5 bg-red text-white leading-0 text-center w-4 h-4 rounded-full text-xs flex items-center justify-center;
+}
+
+.announcements {
+	@apply relative;
+}
+
+.announcements__toggle-btn {
+	@apply bg-gray2-50 cursor-pointer;
+}
+
+.announcements__menu {
+	@apply z-40 absolute w-82 sm:w-100 rounded-md overflow-hidden bg-white;
+	right: -188px;
+	top: calc(100% + 6px);
+	box-shadow: 0 3px 6px rgba(0,0,0, .16);
+}
+
+@media only screen and (min-width: 640px) {
+	.announcements__menu {
+		right: -150px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.announcements__menu {
+		right: -134px;
+	}
+}
+
+.announcements__menu-head {
+	@apply flex justify-between items-center;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.announcements__menu li[easytab-tab] {
+	@apply border-b-2 border-transparent px-8 py-2 text-sm text-gray2-700 text-center sm:font-semibold sm:w-40;
+}
+
+.announcements__menu li[easytab-tab].active {
+	@apply border-primary text-primary;
+}
+
+.announcements__close-btn {
+	@apply ml-2 text-red hover:text-opacity-70 focus:text-opacity-70 transition-colors duration-200;
+}

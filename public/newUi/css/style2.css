@@ -1,0 +1,322 @@
+#show-sec3{
+    margin: 2rem 2rem;
+    background-color: white;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.item-sec3{
+    width: 33%;
+}
+
+
+.item2-sec3{
+    border-left: 1px solid #F1F1F1;
+    border-right: 1px solid #F1F1F1;
+    padding: 0rem 1rem;
+    margin: 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header-item-sec3{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+
+.box1-header-item-sec3{
+    font-weight: 700;
+    font-size: 22px;
+    color: #000000;
+}
+
+
+
+.box2-header-item-sec3{
+    font-weight: 700;
+    font-size: 10px;
+    color: #808191;
+    border: 1px solid #BDBDC7;
+    border-radius: 16px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+.box2-header-item-sec3:hover{
+    background: #F8F9FB;
+    color: #374151;
+    border: 1px solid #BDBDC7;
+}
+
+
+
+.item-message-sec3{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.item-message-sec3:hover{
+    background: #F8F9FB;
+}
+
+
+.box2-message-item-sec3{
+    margin-right: 1rem;
+}
+
+
+
+.box1-message-item-sec3{
+    width: 5.3rem;
+}
+
+
+.img1--message-item-sec3{
+    width: 100%;
+    height: 100%;
+}
+
+
+.txt1-message-item-sec3{
+    font-weight: 700;
+    font-size: 14px;
+    color: #000000;
+}
+
+
+.txt2-message-item-sec3{
+    font-weight: 700;
+    font-size: 12px;
+    color: #3D42DF;
+}
+
+
+.txt3-message-item-sec3{
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+}
+
+
+.box1-txt-message-item-sec3{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: right;
+}
+
+
+.txt4-message-item-sec3{
+    font-weight: 700;
+    font-size: 12px;
+    color: #BDBDC7;
+    margin: 0rem 0.5rem;
+    text-decoration: line-through;
+}
+
+
+.txt5-message-item-sec3{
+    font-weight: 500;
+    font-size: 10px;
+    color: #FFFFFF;
+    background: #FF3838;
+    border-radius: 4px;
+    padding: 0.2rem 0.3rem;
+    max-height: 14px;
+}
+
+
+
+.img1-message-item-sec3{
+    width: 100%;
+}
+
+
+.box1-box-text-message{
+    display: flex;
+    justify-content: right;
+}
+
+
+
+.box2-box-text-message{
+    display: flex;
+}
+
+
+
+.swiper-slide2{
+    width: max-content;
+}
+
+
+.mySwiper2{
+    padding: 2rem 0rem !important;
+    background-color: white;
+    transform: translate3d(0px, 0px, 0px);
+    display: none;
+}
+
+
+.item1-sec3{
+    width: 100% !important;
+}
+
+
+:is(.item1-sec3,.item1-sec3)
+{
+    padding: 1.5rem;
+}
+
+
+.swiper-wrapper2{
+    height: auto !important;
+}
+
+
+
+.swiper-wrapper{
+    height: auto !important;
+}
+
+
+.swiper-slide-active1{
+    width: 23rem !important;
+}
+
+
+
+@media screen and (max-width : 1310px){
+    .box1-message-item-sec3{
+        min-width: 3.5rem;
+    }
+}
+
+
+
+@media screen and (max-width : 1250px){
+    .swiper-button-prev
+    {
+        left: 14% !important;
+    }
+
+    .item-articles{
+        width: 24%;
+    }
+
+    .img-item-category{
+        padding-bottom: 5%;
+    }
+}
+
+
+
+@media screen and (max-width : 1200px){
+    .img-item-category{
+        margin-top: -20px;
+    }
+
+    .box1-message-item-sec3{
+        width: 3rem;
+    }
+
+    .box1-header-item-sec3{
+        font-size: 18px;
+    }
+}
+
+
+
+@media screen and (max-width : 1024px){
+    :is(.swiper-button-prev,.swiper-button-next)
+    {
+        display: none !important;
+    }
+    .swiper-pagination{
+        position: static !important;
+        text-align: center !important;
+        margin-top: 0.5rem;
+    }
+    .swiper-slide1 {
+        width: 100% !important;
+        border-radius: 0px;
+    }
+
+    .swiper-slide1 img {
+        border-radius: 0px;
+    }
+
+    .swiper-pagination-bullet{
+        background-color: #BDBDC7 !important;
+    }
+
+    .swiper-pagination-bullet-active{
+        background-color: #3D42DF !important;
+    }
+
+    #show-main{
+        padding: 1rem;
+    }
+
+    #box1-main-mobile{
+        display: block;
+    }
+
+    #box1-main{
+        display: none;
+    }
+
+    .item-articles{
+        width: 100%;
+    }
+
+    #show-articles{
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    .header-box1-articles{
+        font-weight: 700;
+        font-size: 16px;
+        color: #000000;
+    }
+    
+    .header-box2-articles{
+        font-weight: 500;
+        font-size: 12px;
+        color: #3D42DF;
+    }
+
+    .icon-header-box2-articles{
+        width: 7px;
+    }
+
+    #category{
+        display: none;
+    }
+
+    #show-sec3{
+        display: none;
+    }
+
+    .mySwiper2{
+        display: block;
+    }
+}

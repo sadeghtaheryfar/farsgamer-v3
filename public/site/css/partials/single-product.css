@@ -1,0 +1,42 @@
+.single-product-poster-overlayer {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 1%, rgba(255,255,255,0.4) 100%);
+}
+
+/*
+Account Cetegory Radio Buttons
+*/
+
+.account-category-btn {
+  @apply btn btn-sm bg-gray2-100 relative overflow-hidden hover:bg-gray2-500 border-0 duration-200 ease-in-out;
+  transition-property: background-color;
+}
+
+.account-category-btn__field {
+  @apply opacity-0 absolute inset-0 w-full h-full;
+}
+
+.account-category-btn.radiobox--active {
+  @apply bg-gradient-to-l from-primary to-yellow text-white;
+}
+
+
+/* --- */
+/* Remove Arrows/Spinners from quantity field
+ */
+
+/* Chrome, Safari, Edge, Opera */
+.purchase-form-quantity__field::-webkit-outer-spin-button,
+.purchase-form-quantity__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.purchase-form-quantity__field {
+  -moz-appearance: textfield;
+}
+
+
+.spp-purchase-form__field-wrapper .text-field::placeholder {
+	font-size: 14px;
+}

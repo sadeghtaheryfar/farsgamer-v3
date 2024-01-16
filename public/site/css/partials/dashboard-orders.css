@@ -1,0 +1,43 @@
+.do {
+	@apply overflow-x-auto;
+}
+
+.do::-webkit-scrollbar {
+	height: 4px;
+	border-radius: 99px;
+}
+.do::-webkit-scrollbar-track {
+	background: #F1F1F1;
+	border-radius: 99px;
+}
+.do::-webkit-scrollbar-thumb {
+	background: #BDBDC7;
+	border-radius: 99px;
+}
+.do::-webkit-scrollbar-thumb:hover {
+	background: #808191;
+}
+
+.do__head {
+	@apply border-b-2 border-gray-100;
+	@apply text-sm text-gray2-700 font-semibold;
+	@apply mb-4 pb-2 pt-1 px-6;
+}
+
+.do__item-list {
+	@apply grid gap-4;
+}
+
+.do__item {
+	@apply bg-gray-50 py-4 px-6 rounded-2xl text-sm;
+}
+
+.do__head,
+.do__item-cell-list {
+	@apply flex gap-4 items-center justify-between;
+}
+
+.do__head-cell,
+.do__item-cell {
+	@apply whitespace-nowrap;
+}

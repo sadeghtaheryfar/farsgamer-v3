@@ -1,0 +1,229 @@
+.comment {
+  @apply p-4 rounded-2xl bg-gray-50;
+}
+
+.comment__head {
+  @apply flex items-start justify-between gap-2;
+}
+
+.comment__user-name {
+	@apply font-semibold;
+}
+
+.comment__info {
+  @apply flex items-center gap-2;
+}
+
+.comment__date {
+  @apply min-w-12 min-h-12 max-w-12 max-h-12 w-12 h-12 inline-grid text-center items-center justify-center p-2 text-white rounded-xl bg-gradient-to-bl from-primary to-yellow;
+}
+
+.comment__date-day {
+  @apply text-xl font-extrabold;
+}
+
+.comment__date-month {
+  @apply text-2xs;
+}
+
+.comment__date-day,
+.comment__date-month {
+  @apply leading-none;
+}
+
+.comment__user {
+  @apply grid gap-1;
+}
+
+.comment__author {
+  @apply grid gap-1;
+}
+
+.comment__author-name {
+  @apply font-semibold;
+}
+
+.rating-stars {
+  @apply relative flex gap-px items-center ;
+}
+
+.rating-stars__empty-star,
+.rating-stars__filled-star {
+  font-size: 0.7rem
+}
+
+.rating-stars__empty-star {
+  @apply text-gray2-500;
+}
+
+.rating-stars__filled-star {
+  @apply text-primary;
+}
+
+.comment__tags {
+  @apply flex gap-1;
+}
+
+.comment__tag {
+  @apply flex items-center justify-center bg-gray-100 text-gray-500 rounded-full px-1 py-0.5 text-xs;
+}
+
+.comment__body {
+  @apply mt-3;
+}
+
+.comment__content {
+  @apply relative;
+}
+
+.comment__content-icon {
+  @apply absolute left-0 -top-6 z-0 flex opacity-40;
+}
+
+.comment__content-icon::after {
+  content: "";
+  @apply w-full h-full absolute inset-0 bg-gradient-to-b from-transparent to-gray-50;
+}
+
+.comment__content-icon i {
+  @apply relative text-4xl text-primary leading-none;
+}
+
+.comment__message {
+  @apply relative z-1 text-sm leading-6;
+}
+
+.comment .comment {
+  @apply mt-4;
+}
+
+.comment .comment .comment__content-icon i {
+  @apply flip-y;
+}
+
+.comment--ligth,
+.comment .comment {
+  @apply bg-white;
+}
+
+.comment--ligth .comment__content-icon::after,
+.comment .comment .comment__content-icon::after,
+.swiper-slide .comment {
+  @apply to-white;
+}
+
+.comment--ligth .comment {
+  @apply bg-gray-50;
+}
+
+.comment--ligth .comment .comment__content-icon::after {
+  @apply to-gray-50;
+}
+
+.swiper-slide .comment .comment__content-icon::after {
+  @apply to-white;
+}
+
+.swiper-slide .comment .comment__message {
+  @apply max-h-20 overflow-hidden;
+}
+
+.comment__reply-btn {
+  @apply btn btn-sm btn-primary flex mr-auto ml-0 mt-2;
+}
+
+.comment__form {
+  @apply border border-gray-200 rounded-2xl mt-4 bg-white;
+}
+
+.comment__form-head {
+  @apply border-b border-gray-200 px-4 py-3 flex items-center justify-between;
+}
+
+.comment__form-title {
+  @apply text-lg font-semibold;
+}
+
+.comment__form-content {
+  @apply p-4;
+}
+
+.comment__form-submit {
+  @apply btn btn-xl form-submit btn-primary mt-4 w-64;
+}
+
+.comment .comment__form {
+  @apply border-0;
+}
+
+.comment .comment .comment__form {
+  @apply bg-gray-50;
+}
+
+.comment .comment__form-title {
+  @apply text-base;
+}
+
+.comment--reply.comment--reply.active .comment__form {
+  @apply block;
+}
+
+@keyframes comment__ticker {
+  0% {
+    transform: translate3d(-20%, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(20%, 0, 0);
+  }
+}
+
+.comment__date-month {
+  transition: 300ms ease-in-out;
+  display: inline-block;
+  white-space: nowrap;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: comment__ticker;
+  animation-duration: 5s;
+}
+
+/*
+  Date Box
+*/
+
+.date-box {
+  @apply w-12 h-12 inline-grid text-center items-center justify-center p-2 text-white rounded-2xl bg-gradient-to-bl from-primary to-yellow;
+}
+
+.date-box__day {
+  @apply text-xl font-extrabold;
+}
+
+.date-box__month {
+  @apply text-2xs whitespace-nowrap;
+  transition: 200ms ease-in-out;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: date-box-animation;
+  animation-duration: 5000ms;
+}
+
+.date-box__day,
+.date-box__month {
+  @apply leading-none;
+}
+
+.comment .comment .comment__content-icon i{
+  transform: scaleY(-1);
+}
+
+@keyframes date-box-animation {
+  0% {
+    transform: translate3d(-20%, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    transform: translate3d(20%, 0, 0);
+  }
+}

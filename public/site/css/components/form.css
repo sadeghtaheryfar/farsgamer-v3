@@ -1,0 +1,45 @@
+.text-field {
+  @apply bg-gray2-100 border border-gray2-100 placeholder-gray2-700 hover:border-gray2-500 focus:border-primary;
+  @apply h-12.5 w-full rounded-2xl py-2 px-4 leading-7 transition-all duration-100 ease-in;
+}
+
+textarea {
+  @apply p-4 !important;
+}
+
+input {
+  font-family: montserrat, isans;
+}
+
+label {
+  @apply block mb-2 text-right;
+}
+
+.field-description {
+  @apply text-xs mt-1 leading-5;
+}
+
+/* .password-field, */
+.search-field {
+  @apply relative;
+}
+
+/* .password-field .password-field__toggle {
+  top: 50%;
+  transform: translateY(-50%);
+  @apply absolute left-0 px-4 h-full items-center cursor-pointer;
+} */
+
+.search-field__remove-value {
+  @apply text-xl text-gray-600 absolute inset-y-center left-0 h-10 flex items-center px-4 bg-white cursor-pointer;
+}
+
+.radiobox input {
+  cursor: pointer;
+}
+
+/* 
+.radiobox:checked ~ label {
+  background: red;
+}
+*/

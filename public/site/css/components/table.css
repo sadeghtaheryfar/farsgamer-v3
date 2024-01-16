@@ -1,0 +1,31 @@
+.table-wrapper {
+  @apply overflow-x-auto overflow-y-hidden;
+}
+
+table {
+  @apply w-full;
+}
+
+thead {
+  @apply border-b-2 border-gray-100;
+}
+
+th {
+  @apply p-2 pb-4 mb-4 whitespace-nowrap;
+}
+
+th {
+  @apply font-semibold;
+}
+
+td {
+  @apply py-2 px-3 border-gray-200 text-right;
+}
+
+th, td {
+  @apply text-right;
+}
+
+tbody tr:not(.h-2, .last:h-0) {
+  @apply border-collapse border-b border-gray-200 last:border-b-0;
+}

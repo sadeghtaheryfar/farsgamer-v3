@@ -1,0 +1,20 @@
+:root {
+  --swiper-navigation-size: 1rem;
+}
+
+.swiper-wrapper {
+  @apply box-border;
+}
+
+.swiper-pagination-bullet {
+  @apply bg-gray-500 opacity-60 transition-colors duration-100 ease-in hover:bg-primary;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary opacity-100;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply w-12 h-12 overflow-hidden bg-white rounded-full text-gray-600 border border-gray-100;
+}

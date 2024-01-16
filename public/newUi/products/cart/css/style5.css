@@ -1,0 +1,403 @@
+#message-box-more-slider{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#clothe-message-slider{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 13;
+    cursor: pointer;
+}
+
+
+
+#message-box-slider{
+    z-index: 14;
+    width: 60%;
+    height: auto;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+
+
+.swiper-pagination{
+    position: absolute !important;
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.swiper-slide5{
+    width: 6rem !important;
+    height: 6rem !important;
+    border-radius: 16px;
+    height: max-content;
+}
+
+
+.mySwiper6{
+    height: auto !important;
+    width: 50% !important;
+}
+
+
+.mySwiper5{
+    height: max-content !important;
+    margin-top: 2rem;
+}
+
+
+.swiper-slide5 img{
+    border-radius: 16px;
+}
+
+
+.drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px dashed #3D42DF;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 10px;
+    color: #000000;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+    background: #eee;
+    border-color: #111;
+}
+
+.drop-title {
+    transition: color .2s ease-in-out;
+}
+
+input[type=file] {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+}
+
+
+
+#message-box-more-slider2{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#clothe-message-slider2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 13;
+    cursor: pointer;
+}
+
+
+
+#message-box-slider2{
+    z-index: 14;
+    width: 30rem;
+    height: auto;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+
+.header-message2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #F7F7FA;
+}
+
+
+:is(.box1-header-message2,.box2-header-message2)
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.box1-header-message2 span{
+    margin-right: 0.5rem;
+}
+
+
+.box2-header-message2{
+    width: 40px;
+    height: 40px;
+}
+
+
+.box2-header-message2 img{
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.message2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0rem;
+    background: #F8F9FB;
+    border-radius: 16px;
+    padding: 1rem;
+    height: 16rem;
+    overflow: auto;
+}
+
+
+.message2::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.message2::-webkit-scrollbar-track {
+    background: #F8F9FB;
+}
+
+
+.message2::-webkit-scrollbar-thumb {
+    background: #3D42DF;
+    border-radius: 10px;
+}
+
+
+.message2::-webkit-scrollbar-thumb:hover {
+    background: #3D42DF;
+    border-radius: 10px;
+}
+
+
+.txt2-message2{
+    text-align: justify;
+}
+
+
+.btn-message2{
+    background: #3D42DF;
+    border-radius: 16px;
+    border: none;
+    width: 16.5rem;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    height: 3rem;
+    cursor: pointer;
+}
+
+
+#message-box-more-slider3{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#clothe-message-slider3{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 13;
+    cursor: pointer;
+}
+
+
+
+#message-box-slider3{
+    z-index: 14;
+    width: 30rem;
+    height: auto;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+
+@media screen and (max-width : 1024px){
+    #message-box-slider2{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .message2{
+        height: min-content;
+    }
+
+    .box1-message2{
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    #message-box-slider3{
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+        justify-content: flex-start;
+        position: relative;
+    }
+}

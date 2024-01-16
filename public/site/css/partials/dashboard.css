@@ -1,0 +1,98 @@
+/* Comments Tabs */
+.dashboard-comments__tabs {
+  @apply flex items-center overflow-y-auto border-b border-gray-200 mb-4;
+}
+
+.dashboard-comments__tab {
+  @apply border-b-2 border-transparent py-3 px-6;
+}
+
+.dashboard-comments__tab.active {
+  @apply border-primary;
+}
+
+/* Ratinh Stars */
+.dashboard-comments-rate .br-widget a {
+  margin: 0 !important;
+}
+
+.dashboard-comments-rate .br-widget {
+  display: flex;
+  gap: 2px;
+}
+
+/* Cart Nav */
+
+.cart-nav {
+  @apply flex items-center py-2 mb-4 justify-center;
+}
+
+
+/* First Active */
+.cart-nav--first-active .cart-nav__item:first-child {
+  @apply text-primary;
+}
+.cart-nav--first-active .cart-nav__item:first-child .cart-nav__item-circle {
+  @apply bg-primary;
+}
+
+/* Second Active */
+.cart-nav--second-active .cart-nav__item:first-child,
+.cart-nav--second-active .cart-nav__item:nth-child(2) {
+  @apply text-primary;
+}
+.cart-nav--second-active .cart-nav__item:first-child .cart-nav__item-circle,
+.cart-nav--second-active .cart-nav__item:nth-child(2) .cart-nav__item-circle,
+.cart-nav--second-active .cart-nav__item:nth-child(2) .cart-nav__item-circle::before {
+  @apply bg-primary;
+}
+
+/* Third Active */
+.cart-nav--third-active .cart-nav__item:first-child,
+.cart-nav--third-active .cart-nav__item:nth-child(2),
+.cart-nav--third-active .cart-nav__item:last-child {
+  @apply text-primary;
+}
+.cart-nav--third-active .cart-nav__item:first-child .cart-nav__item-circle,
+.cart-nav--third-active .cart-nav__item:nth-child(2) .cart-nav__item-circle,
+.cart-nav--third-active .cart-nav__item:nth-child(2) .cart-nav__item-circle::before,
+.cart-nav--third-active .cart-nav__item:nth-child(2) .cart-nav__item-circle::after,
+.cart-nav--third-active .cart-nav__item:last-child .cart-nav__item-circle {
+  @apply bg-primary;
+}
+
+
+.cart-nav__item {
+  @apply min-w-28 sm:min-w-36 text-gray-500 whitespace-nowrap items-center gap-2 grid justify-items-center;
+}
+
+.cart-nav__item-info {
+  @apply flex items-center gap-1 2xs:gap-2;
+}
+
+.cart-nav__item-info span,
+.cart-nav__item-info i {
+  @apply text-xs sm:text-sm;
+}
+
+.cart-nav__item-circle {
+  @apply w-4 h-4 bg-gray-500 rounded-full relative;
+}
+
+/* Center Circle Lines */
+
+.cart-nav__item:nth-child(2) .cart-nav__item-circle::before,
+.cart-nav__item:nth-child(2) .cart-nav__item-circle::after {
+  content: "";
+  height: 2px;
+  z-index: -1;
+  @apply absolute inset-y-center bg-gray-500;
+}
+
+.cart-nav__item:nth-child(2) .cart-nav__item-circle::before {
+  @apply -right-28 sm:-right-32 left-0;
+}
+
+.cart-nav__item:nth-child(2) .cart-nav__item-circle::after {
+  @apply -left-28 sm:-left-32 right-0;
+}

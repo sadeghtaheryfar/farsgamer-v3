@@ -1,0 +1,40 @@
+/* Wrapper */
+.cool-image-gallery-slider {
+  @apply grid gap-4 justify-center xs:flex;
+}
+
+/* Big Image Container */
+.cool-image-gallery-slider .swiper-container:first-child {
+  @apply max-w-full xs:mx-0 xs:order-2 xs:max-w-88 xl:max-w-84;
+}
+
+
+/* Small Images Container */
+.cool-image-gallery-slider .swiper-container:last-child {
+  @apply mx-0 xs:order-1 2xs:px-4 xs:px-0;
+}
+
+/* Both Containers */
+.cool-image-gallery-slider .swiper-container {
+  @apply rounded-2xl overflow-hidden;
+}
+
+/* All Slides */
+.cool-image-gallery-slider .swiper-slide {
+  @apply shadow-sm;
+}
+
+/* Big Image Containers, All Slides Image */
+.cool-image-gallery-slider .swiper-container:first-child .swiper-slide img {
+  @apply rounded-2xl;
+}
+
+/* Small Images Container, All Slides Image */
+.cool-image-gallery-slider .swiper-container:last-child .swiper-slide img {
+  @apply rounded-xl;
+}
+
+/* Small Images Container, All Slides */
+.cool-image-gallery-slider .swiper-container:last-child .swiper-slide {
+  @apply xs:w-24 xs:h-24;
+}

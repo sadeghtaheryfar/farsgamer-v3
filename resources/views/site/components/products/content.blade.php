@@ -42,9 +42,9 @@
                     </div>
                 @endforelse
 
-                    @if(method_exists($comments, 'links'))
+                    {{-- @if(method_exists($comments, 'links'))
                         {{ $comments->links('site.components.load-more') }}
-                    @endif
+                    @endif --}}
             </div>
         </div>
 
@@ -60,9 +60,9 @@
                     </div>
                 @endforelse
 
-                    @if(method_exists($questions, 'links'))
+                    {{-- @if(method_exists($questions, 'links'))
                         {{ $questions->links('site.components.load-more') }}
-                    @endif
+                    @endif --}}
 
                 <livewire:site.products.product-create-question :product="$product"/>
             </div>

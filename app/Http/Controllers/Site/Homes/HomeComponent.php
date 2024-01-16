@@ -64,7 +64,7 @@ class HomeComponent extends Component
         $fortnite = $settings->where('name', 'fortnite')->pluck('value')->toArray();
         $physical = $settings->where('name', 'physical')->pluck('value')->toArray();
         $steam = $settings->where('name', 'steam')->pluck('value')->toArray();
-		$article = $settings->where('name', 'home_article')->pluck('value')->toArray();
+		$article = $settings->where('name', 'home_article')->pluck('value')->take(5)->toArray();
 
         $this->imageSpecialDiscount = $settings->where('name', 'image_special_discount')->first()->value ?? '';
 
