@@ -16,9 +16,7 @@
             <div class="swiper slider-main-prudect">
                 <div class="swiper-wrapper">
                     @foreach ($products as $product)
-                        <div class="swiper-slide">
-                            @include('site.components.products.product-box')
-                        </div>
+                        @include('site.components.products.product-box')
                     @endforeach
                 </div>
 

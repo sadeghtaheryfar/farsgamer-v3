@@ -14,6 +14,4 @@
         <div class="swiper-pagination swiper-pagination-home"></div>
     </div>
 </section>
-
-
 <?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/homes/slider.blade.php ENDPATH**/ ?>

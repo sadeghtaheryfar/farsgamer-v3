@@ -1,155 +1,284 @@
-<sidebar id="sidebar">
-    <div id="sidebar__content">
-        <a id="sidebar__logo"
-            class="hidden px-6 pr-8 h-16 items-center lg:h-20 lg:absolute lg:-top-20 lg:right-0 lg:left-0 lg:bg-white"
-            href="/">
-            <div class="flex">
-                <img class="lg:w-34" src="<?php echo e(asset('site/images/logo.png')); ?>" alt="لوگو">
+<aside>
+    <section id="sidebar-pc">
+        <div id="padding-header"></div>
+
+        <section id="box-hever-store" class="hide-item">
+            <div id="clothe-box-hover-store" class="hide-item clothe-menu-store"></div>
+
+            <div id="show-box-hever-store" class="open-menu-store">
+                <div id="show-asli-box-hever-store">
+                    <div id="box-header-box-hever-store">
+                        <ul>
+                            <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <a href="#">
+                                    <li id="item1-box-hever-store" class="item-box-hever-store header-box-hever-store">
+                                        <div class="img">
+                                            <img src="<?php echo e(asset($item['icon'])); ?>" alt="<?php echo e($item['title']); ?>">
+                                        </div>
+
+                                        <span><?php echo e($item['title']); ?></span>
+                                    </li>
+                                </a>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+                    </div>
+
+
+                    <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="box-message-box-hever-store hide-item">
+                            <ul>
+                                <li>
+                                    <a href="<?php echo e(route('index.categories', $item['slug'])); ?>" class="item-box-hever-store">همه محصولات این دسته</a>
+                                </li>
+
+                                <?php $__currentLoopData = $item['children_recursive']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li>
+                                        <a href="<?php echo e(route('index.categories', $item2['slug'])); ?>" class="item-box-hever-store"><?php echo e($item2['title']); ?></a>
+                                    </li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
             </div>
-        </a>
-        <div id="sidebar__scrollable-content" class="overflow-y-auto max-h-full px-4 pb-6">
+        </section>
 
-            <form class="flex mt-4 lg:hidden relative w-full">
-                <input id="search-two" class="text-field h-12 pr-10 pl-2 text-sm w-full" type="text"
-                    placeholder="جستجو در محصولات فارس گیمر" wire:keydown.enter="updateSearch()"
-                    wire:model.lazy="search">
-                <label class="absolute h-full top-0 right-2 bottom-0 flex items-center justify-center mb-0 cursor-text"
-                    for="search-two" wire:click="updateSearch()">
-                    <i class="icon-search w-8 flex items-center justify-center text-gray2-700"></i>
-                </label>
-            </form>
-
-            <nav class="py-4">
-                <ul>
-                    <li>
-                        <a class="nav-menu-item" href="https://www.farsgamer.com/shop">
-                            <i class="nav-menu-item__icon icon-controler"></i>
-                            <span class="nav-menu-item__title store-lable">فروشگاه</span>
-                            <i class="fas fa-chevron-left" style="margin-right: 70px;"></i>
-                        </a>
-
-                    </li>
-                    <hr class="border-gray-200 mb-4 mt-4">
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('home'),'icon' => 'icon-home','href' => ''.e(route('home')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('home')),'icon' => 'icon-home','href' => ''.e(route('home')).'']); ?>
-                        خانه
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('faqs'),'icon' => 'icon-search','href' => ''.e(route('faqs')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('faqs')),'icon' => 'icon-search','href' => ''.e(route('faqs')).'']); ?>
-                        پیگیری سفارش
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('faq'),'icon' => 'icon-question-answer','href' => ''.e(route('faq')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('faq')),'icon' => 'icon-question-answer','href' => ''.e(route('faq')).'']); ?>
-                        سوالات متداول
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('rules'),'icon' => 'icon-law','href' => ''.e(route('rules')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('rules')),'icon' => 'icon-law','href' => ''.e(route('rules')).'']); ?>
-                        قوانین
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('contact-us'),'icon' => 'icon-mail','href' => ''.e(route('contact-us')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('contact-us')),'icon' => 'icon-mail','href' => ''.e(route('contact-us')).'']); ?>
-                        ارتباط با ما
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs('why-us'),'icon' => 'icon-fortnite','href' => ''.e(route('why-us')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs('why-us')),'icon' => 'icon-fortnite','href' => ''.e(route('why-us')).'']); ?>
-                        چرا فارس گیمر
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.sidebar-link','data' => ['active' => request()->routeIs(['articles', 'articles.show']),'icon' => 'icon-articles','href' => ''.e(route('articles')).'']]); ?>
-<?php $component->withName('site.sidebar-link'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(request()->routeIs(['articles', 'articles.show'])),'icon' => 'icon-articles','href' => ''.e(route('articles')).'']); ?>
-                        مقالات
-                     <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
-<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
-<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
-<?php endif; ?>
-                </ul>
-            </nav>
-
-            <hr class="border-gray-200 mb-4">
-
-            <div>
-
-                <ul class="grid gap-2 order-details">
-
-                    <li>
-                        <i class="last-orders"></i>
-                        <p>
-                            <b><?php echo e($ordersLasts); ?></b>
-                            <small>سفارش تکمیل شده 24 ساعت اخیر</small>
-                        <p>
-                    </li>
-                    <li>
-                        <i class="online-orders"></i>
-                        <p>
-                            <b><?php echo e($ordersOnlines); ?></b>
-                            <small>سفارش در حال انجام</small>
-                        <p>
-                    </li>
-
-                </ul>
-            </div>
-
+        <div class="box-logo">
+            <a href="<?php echo e(route('home')); ?>"><img src="<?php echo e(asset('site/images/logo.png')); ?>" alt="لوگو"></a>
         </div>
-    </div>
-</sidebar>
+
+        <div class="box-menu">
+            <ul class="ul-nav-menu">
+                <a href="https://www.farsgamer.com/shop">
+                    <li class="nav-menu-item nav-menu-item-store" id="menu1">
+                        <div class="box-nav1">
+                            <img id="icon-menu17" src="site-v2/img/game-dark.svg" alt=""
+                                class="icon-nav-menu hide-item">
+                            <img id="icon-menu18" src="site-v2/img/game.svg" alt="" class="icon-nav-menu">
+
+                            <span class="text-nav-menu">فروشگاه</span>
+                        </div>
+
+                        <img id="icon-menu19" src="site-v2/img/Vector.svg" alt="" class="icon-nav-menu1">
+                        <img id="icon-menu20" src="site-v2/img/Vector-dark.svg" alt=""
+                            class="icon-nav-menu1 hide-item">
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('home')); ?>">
+                    <li class="nav-menu-item nav-menu-item-active">
+                        <img id="icon-menu1" src="site-v2/img/home-white.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu2" src="site-v2/img/home-dark.svg" alt=""
+                            class="icon-nav-menu hide-item">
+
+                        <span class="text-nav-menu">خانه</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('faqs')); ?>">
+                    <li class="nav-menu-item" id="menu3">
+                        <img id="icon-menu3" src="site-v2/img/prudect.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu4" class="hide-item" src="site-v2/img/box-search-dark.svg" alt="">
+
+                        <span class="text-nav-menu">پیگیری سفارش</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('faq')); ?>">
+                    <li class="nav-menu-item" id="menu4">
+                        <img id="icon-menu5" src="site-v2/img/messages.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu6" class="hide-item" src="site-v2/img/messages-dark.svg" alt="">
+
+                        <span class="text-nav-menu">سوالات متداول</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('rules')); ?>">
+                    <li class="nav-menu-item" id="menu5">
+                        <img id="icon-menu7" src="site-v2/img/book.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu8" class="hide-item" src="site-v2/img/book-dark.svg" alt="">
+
+                        <span class="text-nav-menu">قوانین</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('why-us')); ?>">
+                    <li class="nav-menu-item" id="menu7">
+                        <img id="icon-menu9" src="site-v2/img/book.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu10" class="hide-item" src="site-v2/img/book-dark.svg" alt="">
+
+                        <span class="text-nav-menu">چرا فارس گیمر</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('contact-us')); ?>">
+                    <li class="nav-menu-item" id="menu8">
+                        <img id="icon-menu11" src="site-v2/img/sms.svg" alt="" class="icon-nav-menu">
+
+                        <img id="icon-menu12" class="hide-item" src="site-v2/img/sms-dark.svg" alt="">
+
+                        <span class="text-nav-menu">ارتباط با ما</span>
+                    </li>
+                </a>
+
+                <a href="<?php echo e(route('articles')); ?>">
+                    <li class="nav-menu-item" id="menu9">
+                        <img id="icon-menu13" class="" src="site-v2/img/note.svg" alt="">
+
+                        <img id="icon-menu14" class="hide-item" src="site-v2/img/note-2-dark.svg" alt="">
+
+                        <span class="text-nav-menu">مقاله ها</span>
+                    </li>
+                </a>
+
+                <a href="request.html">
+                    <li class="nav-menu-item" id="menu10">
+                        <svg id="icon-menu15" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1191_7585)">
+                                <path class="fram-white"
+                                    d="M14.4199 11.1901L17.59 14.36C17.7103 14.4942 17.7988 14.6538 17.849 14.827C17.8992 15.0001 17.9098 15.1823 17.8799 15.36C17.8447 15.6259 17.7215 15.8724 17.5299 16.0601C17.3447 16.255 17.097 16.3788 16.83 16.41C16.6477 16.4306 16.4631 16.4099 16.2899 16.3493C16.1168 16.2887 15.9596 16.1898 15.83 16.0601L12.6699 12.9001"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10"
+                                    stroke-linecap="round" />
+                                <path class="fram-white"
+                                    d="M14.4004 11.17L17.5604 14.3301C17.5829 14.3475 17.6031 14.3676 17.6205 14.3901V14.3901L14.4504 11.22"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10"
+                                    stroke-linecap="round" />
+                                <path class="fram-white"
+                                    d="M20.5496 12.73L20.2096 13.07L19.9896 13.29L19.6796 13.5999C19.6973 13.4178 19.6752 13.2341 19.6147 13.0614C19.5543 12.8887 19.457 12.7312 19.3296 12.5999L16.1595 9.42997L13.8496 7.12998C13.7946 7.07282 13.7285 7.02731 13.6555 6.99625C13.5825 6.96519 13.5039 6.94919 13.4246 6.94919C13.3452 6.94919 13.2666 6.96519 13.1936 6.99625C13.1206 7.02731 13.0547 7.07282 12.9996 7.12998L10.0796 10.04C9.92711 10.1938 9.74561 10.316 9.54565 10.3994C9.34569 10.4828 9.13119 10.5257 8.91455 10.5257C8.69791 10.5257 8.48341 10.4828 8.28345 10.3994C8.08349 10.316 7.90211 10.1938 7.74963 10.04V9.98996C7.63906 9.87612 7.57715 9.72368 7.57715 9.56498C7.57715 9.40627 7.63906 9.25383 7.74963 9.13999L12.0496 4.83994L12.3895 4.49997C12.9281 3.95879 13.5687 3.52983 14.2742 3.23801C14.9797 2.9462 15.7362 2.79732 16.4996 2.79996C17.2616 2.79754 18.0164 2.9466 18.7202 3.23844C19.4241 3.53028 20.0629 3.95909 20.5996 4.49997C21.1391 5.04234 21.5658 5.68606 21.8555 6.39408C22.1451 7.10209 22.2919 7.86044 22.2872 8.6254C22.2826 9.39036 22.1267 10.1468 21.8285 10.8512C21.5303 11.5557 21.0956 12.1942 20.5496 12.73V12.73Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M14.1901 17.8701L14.1201 17.8101L14.1801 17.8701H14.1901Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M12.4503 16.17L12.3203 16.04L12.3802 16.1L12.4503 16.17Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M20.0502 13.35L19.9902 13.29" stroke="#374151"
+                                    stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M14.4004 11.17L17.5604 14.3301C17.5829 14.3475 17.6031 14.3676 17.6205 14.3901V14.3901L14.4504 11.22"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10"
+                                    stroke-linecap="round" />
+                                <path class="fram-white"
+                                    d="M12.6599 12.91L15.8199 16.0701C15.9497 16.1997 16.0485 16.357 16.1091 16.5301C16.1697 16.7032 16.1905 16.8878 16.1699 17.0701C16.1348 17.336 16.0116 17.5824 15.8199 17.7701C15.6347 17.965 15.3871 18.0888 15.12 18.1201C14.9422 18.1499 14.7599 18.1394 14.5868 18.0892C14.4137 18.039 14.2542 17.9504 14.12 17.8301L14.0599 17.7701C13.8342 17.577 13.5471 17.4706 13.25 17.47C12.9239 17.471 12.6113 17.6004 12.3799 17.8301C12.5998 17.6117 12.7292 17.3184 12.7422 17.0088C12.7552 16.6992 12.6508 16.396 12.45 16.16L12.3799 16.09L12.3199 16.03C12.0942 15.837 11.807 15.7306 11.5099 15.73C11.1838 15.731 10.8713 15.8603 10.6399 16.09C10.7542 15.9758 10.8449 15.8402 10.9067 15.6909C10.9686 15.5416 11.0005 15.3816 11.0005 15.22C11.0005 15.0584 10.9686 14.8985 10.9067 14.7492C10.8449 14.5999 10.7542 14.4643 10.6399 14.35C10.5255 14.2367 10.3896 14.1474 10.2402 14.0873C10.0908 14.0272 9.93091 13.9976 9.7699 14.0001C9.60896 13.9981 9.44924 14.0281 9.29993 14.0881C9.15061 14.1482 9.01466 14.2372 8.8999 14.35C9.01389 14.2367 9.10441 14.1019 9.16614 13.9534C9.22786 13.805 9.25964 13.6458 9.25964 13.485C9.25964 13.3243 9.22786 13.1651 9.16614 13.0167C9.10441 12.8682 9.01389 12.7334 8.8999 12.6201C8.78736 12.5035 8.65212 12.4115 8.50244 12.3495C8.35276 12.2876 8.19187 12.2571 8.02991 12.2601C7.86803 12.2577 7.70745 12.2884 7.55786 12.3503C7.40827 12.4122 7.27281 12.504 7.15991 12.6201L5.92993 13.85C5.79956 13.9793 5.70029 14.1364 5.63965 14.3097C5.57901 14.4829 5.55862 14.6677 5.57996 14.85L3.44995 12.73C2.3615 11.6391 1.75019 10.1611 1.75 8.62006C1.74978 7.85843 1.89981 7.10424 2.19153 6.4007C2.48324 5.69715 2.91085 5.05809 3.44995 4.52008C3.98867 3.98037 4.6285 3.55216 5.33289 3.26001C6.03727 2.96786 6.79237 2.8175 7.55493 2.8175C8.3175 2.8175 9.07259 2.96786 9.77698 3.26001C10.4814 3.55216 11.1212 3.98037 11.6599 4.52008L12 4.86005L7.69995 9.16003C7.58938 9.27388 7.52747 9.42638 7.52747 9.58508C7.52747 9.74379 7.58938 9.89623 7.69995 10.0101V10.0601C7.85243 10.214 8.03393 10.3361 8.23389 10.4195C8.43385 10.5029 8.64835 10.5458 8.86499 10.5458C9.08163 10.5458 9.29613 10.5029 9.49609 10.4195C9.69605 10.3361 9.87743 10.214 10.0299 10.0601L12.95 7.15009C13.005 7.09292 13.071 7.04742 13.144 7.01636C13.2171 6.9853 13.2956 6.9693 13.375 6.9693C13.4544 6.9693 13.5328 6.9853 13.6058 7.01636C13.6789 7.04742 13.7449 7.09292 13.7999 7.15009L16.11 9.45007"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M12.4503 16.17L12.3203 16.04L12.3802 16.1L12.4503 16.17Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M14.1901 17.8701L14.1201 17.8101L14.1801 17.8701H14.1901Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M8.89969 14.3601L7.6697 15.6C7.54049 15.7304 7.38336 15.8297 7.21011 15.8903C7.03686 15.951 6.85202 15.9714 6.6697 15.9501C6.38721 15.922 6.12271 15.7985 5.9197 15.6C5.71706 15.4 5.5929 15.1339 5.56973 14.85C5.5484 14.6677 5.56878 14.483 5.62942 14.3097C5.69006 14.1364 5.78934 13.9793 5.9197 13.85L7.18972 12.6201C7.30262 12.504 7.43796 12.4123 7.58755 12.3504C7.73714 12.2885 7.89784 12.2578 8.05972 12.2601C8.22168 12.2572 8.38245 12.2876 8.53213 12.3496C8.68181 12.4115 8.81717 12.5036 8.92971 12.6201C9.04328 12.7356 9.13272 12.8726 9.19278 13.023C9.25283 13.1735 9.28236 13.3344 9.27957 13.4963C9.27678 13.6583 9.24175 13.8181 9.17654 13.9664C9.11133 14.1147 9.01716 14.2485 8.89969 14.3601Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M10.6399 16.1L9.40994 17.34C9.28072 17.4704 9.1236 17.5696 8.95034 17.6303C8.77709 17.6909 8.59225 17.7114 8.40994 17.69C8.12745 17.6619 7.86294 17.5384 7.65994 17.34C7.45729 17.1399 7.33313 16.8738 7.30996 16.59C7.28863 16.4077 7.30902 16.2229 7.36966 16.0496C7.43029 15.8764 7.52957 15.7192 7.65994 15.59L8.88992 14.35C9.00468 14.2372 9.14063 14.1482 9.28994 14.0881C9.43926 14.028 9.59898 13.9981 9.75991 14C9.92092 13.9975 10.0809 14.0272 10.2303 14.0873C10.3796 14.1474 10.5155 14.2367 10.6299 14.35C10.7464 14.4637 10.8391 14.5995 10.9027 14.7494C10.9663 14.8992 10.9996 15.0601 11.0005 15.2229C11.0014 15.3857 10.9701 15.547 10.9082 15.6976C10.8463 15.8482 10.7551 15.9849 10.6399 16.1V16.1Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M12.3802 17.84L11.1502 19.08C11.021 19.2104 10.8638 19.3096 10.6906 19.3702C10.5173 19.4309 10.3325 19.4513 10.1502 19.43C9.86768 19.4019 9.60318 19.2785 9.40017 19.08C9.19753 18.8799 9.07337 18.6138 9.0502 18.33C9.02887 18.1477 9.04925 17.9629 9.10989 17.7897C9.17053 17.6164 9.2698 17.4592 9.40017 17.33L10.6302 16.09C10.8615 15.8603 11.1742 15.7309 11.5003 15.73C11.7973 15.7306 12.0844 15.8369 12.3102 16.03L12.4402 16.16C12.6453 16.3953 12.7531 16.6999 12.742 17.0118C12.7308 17.3238 12.6015 17.6198 12.3802 17.84Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M12.4503 16.17L12.3203 16.04L12.3802 16.1L12.4503 16.17Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M14.4803 18.8C14.4625 19.096 14.334 19.3745 14.1203 19.58L12.8902 20.82C12.6784 21.0233 12.4029 21.147 12.1103 21.17H11.9002C11.617 21.1443 11.3518 21.0205 11.1502 20.82C10.9475 20.6199 10.8234 20.3538 10.8002 20.07C10.7789 19.8877 10.7993 19.7029 10.8599 19.5297C10.9205 19.3564 11.0198 19.1992 11.1502 19.07L12.3802 17.83C12.6115 17.6003 12.9242 17.4709 13.2503 17.47C13.5473 17.4705 13.8344 17.5769 14.0602 17.77L14.1302 17.83C14.2536 17.9579 14.3486 18.1104 14.409 18.2775C14.4693 18.4447 14.4936 18.6228 14.4803 18.8V18.8Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white" d="M14.1901 17.8701L14.1201 17.8101L14.1801 17.8701H14.1901Z"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" />
+                                <path class="fram-white"
+                                    d="M16.1897 9.45007L19.3597 12.6201C19.4872 12.7513 19.5845 12.9088 19.6449 13.0815C19.7053 13.2542 19.7275 13.438 19.7097 13.6201C19.6889 13.9074 19.5646 14.1775 19.3597 14.3801C19.1502 14.5823 18.8793 14.709 18.5897 14.7401C18.4195 14.7538 18.2482 14.7325 18.0865 14.6774C17.9249 14.6224 17.7762 14.5348 17.6497 14.42V14.42C17.6322 14.3976 17.6121 14.3775 17.5897 14.36L14.4297 11.2001"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10"
+                                    stroke-linecap="round" />
+                                <path class="fram-white"
+                                    d="M14.4004 11.17L17.5604 14.3301C17.5829 14.3475 17.6031 14.3676 17.6205 14.3901V14.3901L14.4504 11.22"
+                                    stroke="#374151" stroke-width="1.5" stroke-miterlimit="10"
+                                    stroke-linecap="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1191_7585">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                        <img id="icon-menu16" class="hide-item" src="site-v2/img/Frame-dark.svg" alt="">
+
+                        <span class="text-nav-menu">درخواست همکاری</span>
+                    </li>
+                </a>
+            </ul>
+
+            <div id="hover-store-mobile">
+                <div class="header-store-mobile">
+                    <span>دسته بندی ها</span>
+                </div>
+
+                <div class="message-store-mobile">
+                    <div class="item-header-mobile open-box-category">
+                        <span>محصولات فورتنایت</span>
+
+                        <img src="site-v2/img/Vector.svg" class="icon-header-store-mbile icon-category-header-store"
+                            alt="">
+                    </div>
+
+                    <div class="hide-item message-header-sore message-category-store-mobile">
+                        <ul>
+                            <a href="#">
+                                <li>ویباکس</li>
+                            </a>
+
+                            <a href="#">
+                                <li>باندل های فورتنایت</li>
+                            </a>
+
+                            <a href="#">
+                                <li>آیتم شاپ</li>
+                            </a>
+
+                            <a href="#">
+                                <li>گان سیو ده ورلد</li>
+                            </a>
+
+                            <a href="#">
+                                <li>متریال سیو ده ورلد</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="item-header-mobile open-box-category">
+                        <span>تجهیزات گیمینگ</span>
+
+                        <img src="site-v2/img/Vector.svg" class="icon-header-store-mbile icon-category-header-store"
+                            alt="">
+                    </div>
+
+                    <div class="hide-item message-header-sore message-category-store-mobile">
+                        <ul>
+                            <a href="#">
+                                <li>ویباکس</li>
+                            </a>
+
+                            <a href="#">
+                                <li>باندل های فورتنایت</li>
+                            </a>
+
+                            <a href="#">
+                                <li>آیتم شاپ</li>
+                            </a>
+
+                            <a href="#">
+                                <li>گان سیو ده ورلد</li>
+                            </a>
+
+                            <a href="#">
+                                <li>متریال سیو ده ورلد</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="box-clothe-menu-mobile" class="hide-item open-menu-mobile"></section>
+</aside>
 <?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/components/layouts/sidebar.blade.php ENDPATH**/ ?>

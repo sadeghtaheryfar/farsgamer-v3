@@ -3,8 +3,6 @@
 
 @include('site.components.layouts.head')
 <body class="header-and-sidebar-fixed">
-  {{-- @include('site.components.layouts.sidebar')
-  @include('site.components.layouts.header') --}}
 <livewire:site.header/>
 <livewire:site.sidebar/>
 @include('site.components.layouts.top-alert')

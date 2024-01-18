@@ -1,109 +1,259 @@
-<header id="header" wire:ignore.self>
-    <div class="container-base flex items-center justify-between gap-4">
-        <div class="flex items-center gap-4 lg:gap-8">
-            <button id="burger">
-                <div></div>
-                <div></div>
-            </button>
-            <a href="<?php echo e(route('home')); ?>" id="header__logo" class="h-16 flex items-center lg:h-20">
-                <img src="<?php echo e(asset('site/images/logo.png')); ?>" class="w-24 2xs:w-28 lg:w-32" alt="لوگو">
-            </a>
+<header>
+    <section id="box-header">
+        <section id="right-header">
             <form class="hidden lg:block relative w-64">
-                <input id="q" class="text-field h-12 pr-10 text-sm w-76" type="text" placeholder="جستجو در محصولات فارس گیمر" wire:keydown.enter="updateSearch()" wire:model.lazy="q">
-                <label class="absolute h-full top-0 right-2 bottom-0 flex items-center justify-center mb-0 cursor-text" for="q" wire:click="updateSearch()">
-                    <i class="icon-search w-8 flex items-center justify-center text-gray2-700"></i>
-                </label>
-            </form>
-        </div>
-        <div class="flex items-center gap-4">
+                <div id="box-search-header">
+                    <label for="q" wire:click="updateSearch()">
+                        <img src="site-v2/img/search.svg" id="icon-search-header" alt="">
+                    </label>
 
-            <div class="announcements">
-                <a class="header-widget announcements__toggle-btn">
-                    <i class="icon-bell header-widget__icon"></i>
+                    <input class="input-search-header" id="q" type="search"
+                        placeholder="جستجو در محصولات فارس گیمر" wire:keydown.enter="updateSearch()"
+                        wire:model.lazy="q">
+                </div>
+            </form>
+        </section>
+
+        <section id="left-header">
+            <div id="box-icon-notif">
+                <div id="icon-notif" class="nav-right-icon open-menu">
+                    <img src="site-v2/img/notification.svg" alt="">
+
                     <?php if(count($userNotifications) + count($notifications) > 0): ?>
-                        <div class="header-widget__bobble"><?php echo e(count($userNotifications) + count($notifications)); ?></div>
+                        <span
+                            class="number-notif-cart open-menu"><?php echo e(count($userNotifications) + count($notifications)); ?></span>
                     <?php endif; ?>
-                </a>
-                <div easytab class="announcements__menu hidden" wire:ignore.self x-data="{activeTab: 1}">
-                    <div class="announcements__menu-head">
-                        <ul class="flex pt-2">
-                            <li easytab-tab @click="activeTab = 1" x-bind:class="{ 'active': activeTab == 1 }">اطلاعیه عمومی (<?php echo e(count($notifications)); ?>)</li>
-                            <?php if(auth()->guard()->check()): ?>
-                                <li easytab-tab @click="activeTab = 2" x-bind:class="{ 'active': activeTab == 2 }" wire:click="readNotifications()">اطلاعیه شما (<?php echo e(count($userNotifications)); ?>)</li>
-                            <?php endif; ?>
-                        </ul>
-                        <button class="announcements__close-btn">
-                            <i class="icon-cancel"></i>
-                        </button>
-                    </div>
-                    <div class="py-2">
-                        <div easytab-content x-bind:class="{ 'active': activeTab == 1 }">
-                            <ul>
-                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <li>
-                                        <div class="group flex items-start gap-2 py-3 px-2 border-r-3 border-transparent bg-white transition duration-200 ease-in-out hover:bg-gray2-50 focus:bg-gray2-50 hover:border-primary focus:border-primary">
-                                            <div class="min-w-9 min-h-9 max-w-9 max-h-9 flex items-center justify-center rounded-full bg-gray2-50 group-hover:bg-white group-focus:bg-white">
-                                                <img class="w-5 -mr-0.5" src="<?php echo e(asset('site/svg/logo-ninja.svg')); ?>" alt="لوگو نینجا">
-                                            </div>
-                                            <div>
-                                                <p class="font-semibold text-primary text-sm">پشتیبانی</p>
-                                                <p class="mt-1 text-xs"><?php echo e($item->message); ?></p>
-                                                <p class="text-gray-700 mt-3 text-xs"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </ul>
+                </div>
+
+                <div id="box-show-notif" class="hide-item over-menu">
+                    <div id="box-notif">
+                        <div id="header-box-notif">
+                            <span>اعلانات</span>
+
+                            <img class="clothe-menu icon-exit-notif" src="site-v2/img/add.svg" alt="">
                         </div>
+
+                        <div class="message-box-notif">
+                            <div class="header-message-notif">
+                                <div class="item-personal-notif">
+                                    <span id="header-one-notif" class="item-notif item-notif-active personal">پیام های
+                                        عمومی<span style="color: red;">(<?php echo e(count($notifications)); ?>)</span></span>
+                                </div>
+
+                                <?php if(auth()->guard()->check()): ?>
+                                    <div class="item-general-notif">
+                                        <span id="header-two-notif" class="item-notif general"> پیام های
+                                            شخصی <span style="color: red;">(<?php echo e(count($userNotifications)); ?>)</span></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+
+                            <div id="message-notif-personal">
+                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="box-asli-notif">
+                                        <div class="box-header-notif">
+                                            <span
+                                                class="item-clock-box-notif"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></span>
+
+                                            <span class="item-date-box-notif" dir="ltr">پشتیبانی</span>
+                                        </div>
+
+                                        <div class="box-message-notif">
+                                            <span><?php echo e($item->message); ?></span>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+
+                            <div id="message-notif-general" class="hide-item">
+                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="box-asli-notif">
+                                        <div class="box-header-notif">
+                                            <span
+                                                class="item-clock-box-notif"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></span>
+
+                                            <span class="item-date-box-notif" dir="ltr">پشتیبانی</span>
+                                        </div>
+
+                                        <div class="box-message-notif">
+                                            <span><?php echo e($item->message); ?></span>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+
+                        <div id="box3-notif">
+                            <a href="dash-notifications.html"><span>دیدن همه اعلانات</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="box-notif-clothe" class="exit-menu hide-item"></div>
+            </div>
+
+            <a href="<?php echo e(route('cart')); ?>">
+                <div class="nav-right-icon cart-icon">
+                    <img src="site-v2/img/shopping-cart.svg" alt="">
+
+                    <?php if($basketCount > 0): ?>
+                        <span class="number-notif-cart"><?php echo e($basketCount); ?></span>
+                    <?php endif; ?>
+                </div>
+            </a>
+
+            <?php if(auth()->guard()->check()): ?>
+                <a href="<?php echo e(route('dashboard')); ?>">
+                    <div class="nav-right-icon login-icon">
+                        <img src="site-v2/img/user.svg" alt="">
+                        <span class="text-nav"><?php echo e(Auth::user()->name); ?></span>
+                    </div>
+                </a>
+            <?php endif; ?>
+
+            <?php if(auth()->guard()->guest()): ?>
+                <a href="<?php echo e(route('auth')); ?>">
+                    <div class="nav-right-icon login-icon">
+                        <img src="site-v2/img/user.svg" alt="">
+                        <span class="text-nav">ورود / ثبت نام</span>
+                    </div>
+                </a>
+            <?php endif; ?>
+        </section>
+    </section>
+
+    <div id="box-header-mobile-asli">
+        <section id="box-header-mobile">
+            <section id="right-header">
+                <img id="nave-menu-item-icon" class="open-menu-mobile" src="site-v2/img/menu.svg" alt="">
+            </section>
+
+            <section id="center-header">
+                <a href="<?php echo e(route("home")); ?>"><img id="logo-mobile" src="site-v2/img/logo-farsgamer.png" alt="لوگو"></a>
+            </section>
+
+            <section id="left-header">
+                <div class="nav-right-icon-mobile clothe-menu-mobile">
+                    <img src="site-v2/img/notification.svg" alt="">
+
+                    <?php if(count($userNotifications) + count($notifications) > 0): ?>
+                        <span
+                            class="number-notif-cart-mobile"><?php echo e(count($userNotifications) + count($notifications)); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div id="notif-mobile">
+                    <div id="box-notif-mobile" class="hide-item">
+                        <div id="header-box-notif">
+                            <span>اعلانات</span>
+
+                            <img class="icon-exit-notif clothe-menu-mobile" src="site-v2/img/add.svg" alt="">
+                        </div>
+
+                        <div class="message-box-notif">
+                            <div class="header-message-notif">
+                                <div class="item-personal-notif personal-mobile">
+                                    <span id="header-three-notif" class="item-notif item-notif-active">پیام های عمومی
+                                        <span style="color: red;">(<?php echo e(count($notifications)); ?>)</span>
+                                    </span>
+                                </div>
+
+                                <?php if(auth()->guard()->check()): ?>
+                                    <div class="item-general-notif general-mobile">
+                                        <span id="header-four-notif" class="item-notif"> پیام های شخصی
+                                            <span style="color: red;"> (<?php echo e(count($userNotifications)); ?>) </span></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+
+                            <div id="message-notif-general-mobile" class="hide-item">
+                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="box-asli-notif">
+                                        <div class="box-header-notif">
+                                            <span
+                                                class="item-clock-box-notif"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></span>
+
+                                            <span class="item-date-box-notif" dir="ltr">پشتیبانی</span>
+                                        </div>
+
+                                        <div class="box-message-notif">
+                                            <span><?php echo e($item->message); ?></span>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+
+                            <div id="message-notif-personal-mobile">
+                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="box-asli-notif">
+                                        <div class="box-header-notif">
+                                            <span
+                                                class="item-clock-box-notif"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></span>
+
+                                            <span class="item-date-box-notif" dir="ltr">پشتیبانی</span>
+                                        </div>
+
+                                        <div class="box-message-notif">
+                                            <span><?php echo e($item->message); ?></span>
+                                        </div>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+
                         <?php if(auth()->guard()->check()): ?>
-                            <div easytab-content x-bind:class="{ 'active': activeTab == 2 }">
-                                <ul>
-                                    <?php $__currentLoopData = $userNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <li>
-                                            <div class="group flex items-start gap-2 py-3 px-2 border-r-3 border-transparent bg-white transition duration-200 ease-in-out hover:bg-gray2-50 focus:bg-gray2-50 hover:border-primary focus:border-primary">
-                                                <div class="min-w-9 min-h-9 max-w-9 max-h-9 flex items-center justify-center rounded-full bg-gray2-50 group-hover:bg-white group-focus:bg-white">
-                                                    <img class="w-5 -mr-0.5" src="<?php echo e(asset('site/svg/logo-ninja.svg')); ?>" alt="لوگو نینجا">
-                                                </div>
-                                                <div>
-                                                    <p class="font-semibold text-primary text-sm">پشتیبانی</p>
-                                                    <p class="mt-1 text-xs"><?php echo e($item->note); ?></p>
-                                                    <p class="text-gray-700 mt-3 text-xs"><?php echo e(jalaliDate($item->created_at, 'diffForHumans')); ?></p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </ul>
+                            <div id="box3-notif">
+                                <a href="dash-notifications.html"><span>دیدن همه اعلانات</span></a>
                             </div>
                         <?php endif; ?>
                     </div>
                 </div>
-            </div>
+            </section>
+        </section>
 
-            <a href="<?php echo e(route('cart')); ?>" class="w-7.5 h-7.5 flex items-center justify-center relative  transition duration-200 hover:text-primary focus:text-primary">
-                <i class="icon-basket text-xl"></i>
-                <?php if($basketCount > 0): ?>
-                    <div class="absolute -right-0.5 -top-0.5 bg-red text-white leading-0 text-center w-4 h-4 rounded-full
-                 text-xs flex items-center justify-center"><?php echo e($basketCount); ?></div>
+        <section id="box2-header-mobile">
+            <section id="right-header-mobile">
+                <form class="lg:block relative">
+                    <div id="box-search-header-mobile">
+                        <label for="q" wire:click="updateSearch()">
+                            <img src="site-v2/img/search.svg" id="icon-search-header" alt="">
+                        </label>
+
+                        <input class="input-search-header-mobile" id="q" type="search"
+                            placeholder="جستجو در محصولات" wire:model.lazy="q" wire:keydown.enter="updateSearch()">
+                    </div>
+                </form>
+            </section>
+
+            <section id="left-header">
+                <?php if(auth()->guard()->check()): ?>
+                    <a href="<?php echo e(route('dashboard')); ?>">
+                    <div class="nav-two-left-icon-mobile">
+                        <img src="site-v2/img/user.svg" alt="">
+                        <span class="text-nav"><?php echo e(Auth::user()->name); ?></span>
+                    </div>
+                    </a>
                 <?php endif; ?>
-            </a>
 
-            <?php if(auth()->guard()->guest()): ?>
-                <a href="<?php echo e(route('auth')); ?>"
-                   class="h-7.5 flex items-center justify-center relative gap-2 text-sm transition duration-200 hover:text-primary focus:text-primary">
-                    <i class="icon-user"></i>
-                    <p>ورود/عضویت</p>
+                <?php if(auth()->guard()->guest()): ?>
+                    <a href="<?php echo e(route('auth')); ?>">
+                        <div class="nav-two-left-icon-mobile">
+                            <img src="site-v2/img/user.svg" alt="">
+                            <span class="text-nav">ورود</span>
+                        </div>
+                    </a>
+                <?php endif; ?>
+
+                <a href="<?php echo e(route('cart')); ?>" class="nav-left-icon-mobile">
+                    <div>
+                        <img src="site-v2/img/shopping-cart.svg" alt="">
+
+                        <?php if($basketCount > 0): ?>
+                            <span class="number-notif-cart"><?php echo e($basketCount); ?></span>
+                        <?php endif; ?>
+                    </div>
                 </a>
-            <?php endif; ?>
-            <?php if(auth()->guard()->check()): ?>
-                <a href="<?php echo e(route('dashboard')); ?>"
-                   class="h-7.5 flex items-center justify-center relative gap-2 text-sm transition duration-200 hover:text-primary focus:text-primary">
-                    <i class="icon-user text-xl"></i>
-                    <p>داشبورد</p>
-                </a>
-            <?php endif; ?>
-            <span class="hidden sm:flex pr-4 border-r border-gray2-500 text-sm">
-                <a href="tel:<?php echo e($phone); ?>"><?php echo e($phone); ?></a>
-            </span>
-        </div>
+            </section>
+        </section>
     </div>
 </header><?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/components/layouts/header.blade.php ENDPATH**/ ?>

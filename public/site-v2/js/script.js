@@ -1073,7 +1073,7 @@ var swiper = new Swiper(".slider-main-prudect", {
     },
     breakpoints: {
         320: {
-            slidesPerView: "auto",
+            slidesPerView: 2,
         },
         750: {
             slidesPerView: 3,
