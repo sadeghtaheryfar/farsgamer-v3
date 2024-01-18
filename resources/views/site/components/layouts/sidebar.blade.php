@@ -52,9 +52,9 @@
                 <a href="https://www.farsgamer.com/shop">
                     <li class="nav-menu-item nav-menu-item-store" id="menu1">
                         <div class="box-nav1">
-                            <img id="icon-menu17" src="site-v2/img/game-dark.svg" alt=""
+                            <img id="icon-menu17" src="{{ asset("site-v2/img/game-dark.svg") }}" alt=""
                                 class="icon-nav-menu hide-item">
-                            <img id="icon-menu18" src="site-v2/img/game.svg" alt="" class="icon-nav-menu">
+                            <img id="icon-menu18" src="{{ asset("site-v2/img/game.svg") }}" alt="" class="icon-nav-menu">
 
                             <span class="text-nav-menu">فروشگاه</span>
                         </div>
@@ -67,9 +67,9 @@
 
                 <a href="{{ route('home') }}">
                     <li class="nav-menu-item nav-menu-item-active">
-                        <img id="icon-menu1" src="site-v2/img/home-white.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu1" src="{{ asset("site-v2/img/home-white.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu2" src="site-v2/img/home-dark.svg" alt=""
+                        <img id="icon-menu2" src="{{ asset("site-v2/img/home-dark.svg") }}" alt=""
                             class="icon-nav-menu hide-item">
 
                         <span class="text-nav-menu">خانه</span>
@@ -78,9 +78,9 @@
 
                 <a href="{{route('faqs')}}">
                     <li class="nav-menu-item" id="menu3">
-                        <img id="icon-menu3" src="site-v2/img/prudect.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu3" src="{{ asset("site-v2/img/prudect.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu4" class="hide-item" src="site-v2/img/box-search-dark.svg" alt="">
+                        <img id="icon-menu4" class="hide-item" src="{{ asset("site-v2/img/box-search-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">پیگیری سفارش</span>
                     </li>
@@ -88,9 +88,9 @@
 
                 <a href="{{route('faq')}}">
                     <li class="nav-menu-item" id="menu4">
-                        <img id="icon-menu5" src="site-v2/img/messages.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu5" src="{{ asset("site-v2/img/messages.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu6" class="hide-item" src="site-v2/img/messages-dark.svg" alt="">
+                        <img id="icon-menu6" class="hide-item" src="{{ asset("site-v2/img/messages-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">سوالات متداول</span>
                     </li>
@@ -98,9 +98,9 @@
 
                 <a href="{{route('rules')}}">
                     <li class="nav-menu-item" id="menu5">
-                        <img id="icon-menu7" src="site-v2/img/book.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu7" src="{{ asset("site-v2/img/book.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu8" class="hide-item" src="site-v2/img/book-dark.svg" alt="">
+                        <img id="icon-menu8" class="hide-item" src="{{ asset("site-v2/img/book-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">قوانین</span>
                     </li>
@@ -108,9 +108,9 @@
 
                 <a href="{{route('why-us')}}">
                     <li class="nav-menu-item" id="menu7">
-                        <img id="icon-menu9" src="site-v2/img/book.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu9" src="{{ asset("site-v2/img/book.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu10" class="hide-item" src="site-v2/img/book-dark.svg" alt="">
+                        <img id="icon-menu10" class="hide-item" src="{{ asset("site-v2/img/book-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">چرا فارس گیمر</span>
                     </li>
@@ -118,9 +118,9 @@
 
                 <a href="{{route('contact-us')}}">
                     <li class="nav-menu-item" id="menu8">
-                        <img id="icon-menu11" src="site-v2/img/sms.svg" alt="" class="icon-nav-menu">
+                        <img id="icon-menu11" src="{{ asset("site-v2/img/sms.svg") }}" alt="" class="icon-nav-menu">
 
-                        <img id="icon-menu12" class="hide-item" src="site-v2/img/sms-dark.svg" alt="">
+                        <img id="icon-menu12" class="hide-item" src="{{ asset("site-v2/img/sms-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">ارتباط با ما</span>
                     </li>
@@ -128,9 +128,9 @@
 
                 <a href="{{route('articles')}}">
                     <li class="nav-menu-item" id="menu9">
-                        <img id="icon-menu13" class="" src="site-v2/img/note.svg" alt="">
+                        <img id="icon-menu13" class="" src="{{ asset("site-v2/img/note.svg") }}" alt="">
 
-                        <img id="icon-menu14" class="hide-item" src="site-v2/img/note-2-dark.svg" alt="">
+                        <img id="icon-menu14" class="hide-item" src="{{ asset("site-v2/img/note-2-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">مقاله ها</span>
                     </li>
@@ -201,7 +201,7 @@
                             </defs>
                         </svg>
 
-                        <img id="icon-menu16" class="hide-item" src="site-v2/img/Frame-dark.svg" alt="">
+                        <img id="icon-menu16" class="hide-item" src="{{ asset("site-v2/img/Frame-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">درخواست همکاری</span>
                     </li>
@@ -217,7 +217,7 @@
                     <div class="item-header-mobile open-box-category">
                         <span>محصولات فورتنایت</span>
 
-                        <img src="site-v2/img/Vector.svg" class="icon-header-store-mbile icon-category-header-store"
+                        <img src="{{ asset("site-v2/img/Vector.svg") }}" class="icon-header-store-mbile icon-category-header-store"
                             alt="">
                     </div>
 
@@ -248,7 +248,7 @@
                     <div class="item-header-mobile open-box-category">
                         <span>تجهیزات گیمینگ</span>
 
-                        <img src="site-v2/img/Vector.svg" class="icon-header-store-mbile icon-category-header-store"
+                        <img src="{{ asset("site-v2/img/Vector.svg") }}" class="icon-header-store-mbile icon-category-header-store"
                             alt="">
                     </div>
 
