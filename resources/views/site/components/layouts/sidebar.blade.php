@@ -28,12 +28,14 @@
                         <div class="box-message-box-hever-store hide-item">
                             <ul>
                                 <li>
-                                    <a href="{{ route('index.categories', $item['slug']) }}" class="item-box-hever-store">همه محصولات این دسته</a>
+                                    <a href="{{ route('index.categories', $item['slug']) }}"
+                                        class="item-box-hever-store">همه محصولات این دسته</a>
                                 </li>
 
                                 @foreach ($item['children_recursive'] as $item2)
                                     <li>
-                                        <a href="{{ route('index.categories', $item2['slug']) }}" class="item-box-hever-store">{{ $item2['title'] }}</a>
+                                        <a href="{{ route('index.categories', $item2['slug']) }}"
+                                            class="item-box-hever-store">{{ $item2['title'] }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -52,9 +54,29 @@
                 <a href="https://www.farsgamer.com/shop">
                     <li class="nav-menu-item nav-menu-item-store" id="menu1">
                         <div class="box-nav1">
-                            <img id="icon-menu17" src="{{ asset("site-v2/img/game-dark.svg") }}" alt=""
-                                class="icon-nav-menu hide-item">
-                            <img id="icon-menu18" src="{{ asset("site-v2/img/game.svg") }}" alt="" class="icon-nav-menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.56953 12.46L6.51953 15.51" stroke="#292D32" stroke-width="1.5"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6.55078 12.49L9.60078 15.54" stroke="#292D32" stroke-width="1.5"
+                                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M13.5293 14H13.5393" stroke="#292D32" stroke-width="2" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.4707 14H17.4807" stroke="#292D32" stroke-width="2" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M15.5 15.98V15.96" stroke="#292D32" stroke-width="2" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M15.5 12.04V12.02" stroke="#292D32" stroke-width="2" stroke-miterlimit="10"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 22H15C20 22 22 20 22 15V13C22 8 20 6 15 6H9C4 6 2 8 2 13V15C2 20 4 22 9 22Z"
+                                    stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M13.0105 2L13.0005 3.01C12.9905 3.56 12.5505 4 12.0005 4H11.9705C11.4205 4 10.9805 4.45 10.9805 5C10.9805 5.55 11.4305 6 11.9805 6H12.9805"
+                                    stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
 
                             <span class="text-nav-menu">فروشگاه</span>
                         </div>
@@ -66,78 +88,157 @@
                 </a>
 
                 <a href="{{ route('home') }}">
-                    <li class="nav-menu-item nav-menu-item-active">
-                        <img id="icon-menu1" src="{{ asset("site-v2/img/home-white.svg") }}" alt="" class="icon-nav-menu">
+                    <li class="nav-menu-item {{ request()->routeIs('home') ? 'nav-menu-item-active' : '' }}">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.02 2.84004L3.63 7.04004C2.73 7.74004 2 9.23004 2 10.36V17.77C2 20.09 3.89 21.99 6.21 21.99H17.79C20.11 21.99 22 20.09 22 17.78V10.5C22 9.29004 21.19 7.74004 20.2 7.05004L14.02 2.72004C12.62 1.74004 10.37 1.79004 9.02 2.84004Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17.99V14.99" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu2" src="{{ asset("site-v2/img/home-dark.svg") }}" alt=""
-                            class="icon-nav-menu hide-item">
 
                         <span class="text-nav-menu">خانه</span>
                     </li>
                 </a>
 
-                <a href="{{route('faqs')}}">
-                    <li class="nav-menu-item" id="menu3">
-                        <img id="icon-menu3" src="{{ asset("site-v2/img/prudect.svg") }}" alt="" class="icon-nav-menu">
+                <a href="{{ route('faqs') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('faqs') ? 'nav-menu-item-active' : '' }}"
+                        id="menu3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.16992 7.43994L11.9999 12.5499L20.7699 7.46991" stroke="#374151"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 21.6099V12.5399" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M21.6106 12.83V9.17C21.6106 7.79 20.6206 6.11002 19.4106 5.44002L14.0706 2.48C12.9306 1.84 11.0706 1.84 9.9306 2.48L4.59061 5.44002C3.38061 6.11002 2.39062 7.79 2.39062 9.17V14.83C2.39062 16.21 3.38061 17.89 4.59061 18.56L9.9306 21.52C10.5006 21.84 11.2506 22 12.0006 22C12.7506 22 13.5006 21.84 14.0706 21.52"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M19.2 21.4C20.9673 21.4 22.4 19.9673 22.4 18.2C22.4 16.4327 20.9673 15 19.2 15C17.4327 15 16 16.4327 16 18.2C16 19.9673 17.4327 21.4 19.2 21.4Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M23 22L22 21" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu4" class="hide-item" src="{{ asset("site-v2/img/box-search-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">پیگیری سفارش</span>
                     </li>
                 </a>
 
-                <a href="{{route('faq')}}">
-                    <li class="nav-menu-item" id="menu4">
-                        <img id="icon-menu5" src="{{ asset("site-v2/img/messages.svg") }}" alt="" class="icon-nav-menu">
+                <a href="{{ route('faq') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('faq') ? 'nav-menu-item-active' : '' }}" id="menu4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.98 10.79V14.79C17.98 15.05 17.97 15.3 17.94 15.54C17.71 18.24 16.12 19.58 13.19 19.58H12.79C12.54 19.58 12.3 19.7 12.15 19.9L10.95 21.5C10.42 22.21 9.56 22.21 9.03 21.5L7.82999 19.9C7.69999 19.73 7.41 19.58 7.19 19.58H6.79001C3.60001 19.58 2 18.79 2 14.79V10.79C2 7.86001 3.35001 6.27001 6.04001 6.04001C6.28001 6.01001 6.53001 6 6.79001 6H13.19C16.38 6 17.98 7.60001 17.98 10.79Z"
+                                stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M21.9791 6.79001V10.79C21.9791 13.73 20.6291 15.31 17.9391 15.54C17.9691 15.3 17.9791 15.05 17.9791 14.79V10.79C17.9791 7.60001 16.3791 6 13.1891 6H6.78906C6.52906 6 6.27906 6.01001 6.03906 6.04001C6.26906 3.35001 7.85906 2 10.7891 2H17.1891C20.3791 2 21.9791 3.60001 21.9791 6.79001Z"
+                                stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M13.4955 13.25H13.5045" stroke="#374151" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M9.9955 13.25H10.0045" stroke="#374151" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M6.4955 13.25H6.5045" stroke="#374151" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu6" class="hide-item" src="{{ asset("site-v2/img/messages-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">سوالات متداول</span>
                     </li>
                 </a>
 
-                <a href="{{route('rules')}}">
-                    <li class="nav-menu-item" id="menu5">
-                        <img id="icon-menu7" src="{{ asset("site-v2/img/book.svg") }}" alt="" class="icon-nav-menu">
+                <a href="{{ route('rules') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('rules') ? 'nav-menu-item-active' : '' }}" id="menu5">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22 16.7399V4.66994C22 3.46994 21.02 2.57994 19.83 2.67994H19.77C17.67 2.85994 14.48 3.92994 12.7 5.04994L12.53 5.15994C12.24 5.33994 11.76 5.33994 11.47 5.15994L11.22 5.00994C9.44 3.89994 6.26 2.83994 4.16 2.66994C2.97 2.56994 2 3.46994 2 4.65994V16.7399C2 17.6999 2.78 18.5999 3.74 18.7199L4.03 18.7599C6.2 19.0499 9.55 20.1499 11.47 21.1999L11.51 21.2199C11.78 21.3699 12.21 21.3699 12.47 21.2199C14.39 20.1599 17.75 19.0499 19.93 18.7599L20.26 18.7199C21.22 18.5999 22 17.6999 22 16.7399Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 5.48999V20.49" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7.75 8.48999H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8.5 11.49H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu8" class="hide-item" src="{{ asset("site-v2/img/book-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">قوانین</span>
                     </li>
                 </a>
 
-                <a href="{{route('why-us')}}">
-                    <li class="nav-menu-item" id="menu7">
-                        <img id="icon-menu9" src="{{ asset("site-v2/img/book.svg") }}" alt="" class="icon-nav-menu">
+                <a href="{{ route('why-us') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('why-us') ? 'nav-menu-item-active' : '' }}" id="menu7">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22 16.7399V4.66994C22 3.46994 21.02 2.57994 19.83 2.67994H19.77C17.67 2.85994 14.48 3.92994 12.7 5.04994L12.53 5.15994C12.24 5.33994 11.76 5.33994 11.47 5.15994L11.22 5.00994C9.44 3.89994 6.26 2.83994 4.16 2.66994C2.97 2.56994 2 3.46994 2 4.65994V16.7399C2 17.6999 2.78 18.5999 3.74 18.7199L4.03 18.7599C6.2 19.0499 9.55 20.1499 11.47 21.1999L11.51 21.2199C11.78 21.3699 12.21 21.3699 12.47 21.2199C14.39 20.1599 17.75 19.0499 19.93 18.7599L20.26 18.7199C21.22 18.5999 22 17.6999 22 16.7399Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 5.48999V20.49" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7.75 8.48999H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8.5 11.49H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu10" class="hide-item" src="{{ asset("site-v2/img/book-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">چرا فارس گیمر</span>
                     </li>
                 </a>
 
-                <a href="{{route('contact-us')}}">
-                    <li class="nav-menu-item" id="menu8">
-                        <img id="icon-menu11" src="{{ asset("site-v2/img/sms.svg") }}" alt="" class="icon-nav-menu">
+                <a href="{{ route('contact-us') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('contact-us') ? 'nav-menu-item-active' : '' }}" id="menu8">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
+                                stroke="#374151" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="#374151"
+                                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu12" class="hide-item" src="{{ asset("site-v2/img/sms-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">ارتباط با ما</span>
                     </li>
                 </a>
 
-                <a href="{{route('articles')}}">
-                    <li class="nav-menu-item" id="menu9">
-                        <img id="icon-menu13" class="" src="{{ asset("site-v2/img/note.svg") }}" alt="">
+                <a href="{{ route('articles') }}">
+                    <li class="nav-menu-item {{ request()->routeIs('articles') ? 'nav-menu-item-active' : '' }}" id="menu9">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M21.6602 10.44L20.6802 14.62C19.8402 18.23 18.1802 19.69 15.0602 19.39C14.5602 19.35 14.0202 19.26 13.4402 19.12L11.7602 18.72C7.59018 17.73 6.30018 15.67 7.28018 11.49L8.26018 7.30001C8.46018 6.45001 8.70018 5.71001 9.00018 5.10001C10.1702 2.68001 12.1602 2.03001 15.5002 2.82001L17.1702 3.21001C21.3602 4.19001 22.6402 6.26001 21.6602 10.44Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M15.0603 19.39C14.4403 19.81 13.6603 20.16 12.7103 20.47L11.1303 20.99C7.16034 22.27 5.07034 21.2 3.78034 17.23L2.50034 13.28C1.22034 9.30998 2.28034 7.20998 6.25034 5.92998L7.83034 5.40998C8.24034 5.27998 8.63034 5.16998 9.00034 5.09998C8.70034 5.70998 8.46034 6.44998 8.26034 7.29998L7.28034 11.49C6.30034 15.67 7.59034 17.73 11.7603 18.72L13.4403 19.12C14.0203 19.26 14.5603 19.35 15.0603 19.39Z"
+                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12.6406 8.53003L17.4906 9.76003" stroke="#374151" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M11.6602 12.4L14.5602 13.14" stroke="#374151" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
 
-                        <img id="icon-menu14" class="hide-item" src="{{ asset("site-v2/img/note-2-dark.svg") }}" alt="">
 
                         <span class="text-nav-menu">مقاله ها</span>
                     </li>
                 </a>
 
                 <a href="request.html">
-                    <li class="nav-menu-item" id="menu10">
+                    <li class="nav-menu-item {{ request()->routeIs('request') ? 'nav-menu-item-active' : '' }}" id="menu10">
                         <svg id="icon-menu15" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1191_7585)">
@@ -201,8 +302,6 @@
                             </defs>
                         </svg>
 
-                        <img id="icon-menu16" class="hide-item" src="{{ asset("site-v2/img/Frame-dark.svg") }}" alt="">
-
                         <span class="text-nav-menu">درخواست همکاری</span>
                     </li>
                 </a>
@@ -217,8 +316,8 @@
                     <div class="item-header-mobile open-box-category">
                         <span>محصولات فورتنایت</span>
 
-                        <img src="{{ asset("site-v2/img/Vector.svg") }}" class="icon-header-store-mbile icon-category-header-store"
-                            alt="">
+                        <img src="{{ asset('site-v2/img/Vector.svg') }}"
+                            class="icon-header-store-mbile icon-category-header-store" alt="">
                     </div>
 
                     <div class="hide-item message-header-sore message-category-store-mobile">
@@ -248,8 +347,8 @@
                     <div class="item-header-mobile open-box-category">
                         <span>تجهیزات گیمینگ</span>
 
-                        <img src="{{ asset("site-v2/img/Vector.svg") }}" class="icon-header-store-mbile icon-category-header-store"
-                            alt="">
+                        <img src="{{ asset('site-v2/img/Vector.svg') }}"
+                            class="icon-header-store-mbile icon-category-header-store" alt="">
                     </div>
 
                     <div class="hide-item message-header-sore message-category-store-mobile">

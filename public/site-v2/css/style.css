@@ -1092,6 +1092,21 @@ aside::-webkit-scrollbar-thumb:hover {
 }
 
 
+.nav-menu-item:hover path{
+    stroke: #3D42DF;
+}
+
+
+.nav-menu-item-active:hover path{
+    stroke: white;
+}
+
+
+.nav-menu-item-active path{
+    stroke: white;
+}
+
+
 .nav-menu-item-store{
     border-bottom: 1px solid #F1F1F1;
     border-radius: 0px;
@@ -2278,7 +2293,7 @@ footer{
     font-weight: 700;
     font-size: 10px;
     color: #808191;
-    padding: 0.8rem 2rem;
+    padding: 0.4rem 1rem;
     transition: 0.3s;
 }
 
@@ -2288,7 +2303,6 @@ footer{
     font-weight: 700;
     font-size: 10px;
     color: #374151;
-    padding: 0.8rem 2rem;
 }
 
 

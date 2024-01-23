@@ -24,6 +24,10 @@ class HomeComponent extends Component
     public $specialDiscountOne, $specialDiscountTwo, $specialDiscountThree;
     public $articles;
     public $steamGames;
+    public $MouseProduct;
+    public $BestSellersNew;
+    public $SpecialDiscountsNew;
+    public $GiftCardsNew;
 
     public function mount()
     {
@@ -65,6 +69,7 @@ class HomeComponent extends Component
         $physical = $settings->where('name', 'physical')->pluck('value')->toArray();
         $steam = $settings->where('name', 'steam')->pluck('value')->toArray();
         $article = $settings->where('name', 'home_article')->pluck('value')->take(5)->toArray();
+        $GiftCardsNew = ['giftcardamazon-us','playstationgiftcard','giftcard-googleplay','giftcard-itunes','giftcardxbox-usa','giftcardsteam'];
 
         $this->imageSpecialDiscount = $settings->where('name', 'image_special_discount')->first()->value ?? '';
 
@@ -80,6 +85,9 @@ class HomeComponent extends Component
             ))->get();
 
         $this->bestSellers = $products->whereIn('slug', $bestSellers);
+        $this->BestSellersNew = $products->whereIn('slug', $bestSellers)->take(5);
+        $this->GiftCardsNew = Product::whereIn('slug', $GiftCardsNew)->where("status","available")->take(5)->get();
+        $this->SpecialDiscountsNew = Product::where('discount_amount',"!=", 0)->where("status","available")->take(5)->get();
         $this->fortnite = $products->whereIn('slug', $fortnite);
         $this->physical = $products->whereIn('slug', $physical);
         $this->steam = $products->whereIn('slug', $steam);
@@ -88,6 +96,7 @@ class HomeComponent extends Component
         $this->specialDiscountThree = $products->whereIn('slug', $settings->where('name', 'slug_three_special_discount')->pluck('value'))->first();
         $id = Category::where('slug', '=', 'steam-game')->pluck('id')->toArray();
         $this->steamGames = Product::where('category_id', $id[0])->take(12)->get();
+        $this->MouseProduct = Product::where('category_id', "14")->where("status","available")->take(8)->get();
         $this->recentComments = Comment::with('user')
             ->latest()
             ->isConfirmed()

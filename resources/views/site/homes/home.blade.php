@@ -8,21 +8,14 @@
     ])
     @include('site.homes.gift-cards')
 
-    <section class="mt-4">
-        @foreach (\App\Models\Setting::whereIn('name', ['home_big_one'])->get()->pluck('value', 'id') as $banner)
-            <a href="{{ $banner['url'] }}" class="flex"><img class="w-full rounded-lg" src="{{ asset($banner['image']) }}"
-                    alt=""></a>
-        @endforeach
-    </section>
-
     @include('site.homes.special-discount')
 
     @include('site.homes.fortnite', ['products' => $fortnite, 'title' => 'موس', 'icon' => ''])
 
     <section class="grid gap-4 mt-4 sm:grid-cols-2">
         @foreach (\App\Models\Setting::whereIn('name', ['home_medium_two', 'home_medium_three'])->get()->pluck('value', 'id') as $banner)
-            <a href="{{ $banner['url'] }}" class="flex"><img class="w-full rounded-lg"
-                    src="{{ asset($banner['image']) }}" alt=""></a>
+            <a href="{{ $banner['url'] }}" class="flex"><img class="w-full rounded-lg" src="{{ asset($banner['image']) }}"
+                    alt=""></a>
         @endforeach
     </section>
 
@@ -40,12 +33,20 @@
         @endforeach
     </section>
 
-    @include('site.homes.best-sellers', [
+    {{-- @include('site.homes.best-sellers', [
         'products' => $steam,
         'title' => ' مانیتور',
         'route' => route('products'),
         'icon' => '',
+    ]) --}}
+
+    @include('site.homes.best-sellers', [
+        'products' => $MouseProduct,
+        'title' => ' موس',
+        'route' => route('products'),
+        'icon' => '',
     ])
+
     @include('site.homes.recent-comments')
 
 

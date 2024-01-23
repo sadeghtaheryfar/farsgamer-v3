@@ -8,21 +8,14 @@
     ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php echo $__env->make('site.homes.gift-cards', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <section class="mt-4">
-        <?php $__currentLoopData = \App\Models\Setting::whereIn('name', ['home_big_one'])->get()->pluck('value', 'id'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <a href="<?php echo e($banner['url']); ?>" class="flex"><img class="w-full rounded-lg" src="<?php echo e(asset($banner['image'])); ?>"
-                    alt=""></a>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </section>
-
     <?php echo $__env->make('site.homes.special-discount', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <?php echo $__env->make('site.homes.fortnite', ['products' => $fortnite, 'title' => 'موس', 'icon' => ''], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <section class="grid gap-4 mt-4 sm:grid-cols-2">
         <?php $__currentLoopData = \App\Models\Setting::whereIn('name', ['home_medium_two', 'home_medium_three'])->get()->pluck('value', 'id'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $banner): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <a href="<?php echo e($banner['url']); ?>" class="flex"><img class="w-full rounded-lg"
-                    src="<?php echo e(asset($banner['image'])); ?>" alt=""></a>
+            <a href="<?php echo e($banner['url']); ?>" class="flex"><img class="w-full rounded-lg" src="<?php echo e(asset($banner['image'])); ?>"
+                    alt=""></a>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </section>
 
@@ -40,12 +33,15 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </section>
 
+    
+
     <?php echo $__env->make('site.homes.best-sellers', [
-        'products' => $steam,
-        'title' => ' مانیتور',
+        'products' => $MouseProduct,
+        'title' => ' موس',
         'route' => route('products'),
         'icon' => '',
     ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
     <?php echo $__env->make('site.homes.recent-comments', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 

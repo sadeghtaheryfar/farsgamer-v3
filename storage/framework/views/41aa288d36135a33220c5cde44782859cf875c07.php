@@ -66,7 +66,7 @@
                             </div>
 
                             <div id="message-notif-general" class="hide-item">
-                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $userNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="box-asli-notif">
                                         <div class="box-header-notif">
                                             <span
@@ -167,7 +167,7 @@
                             </div>
 
                             <div id="message-notif-general-mobile" class="hide-item">
-                                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php $__currentLoopData = $userNotifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="box-asli-notif">
                                         <div class="box-header-notif">
                                             <span

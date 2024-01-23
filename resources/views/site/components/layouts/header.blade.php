@@ -66,7 +66,7 @@
                             </div>
 
                             <div id="message-notif-general" class="hide-item">
-                                @foreach ($notifications as $item)
+                                @foreach ($userNotifications as $item)
                                     <div class="box-asli-notif">
                                         <div class="box-header-notif">
                                             <span
@@ -167,7 +167,7 @@
                             </div>
 
                             <div id="message-notif-general-mobile" class="hide-item">
-                                @foreach ($notifications as $item)
+                                @foreach ($userNotifications as $item)
                                     <div class="box-asli-notif">
                                         <div class="box-header-notif">
                                             <span

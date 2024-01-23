@@ -342,59 +342,25 @@ boxgiftcarts.forEach((boxgiftcart,index) => {
 
 //  hover menu .....................................................................
 
-
-var  iconmenu1 = document.getElementById("icon-menu1");
-var  iconmenu2 = document.getElementById("icon-menu2");
-var  iconmenu3 = document.getElementById("icon-menu3");
-var  iconmenu4 = document.getElementById("icon-menu4");
-var  iconmenu5 = document.getElementById("icon-menu5");
-var  iconmenu6 = document.getElementById("icon-menu6");
-var  iconmenu7 = document.getElementById("icon-menu7");
-var  iconmenu8 = document.getElementById("icon-menu8");
-var  iconmenu9 = document.getElementById("icon-menu9");
-var  iconmenu10 = document.getElementById("icon-menu10");
-var  iconmenu11 = document.getElementById("icon-menu11");
-var  iconmenu12 = document.getElementById("icon-menu12");
-var  iconmenu13 = document.getElementById("icon-menu13");
-var  iconmenu14 = document.getElementById("icon-menu14");
-var  iconmenu15 = document.getElementById("icon-menu15");
-var  iconmenu16 = document.getElementById("icon-menu16");
-var  iconmenu17 = document.getElementById("icon-menu17");
-var  iconmenu18 = document.getElementById("icon-menu18");
-var  iconmenu19 = document.getElementById("icon-menu19");
-var  iconmenu20 = document.getElementById("icon-menu20");
-var  iconmenu22 = document.getElementById("icon-menu22");
-var  iconmenu23 = document.getElementById("icon-menu23");
-
 var menu1 = document.getElementById("menu1");
 var menu1request = document.getElementById("menu1-request");
-var menu2 = document.getElementById("menu2");
-var menu3 = document.getElementById("menu3");
-var menu4 = document.getElementById("menu4");
-var menu5 = document.getElementById("menu5");
-var menu6 = document.getElementById("menu6");
-var menu7 = document.getElementById("menu7");
-var menu8 = document.getElementById("menu8");
-var menu9 = document.getElementById("menu9");
-var menu10 = document.getElementById("menu10");
 
+
+
+var navMenuItem = document.querySelectorAll(".nav-menu-item");
+
+
+navMenuItem.forEach((navMenuItem,index) => {
+    navMenuItem.addEventListener('mouseover', function handleClick(event) {
+
+    });
+});
 
 
 if(menu1 != undefined)
 {
     menu1.addEventListener('mouseover', function handleClick(event) {
-        iconmenu17.classList.remove("hide-item");
-        iconmenu18.classList.add("hide-item");
-        iconmenu19.classList.add("hide-item");
-        iconmenu20.classList.remove("hide-item");
         boxheverstore.classList.remove("hide-item");
-    });
-
-    menu1.addEventListener('mouseout', function handleClick(event) {
-        iconmenu17.classList.add("hide-item");
-        iconmenu18.classList.remove("hide-item");
-        iconmenu19.classList.remove("hide-item");
-        iconmenu20.classList.add("hide-item");
     });
 }
 
@@ -403,141 +369,6 @@ if(menu1request != undefined)
 {
     menu1request.addEventListener('mouseover', function handleClick(event) {
         boxheverstore.classList.remove("hide-item");
-    });
-}
-
-
-if(menu2 != undefined)
-{
-    menu2.addEventListener('mouseover', function handleClick(event) {
-        iconmenu2.classList.remove("hide-item");
-        iconmenu1.classList.add("hide-item");
-    });
-
-
-    menu2.addEventListener('mouseout', function handleClick(event) {
-        iconmenu2.classList.add("hide-item");
-        iconmenu1.classList.remove("hide-item");
-    });
-}
-
-
-if(menu3 != undefined)
-{
-    menu3.addEventListener('mouseover', function handleClick(event) {
-        iconmenu4.classList.remove("hide-item");
-        iconmenu3.classList.add("hide-item");
-    });
-
-
-    menu3.addEventListener('mouseout', function handleClick(event) {
-        iconmenu4.classList.add("hide-item");
-        iconmenu3.classList.remove("hide-item");
-    });
-}
-
-
-if(menu4 != undefined)
-{
-    menu4.addEventListener('mouseover', function handleClick(event) {
-        iconmenu6.classList.remove("hide-item");
-        iconmenu5.classList.add("hide-item");
-    });
-
-
-    menu4.addEventListener('mouseout', function handleClick(event) {
-        iconmenu6.classList.add("hide-item");
-        iconmenu5.classList.remove("hide-item");
-    });
-}
-
-
-if(menu5 != undefined)
-{
-    menu5.addEventListener('mouseover', function handleClick(event) {
-        iconmenu8.classList.remove("hide-item");
-        iconmenu7.classList.add("hide-item");
-    });
-
-
-    menu5.addEventListener('mouseout', function handleClick(event) {
-        iconmenu8.classList.add("hide-item");
-        iconmenu7.classList.remove("hide-item");
-    });
-}
-
-
-if(menu6 != undefined)
-{
-    menu6.addEventListener('mouseover', function handleClick(event) {
-        iconmenu23.classList.remove("hide-item");
-        iconmenu22.classList.add("hide-item");
-    });
-
-
-    menu6.addEventListener('mouseout', function handleClick(event) {
-        iconmenu23.classList.add("hide-item");
-        iconmenu22.classList.remove("hide-item");
-    });
-}
-
-
-if(menu7 != undefined)
-{
-    menu7.addEventListener('mouseover', function handleClick(event) {
-        iconmenu10.classList.remove("hide-item");
-        iconmenu9.classList.add("hide-item");
-    });
-
-
-    menu7.addEventListener('mouseout', function handleClick(event) {
-        iconmenu10.classList.add("hide-item");
-        iconmenu9.classList.remove("hide-item");
-    });
-}
-
-
-if(menu8 != undefined)
-{
-    menu8.addEventListener('mouseover', function handleClick(event) {
-        iconmenu12.classList.remove("hide-item");
-        iconmenu11.classList.add("hide-item");
-    });
-
-
-    menu8.addEventListener('mouseout', function handleClick(event) {
-        iconmenu12.classList.add("hide-item");
-        iconmenu11.classList.remove("hide-item");
-    });
-}
-
-
-if(menu9 != undefined)
-{
-    menu9.addEventListener('mouseover', function handleClick(event) {
-        iconmenu14.classList.remove("hide-item");
-        iconmenu13.classList.add("hide-item");
-    });
-
-
-    menu9.addEventListener('mouseout', function handleClick(event) {
-        iconmenu14.classList.add("hide-item");
-        iconmenu13.classList.remove("hide-item");
-    });
-}
-
-
-if(menu10 != undefined)
-{
-    menu10.addEventListener('mouseover', function handleClick(event) {
-        iconmenu16.classList.remove("hide-item");
-        iconmenu15.classList.add("hide-item");
-    });
-
-
-    menu10.addEventListener('mouseout', function handleClick(event) {
-        iconmenu16.classList.add("hide-item");
-        iconmenu15.classList.remove("hide-item");
     });
 }
 
