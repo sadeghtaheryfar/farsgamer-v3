@@ -41,10 +41,7 @@
                         <?php echo $__env->make('site.components.products.comment', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                    <?php if(method_exists($comments, 'links')): ?>
-                        <?php echo e($comments->links('site.components.load-more')); ?>
-
-                    <?php endif; ?>
+                    
 
                     <?php
 if (! isset($_instance)) {

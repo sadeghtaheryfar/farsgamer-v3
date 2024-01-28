@@ -755,7 +755,6 @@ if(formfaqs != undefined)
                     errorenumberprudectfaqs.classList.add("hide-item");
                 }
                 event.preventDefault();
-                window.location.href = "faqs-answer.html";
             }
         }
     })();

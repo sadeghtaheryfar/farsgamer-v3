@@ -1,106 +1,265 @@
 @if ($table === false)
-<div class="relative p-4 bg-white rounded-2xl overflow-hidden xl:flex xl:p-8 xl:pt-0 xl:items-start">
-	<div class="grid justify-center gap-8 max-w-2xl mx-auto xl:pt-8 xl:mr-0 xl:items-start xl:gap-12">
-		<div>
-			<h1 class="text-lg font-semibold">پیگیری سفارش</h1>
-			<p class="text-sm mt-4">
-		
-			فارس گیمری عزیز، در صورتی که در وب سایت سفارشی ثبت کرده اید و قصد دارید تا از آخرین وضعیت انجام آن مطلع شوید، میتوانید از طریق این قسمت سفارش خود را پیگیری کنید.
-			<br>
-			<br>
-<b>کد سفارش چیست؟ </b>
-<br>
-زمانی که شما سفارش ثبت میکنید، از طریق پیامک و ایمیل برای شما کد سفارش ارسال خواهد شد که به صورت FAG-** می باشد.
-جهت پیگیری سفارش شما به این کد نیاز دارید.
-<br>
-<span style="color:#3d42df">*در صورت بروز هرگونه مشکل و وجود ابهام یا سوال تیم پشتیبانی ما در خدمت شما هستند*</span>
-			</p>
-		</div>
-		
-		<div class="grid gap-6 w-full max-w-sm mx-auto">
-			<form class="grid gap-6 w-full max-w-sm mx-auto">
-				<div>
-				<label class="font-semibold mr-2" for="tracking-code">کد سفارش</label>
-				<input class="text-field dir-ltr" wire:model="code" type="text" wire:keydown.enter="showOrder()" name="tracking-code" id="tracking-code" placeholder="FAG کد سفارش بدون">
-				</div>
-				<div>
-					<label class="font-semibold mr-2" for="phone">شماره همراه</label>
-					<input class="text-field dir-ltr" wire:model="phoneNumber" wire:keydown.enter="showOrder()" type="text" name="phone" id="phone" autocomplete="tel" placeholder="09*********">
-				</div>
-				<div class="flex">
-					@if ($alert)
-						<i id="search-order-alert"></i><p class="text-danger-alert">{{$alert}}</p>
-					@endif
-				</div>
-			<button wire:click="showOrder" type="button" class="btn btn-primary form-submit font-semibold text-lg mt-4">{{$search}}</button>
-			</form>
-		</div>
-	</div>
-	<div class="hidden xl:block">
-		<img src="{{asset('site/images/spiderman.png')}}" alt="عکس مرد عنکبوتی">
-	</div>
-</div>
-@endif
-@if ($table === true)
-<div class="relative grid gap-4 overflow-hidden bg-white rounded-2xl xl:grid-cols-12 xl:gap-8 xl:bg-transparent">
-    <div class="xl:col-start-1 xl:col-end-9 2xl:col-end-10 xl:row-span-full overflow-hidden xl:bg-white xl:rounded-2xl">
-        <div class="p-4 lg:p-6 bg-white rounded-2xl">
-            <h1 class="font-semibold text-lg mb-4">پیگیری سفارش</h1>
-			<ol class="grid gap-4">
-				@foreach ($orders as $item)
-					<li class="odd:bg-gray-50 p-4 rounded-2xl border border-gray-100 font-medium">
-						<a class="flex gap-4 items-center">
-							<img class="rounded-xl w-24" src="{{asset($item->product->image)}}">
-							<h3>{{$item->product->title}}</h3>
-						</a>
-						<p class="mt-4 text-sm text-red-400">{{$item->status_label}}</p>
-					</li>
-				@endforeach
-			</ol>
-        </div>
-    </div>
+    <section id="main-faqs" class="main-style-page flex-box flex-justify-space flex-aling-auto">
+        <div class="right-faqs">
+            <div class="message-right-faqs">
+                <form id="form-faqs">
+                    <div class="header-message-right-faqs">
+                        <span>پیگیر سفارش</span>
+                    </div>
 
-    <div class="border-t border-gray-200 pt-4 xl:border-none xl:pt-0 xl:col-start-9 xl:col-end-13 2xl:col-start-10 xl:row-span-full xl:bg-white xl:rounded-2xl">
-        <div class="p-4 rounded-2xl lg:p-6 bg-white">
-		
-            <div class="bg-gray-50 text-primary border border-primary rounded-2xl text-center" wire:ignore>
-                <p class="px-3 py-2">زمان تحویل</p>
-                <p class="px-3 py-2 font-medium border-t border-primary text-2xl" data-countdown="{{$singleOrder->delivery_time}}"></p>
+                    <div>
+                        <label for="number-order-faqs">کد سفارش :</label>
+
+                        <input class="input-style" name="tracking-code" type="text" id="number-order-faqs"
+                            placeholder="کد سفارش" wire:model="code" wire:keydown.enter="showOrder()">
+                    </div>
+
+                    <span id="errore-number-prudect-faqs" class="warning-form-faqs flex-box hide-item">
+                        <img src="img/warning-2.svg" alt="">
+
+                        <span>فیلد را کامل کنید</span>
+                    </span>
+
+                    <div>
+                        <label for="number-phone-faqs">شماره همراه :</label>
+
+                        <input dir="ltr" class="input-style" name="phone" type="text" id="number-phone-faqs"
+                            wire:model="phoneNumber" wire:keydown.enter="showOrder()" placeholder="09*********">
+                    </div>
+
+                    <span id="errore-number-faqs" class="warning-form-faqs flex-box hide-item">
+                        <img src="img/warning-2.svg" alt="">
+
+                        <span>شماره همراه نادرست می باشد</span>
+                    </span>
+
+                    <br>
+
+                    <div class="flex">
+                        @if ($alert)
+                            <i id="search-order-alert"></i>
+                            <p class="text-danger-alert">{{ $alert }}</p>
+                        @endif
+                    </div>
+
+                    <div>
+                        <button id="form-faqs-btn" type="button" wire:click="showOrder"
+                            class="input-submit-style">{{ $search }}</button>
+                    </div>
+                </form>
             </div>
-		
-            <ul class="my-6 space-y-2 text-base">
-                <li class="flex items-center justify-between">
-                    <p class="text-gray-500 font-semibold">شماره سفارش</p>
-                    <p class="dir-ltr font-semibold"><span class="text-gray2-700"></span><span class="font-isans-ed select-all">FAG-{{$code}}</span></p>
-                </li>
-                <li class="flex items-center justify-between">
-                    <p class="text-gray-500 font-semibold">تاریخ</p>
-                    <p class="font-semibold">{{jalaliDate($singleOrder->created_at,'%d %B %Y')}}</p>
-					
-                </li>
-            </ul>
-			@if (count($userNotifications) > 0)
-            <p class="text-red text-sm text-center">شما {{count($userNotifications)}} پیام از پشتیبانی دارید</p>
-           <a href="{{route('dashboard.notifications')}}" class="btn btn-primary w-full h-12.5 mt-2 text-lg font-semibold">مشاهده پیام</a>
-		   @endif
+        </div>
+
+        <div class="left-faqs">
+            <div class="box-img-left-faqs">
+                <div class="bac-left-faqs"></div>
+
+                <img class="img0-left-faqs" src="{{ asset('site-v2/img/img-faqs/0.png') }}" alt="">
+
+                <img class="img1-left-faqs" src="{{ asset('site-v2/img/img-faqs/1.png') }}" alt="">
+
+                <img class="img2-left-faqs" src="{{ asset('site-v2/img/img-faqs/2.png') }}" alt="">
+
+                <img class="img3-left-faqs" src="{{ asset('site-v2/img/img-faqs/3.png') }}" alt="">
+
+                <div class="box-text-left-faqs flex-box flex-column flex-justify-space height-max">
+                    <img class="img5-left-faqs" src="{{ asset('site-v2/img/img-faqs/5.png') }}" alt="">
+
+                    <img class="img4-left-faqs" src="{{ asset('site-v2/img/img-faqs/4.png') }}" alt="">
+
+                    <img class="img6-left-faqs" src="{{ asset('site-v2/img/img-faqs/6.png') }}" alt="">
+                </div>
+            </div>
+
+            <div class="box-img-left-faqs-mobile">
+                <div class="bac-left-faqs-mo flex-box">
+                    <img class="img0-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/1m.png') }}"
+                        alt="">
+                    <img class="img1-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/2m.png') }}"
+                        alt="">
+                    <img class="img2-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/3m.png') }}"
+                        alt="">
+                    <img class="img3-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/4m.png') }}"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+@if ($table === true)
+    <section id="main-faqs" class="main-style-page flex-box flex-justify-space flex-aling-auto">
+        <div class="right-faqs-answer">
+            <div class="box-faqs-answer">
+                @if (count($userNotifications) > 0)
+                    <div class="notif-header-faqs-answer flex-box">
+                        <img src="img/sms-red.svg" alt="">
+
+                        <div>
+                            <span>شما</span>
+
+                            <span class="color-red">{{ count($userNotifications) }} پیام جدید</span>
+
+                            <span>از طرف فارس گیمر دارید </span>
+
+                            <a href="{{ route('dashboard.notifications') }}" class="color-blue">وارد پنل</a>
+
+                            <span>خود شوید</span>
+                        </div>
+                    </div>
+                @endif
+
+                <div class="header-faqs-answer flex-box">
+                    <a href="#" onclick="location.reload()">
+                        <img src="{{ asset('site-v2/img/arrow-right.svg') }}" alt="">
+                    </a>
+
+                    <span>زمان باقی مانده</span>
+                </div>
+
+                <div>
+                    <div class="width-max">
+                        <div class="number-time-detalist-pay flex-box color-blue">
+                            <span id="time-time-detalist-pay"
+                                data-countdown="{{ $singleOrder->delivery_time }}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="date-faqs-answer">
+                    <div class="item-detalist-user-pay flex-box flex-justify-space">
+                        <span>کد سفارش : </span>
+
+                        <span dir="ltr">FAG-{{ $code }}</span>
+                    </div>
+
+                    <div class="item-detalist-user-pay flex-box flex-justify-space">
+                        <span>تاریخ :</span>
+
+                        <span>{{ jalaliDate($singleOrder->created_at, '%d %B %Y') }}</span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex-box">
+                        @foreach ($orders as $item)
+                            <div class="item-more-img-detalist-product">
+                                <img src="{{ asset($item->product->image) }}" alt="">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="complete-faqs-answer">
+                    <img src="{{ asset("site-v2/img/tik.svg") }}" alt="">
+
+                    <span>{{ $item->status_label }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-faqs">
+            <div class="box-img-left-faqs">
+                <div class="bac-left-faqs"></div>
+
+                <img class="img0-left-faqs" src="{{ asset('site-v2/img/img-faqs/0.png') }}" alt="">
+
+                <img class="img1-left-faqs" src="{{ asset('site-v2/img/img-faqs/1.png') }}" alt="">
+
+                <img class="img2-left-faqs" src="{{ asset('site-v2/img/img-faqs/2.png') }}" alt="">
+
+                <img class="img3-left-faqs" src="{{ asset('site-v2/img/img-faqs/3.png') }}" alt="">
+
+                <div class="box-text-left-faqs flex-box flex-column flex-justify-space height-max">
+                    <img class="img5-left-faqs" src="{{ asset('site-v2/img/img-faqs/5.png') }}" alt="">
+
+                    <img class="img4-left-faqs" src="{{ asset('site-v2/img/img-faqs/4.png') }}" alt="">
+
+                    <img class="img6-left-faqs" src="{{ asset('site-v2/img/img-faqs/6.png') }}" alt="">
+                </div>
+            </div>
+
+            <div class="box-img-left-faqs-mobile">
+                <div class="bac-left-faqs-mo flex-box">
+                    <img class="img0-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/1m.png') }}"
+                        alt="">
+                    <img class="img1-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/2m.png') }}"
+                        alt="">
+                    <img class="img2-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/3m.png') }}"
+                        alt="">
+                    <img class="img3-left-faqs-mo" src="{{ asset('site-v2/img/img-faqs-mobile/4m.png') }}"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+@if ($table === true)
+    <div class="relative grid gap-4 overflow-hidden bg-white rounded-2xl xl:grid-cols-12 xl:gap-8 xl:bg-transparent">
+        <div
+            class="xl:col-start-1 xl:col-end-9 2xl:col-end-10 xl:row-span-full overflow-hidden xl:bg-white xl:rounded-2xl">
+            <div class="p-4 lg:p-6 bg-white rounded-2xl">
+                <h1 class="font-semibold text-lg mb-4">پیگیری سفارش</h1>
+                <ol class="grid gap-4">
+                    @foreach ($orders as $item)
+                        <li class="odd:bg-gray-50 p-4 rounded-2xl border border-gray-100 font-medium">
+                            <a class="flex gap-4 items-center">
+                                <img class="rounded-xl w-24" src="{{ asset($item->product->image) }}">
+                                <h3>{{ $item->product->title }}</h3>
+                            </a>
+                            <p class="mt-4 text-sm text-red-400">{{ $item->status_label }}</p>
+                        </li>
+                    @endforeach
+                </ol>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-gray-200 pt-4 xl:border-none xl:pt-0 xl:col-start-9 xl:col-end-13 2xl:col-start-10 xl:row-span-full xl:bg-white xl:rounded-2xl">
+            <div class="p-4 rounded-2xl lg:p-6 bg-white">
+
+                <div class="bg-gray-50 text-primary border border-primary rounded-2xl text-center" wire:ignore>
+                    <p class="px-3 py-2">زمان تحویل</p>
+                    <p class="px-3 py-2 font-medium border-t border-primary text-2xl"
+                        data-countdown="{{ $singleOrder->delivery_time }}"></p>
+                </div>
+
+                <ul class="my-6 space-y-2 text-base">
+                    <li class="flex items-center justify-between">
+                        <p class="text-gray-500 font-semibold">شماره سفارش</p>
+                        <p class="dir-ltr font-semibold"><span class="text-gray2-700"></span><span
+                                class="font-isans-ed select-all">FAG-{{ $code }}</span></p>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <p class="text-gray-500 font-semibold">تاریخ</p>
+                        <p class="font-semibold">{{ jalaliDate($singleOrder->created_at, '%d %B %Y') }}</p>
+
+                    </li>
+                </ul>
+                @if (count($userNotifications) > 0)
+                    <p class="text-red text-sm text-center">شما {{ count($userNotifications) }} پیام از پشتیبانی دارید
+                    </p>
+                    <a href="{{ route('dashboard.notifications') }}"
+                        class="btn btn-primary w-full h-12.5 mt-2 text-lg font-semibold">مشاهده پیام</a>
+                @endif
+            </div>
         </div>
     </div>
-</div>
-
 @endif
 
 
 
 @push('scripts')
     <script>
-	window.livewire.on('showOrder', () => {
-     $('[data-countdown]').each(function () {
-            var $this = $(this), finalDate = $(this).data('countdown');
-            $this.countdown(finalDate, function (event) {
-                $this.html(event.strftime('%H:%M:%S'));
+        window.livewire.on('showOrder', () => {
+            $('[data-countdown]').each(function() {
+                var $this = $(this),
+                    finalDate = $(this).data('countdown');
+                $this.countdown(finalDate, function(event) {
+                    $this.html(event.strftime('%H:%M:%S'));
+                });
             });
         });
-	});
-	
     </script>
 @endpush

@@ -15,7 +15,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 <?php $__currentLoopData = $BestSellersNew; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="<?php echo e(route('products.show', $specialDiscountOne->slug)); ?>">
+                                    <a href="<?php echo e(route('products.show', $product->slug)); ?>">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="<?php echo e(asset($product->image)); ?>" alt="">
@@ -74,7 +74,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 <?php $__currentLoopData = $SpecialDiscountsNew; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="<?php echo e(route('products.show', $specialDiscountOne->slug)); ?>">
+                                    <a href="<?php echo e(route('products.show', $product->slug)); ?>">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="<?php echo e(asset($product->image)); ?>" alt="">
@@ -133,7 +133,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 <?php $__currentLoopData = $GiftCardsNew; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <a href="<?php echo e(route('products.show', $specialDiscountOne->slug)); ?>">
+                                    <a href="<?php echo e(route('products.show', $product->slug)); ?>">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="<?php echo e(asset($product->image)); ?>" alt="">

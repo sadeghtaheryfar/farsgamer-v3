@@ -15,7 +15,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 @foreach ($BestSellersNew as $product)
-                                    <a href="{{ route('products.show', $specialDiscountOne->slug) }}">
+                                    <a href="{{ route('products.show', $product->slug) }}">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="{{ asset($product->image) }}" alt="">
@@ -73,7 +73,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 @foreach ($SpecialDiscountsNew as $product)
-                                    <a href="{{ route('products.show', $specialDiscountOne->slug) }}">
+                                    <a href="{{ route('products.show', $product->slug) }}">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="{{ asset($product->image) }}" alt="">
@@ -131,7 +131,7 @@
 
                             <div class="message-item-best-sellers width-max">
                                 @foreach ($GiftCardsNew as $product)
-                                    <a href="{{ route('products.show', $specialDiscountOne->slug) }}">
+                                    <a href="{{ route('products.show', $product->slug) }}">
                                         <div class="item-message-item-best-sellers flex-box flex-justify-space">
                                             <div class="img-item-message-sellers">
                                                 <img src="{{ asset($product->image) }}" alt="">

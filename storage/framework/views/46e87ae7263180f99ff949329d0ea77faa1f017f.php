@@ -130,7 +130,8 @@
                 </a>
 
                 <a href="<?php echo e(route('faq')); ?>">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('faq') ? 'nav-menu-item-active' : ''); ?>" id="menu4">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('faq') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu4">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -155,7 +156,8 @@
                 </a>
 
                 <a href="<?php echo e(route('rules')); ?>">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('rules') ? 'nav-menu-item-active' : ''); ?>" id="menu5">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('rules') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu5">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -176,28 +178,29 @@
                 </a>
 
                 <a href="<?php echo e(route('why-us')); ?>">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('why-us') ? 'nav-menu-item-active' : ''); ?>" id="menu7">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('why-us') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu7">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M22 16.7399V4.66994C22 3.46994 21.02 2.57994 19.83 2.67994H19.77C17.67 2.85994 14.48 3.92994 12.7 5.04994L12.53 5.15994C12.24 5.33994 11.76 5.33994 11.47 5.15994L11.22 5.00994C9.44 3.89994 6.26 2.83994 4.16 2.66994C2.97 2.56994 2 3.46994 2 4.65994V16.7399C2 17.6999 2.78 18.5999 3.74 18.7199L4.03 18.7599C6.2 19.0499 9.55 20.1499 11.47 21.1999L11.51 21.2199C11.78 21.3699 12.21 21.3699 12.47 21.2199C14.39 20.1599 17.75 19.0499 19.93 18.7599L20.26 18.7199C21.22 18.5999 22 17.6999 22 16.7399Z"
-                                stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                                d="M10.49 2.23006L5.49997 4.11006C4.34997 4.54006 3.40997 5.90006 3.40997 7.12006V14.5501C3.40997 15.7301 4.18997 17.2801 5.13997 17.9901L9.43997 21.2001C10.85 22.2601 13.17 22.2601 14.58 21.2001L18.88 17.9901C19.83 17.2801 20.61 15.7301 20.61 14.5501V7.12006C20.61 5.89006 19.67 4.53006 18.52 4.10006L13.53 2.23006C12.68 1.92006 11.32 1.92006 10.49 2.23006Z"
+                                stroke="#292D32" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
-                            <path d="M12 5.48999V20.49" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
+                            <path
+                                d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z"
+                                stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
                                 stroke-linejoin="round" />
-                            <path d="M7.75 8.48999H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            <path d="M8.5 11.49H5.5" stroke="#374151" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <path d="M12 12.5V15.5" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-
 
                         <span class="text-nav-menu">چرا فارس گیمر</span>
                     </li>
                 </a>
 
                 <a href="<?php echo e(route('contact-us')); ?>">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('contact-us') ? 'nav-menu-item-active' : ''); ?>" id="menu8">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('contact-us') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu8">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -215,7 +218,8 @@
                 </a>
 
                 <a href="<?php echo e(route('articles')); ?>">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('articles') ? 'nav-menu-item-active' : ''); ?>" id="menu9">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('articles') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu9">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -238,7 +242,8 @@
                 </a>
 
                 <a href="request.html">
-                    <li class="nav-menu-item <?php echo e(request()->routeIs('request') ? 'nav-menu-item-active' : ''); ?>" id="menu10">
+                    <li class="nav-menu-item <?php echo e(request()->routeIs('request') ? 'nav-menu-item-active' : ''); ?>"
+                        id="menu10">
                         <svg id="icon-menu15" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1191_7585)">
