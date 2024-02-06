@@ -110,7 +110,7 @@
                 <?php endif; ?>
 
                 <div class="header-faqs-answer flex-box">
-                    <a onclick="location.reload()">
+                    <a href="#" onclick="location.reload()">
                         <img src="<?php echo e(asset('site-v2/img/arrow-right.svg')); ?>" alt="">
                     </a>
 

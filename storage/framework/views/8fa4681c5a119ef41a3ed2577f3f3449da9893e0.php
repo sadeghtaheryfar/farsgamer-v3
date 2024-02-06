@@ -23,11 +23,18 @@
                                 </div>
 
                                 <div class="flex-box flex-right">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img src="img/star-white.svg" alt="">
-                                    <img src="img/star-white.svg" alt="">
+                                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.site.rating-star','data' => ['rating' => $comment->rating]]); ?>
+<?php $component->withName('site.rating-star'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes(['rating' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($comment->rating)]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -42,4 +49,5 @@
 
         <div class="swiper-pagination swiper-pagination-comment flex-box"></div>
     </div>
-</section><?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/homes/recent-comments.blade.php ENDPATH**/ ?>
+</section>
+<?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/homes/recent-comments.blade.php ENDPATH**/ ?>

@@ -1,170 +1,63 @@
 <section id="slider-page-articles">
     <div class="swiper mySwiper-page-articles flex-box">
         <div class="swiper-wrapper">
-            <div class="swiper-slide swiper-slide-page-articles">
-                <div class="box-right-slide-page-articles flex-box flex-column">
-                    <div class="flex-box flex-justify-space width-max">
-                        <div class="header-slide-page-articles">
-                            <span>مقالات اخیر</span>
+            <?php $__currentLoopData = $LastArticles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $slider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="swiper-slide swiper-slide-page-articles">
+                    <div class="box-right-slide-page-articles flex-box flex-column">
+                        <div class="flex-box flex-justify-space width-max">
+                            <div class="header-slide-page-articles">
+                                <span>مقالات اخیر</span>
+                            </div>
+
+                            <div class="flex-box flex-column flex-aling-left">
+                                <div dir="ltr" class="number-articles-item-slider">
+                                    <span>0<?php echo e(++$key); ?></span>
+
+                                    <span>/</span>
+
+                                    <span>05</span>
+                                </div>
+
+                                <div class="date-articles-item-slider flex-box flex-right">
+                                    <span><?php echo e(jalaliDate($slider->created_at, '%d %B %Y')); ?></span>
+
+                                    <div class="circle-date-articles-item"></div>
+
+                                    <span><?php echo e(!empty($slider->categories->title) ? $slider->categories->title : 'بدون دسته بندی'); ?></span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="flex-box flex-column flex-aling-left">
-                            <div dir="ltr" class="number-articles-item-slider">
-                                <span>01</span>
-
-                                <span>/</span>
-
-                                <span>03</span>
-                            </div>
-
-                            <div class="date-articles-item-slider flex-box flex-right">
-                                <span>24 اردیبهشت</span>
-
-                                <div class="circle-date-articles-item"></div>
-
-                                <span>3 دقیقه خواندن</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="message-header-slide-page-articles">
-                        <span>رفتار عجیب کاراکتر های بازی هوش مصنوعی در زمین های متاورسدر حالی که همه مرده اند </span>
-                    </div>
-
-                    <div class="message-slide-page-articles">
-                        <span>گروه علم و پیشرفت خبرگزاری فارس؛‌ متاورس، جهانی مصنوعی است که دنیای واقعی و مجازی را در هم
-                            می‌آمیزد و این امکان را به افراد می دهد تا همه فعالیت هایی که در دنیای واقعی دارند را در این
-                            دنیای مجازی نیز داشته باشند. این پلتفرم، جهان دیجیتالی است که واقعیت مجازی و افزوده
-                            را...</span>
-                    </div>
-
-                    <div class="flex-box flex-right width-max" style="margin-top: auto">
-                        <a href="link.html" class="btn-more-page-articles">
-                            <span>مطالعه بیشتر</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination swiper-pagination-page-articles flex-box">tesgawgawg</div>
-
-                <div class="box-left-slide-page-articles">
-                    <img src="img/articles/1.png" alt="">
-                </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-page-articles">
-                <div class="box-right-slide-page-articles flex-box flex-column">
-                    <div class="flex-box flex-justify-space width-max">
-                        <div class="header-slide-page-articles">
-                            <span>مقالات اخیر</span>
+                        <div class="message-header-slide-page-articles">
+                            <span><?php echo e($slider->title); ?></span>
                         </div>
 
-                        <div class="flex-box flex-column flex-aling-left">
-                            <div dir="ltr" class="number-articles-item-slider">
-                                <span>02</span>
+                        <div class="message-slide-page-articles">
+                            <?php echo $slider->description; ?>
 
-                                <span>/</span>
+                        </div>
 
-                                <span>03</span>
-                            </div>
-
-                            <div class="date-articles-item-slider flex-box flex-right">
-                                <span>24 اردیبهشت</span>
-
-                                <div class="circle-date-articles-item"></div>
-
-                                <span>3 دقیقه خواندن</span>
-                            </div>
+                        <div class="flex-box flex-right width-max" style="margin-top: auto">
+                            <a href="<?php echo e(route('articles.show', $slider->slug)); ?>" class="btn-more-page-articles">
+                                <span>مطالعه بیشتر</span>
+                            </a>
                         </div>
                     </div>
 
-                    <div class="message-header-slide-page-articles">
-                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                            است.</span>
-                    </div>
+                    <div class="swiper-pagination swiper-pagination-page-articles flex-box"></div>
 
-                    <div class="message-slide-page-articles">
-                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
-                            است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                            تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در
-                            شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها
-                            شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی
-                            ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط
-                            سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته
-                            اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</span>
-                    </div>
-
-                    <div class="flex-box flex-right width-max" style="margin-top: auto">
-                        <a href="link.html" class="btn-more-page-articles">
-                            <span>مطالعه بیشتر</span>
-                        </a>
+                    <div class="box-left-slide-page-articles">
+                        <img src="<?php echo e(asset($slider->image)); ?>" alt="">
                     </div>
                 </div>
-
-                <div class="swiper-pagination swiper-pagination-page-articles flex-box"></div>
-
-                <div class="box-left-slide-page-articles">
-                    <img src="img/articles/1.png" alt="">
-                </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-page-articles">
-                <div class="box-right-slide-page-articles flex-box flex-column">
-                    <div class="flex-box flex-justify-space width-max">
-                        <div class="header-slide-page-articles">
-                            <span>مقالات اخیر</span>
-                        </div>
-
-                        <div class="flex-box flex-column flex-aling-left">
-                            <div dir="ltr" class="number-articles-item-slider">
-                                <span>03</span>
-
-                                <span>/</span>
-
-                                <span>03</span>
-                            </div>
-
-                            <div class="date-articles-item-slider flex-box flex-right">
-                                <span>24 اردیبهشت</span>
-
-                                <div class="circle-date-articles-item"></div>
-
-                                <span>3 دقیقه خواندن</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="message-header-slide-page-articles">
-                        <span>رفتار عجیب کاراکتر های بازی هوش مصنوعی در زمین های متاورسدر حالی که همه مرده اند </span>
-                    </div>
-
-                    <div class="message-slide-page-articles">
-                        <span>گروه علم و پیشرفت خبرگزاری فارس؛‌ متاورس، جهانی مصنوعی است که دنیای واقعی و مجازی را در هم
-                            می‌آمیزد و این امکان را به افراد می دهد تا همه فعالیت هایی که در دنیای واقعی دارند را در این
-                            دنیای مجازی نیز داشته باشند. این پلتفرم، جهان دیجیتالی است که واقعیت مجازی و افزوده
-                            را...</span>
-                    </div>
-
-                    <div class="flex-box flex-right width-max" style="margin-top: auto">
-                        <a href="link.html" class="btn-more-page-articles">
-                            <span>مطالعه بیشتر</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination swiper-pagination-page-articles flex-box"></div>
-
-                <div class="box-left-slide-page-articles">
-                    <img src="img/articles/1.png" alt="">
-                </div>
-            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
 
         <div class="swiper-button-next swiper-button-next-page-articles"></div>
 
         <div class="swiper-button-prev swiper-button-prev-page-articles"></div>
 
-        <div class="swiper-pagination swiper-pagination-page-articles flex-box"></div>
+        
     </div>
 </section>
 
@@ -285,28 +178,12 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
-    
+
     <div class="mt-4">
         <?php echo e($articles->links('site.components.pagination')); ?>
 
     </div>
 </section>
 
-<section class="bg-white p-4 lg:p-6 rounded-2xl">
-    <div class="grid gap-4 grid-cols-2 sm:grid-cols-3 2md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4">
-        <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <a class="post-box" href="<?php echo e(route('articles.show', $article->slug)); ?>">
-                <img class="post-box__image" src="<?php echo e(asset($article->image)); ?>" alt="">
-                <div class="post-box__content">
-                    <h3 class="post-box__title"><?php echo e($article->title); ?></h3>
-                    <h5 class="post-category">
-                        <?php echo e(!empty($article->categories->title) ? $article->categories->title : 'بدون دسته بندی'); ?></h5>
-                    <div class="post-box__btn">مشاهده</div>
-                </div>
-            </a>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
-    <?php echo e($articles->links('site.components.pagination')); ?>
 
-</section>
 <?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/articles/articles-component.blade.php ENDPATH**/ ?>

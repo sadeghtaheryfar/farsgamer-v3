@@ -23,11 +23,7 @@
                                 </div>
 
                                 <div class="flex-box flex-right">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img class="icon-star" src="img/star-fill.svg" alt="">
-                                    <img src="img/star-white.svg" alt="">
-                                    <img src="img/star-white.svg" alt="">
+                                    <x-site.rating-star :rating="$comment->rating"/>
                                 </div>
                             </div>
                         </div>

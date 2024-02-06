@@ -22,7 +22,7 @@ class CartComponent extends Component
         JsonLd::setTitle('سبد خرید - فارس گیمر');
 
 
-        foreach (Cart::content() as $item){
+        foreach (Cart::content() as $item) {
             $this->quantities[$item->id] = $item->quantity;
         }
     }
@@ -31,9 +31,8 @@ class CartComponent extends Component
     {
         $elements = explode('.', $name);
 
-        if ($elements[0] == 'quantities'){
-            $this->validate(['quantities.'.$elements[1] => ['required', 'integer', 'min:1', 'max:100']]);
-
+        if ($elements[0] == 'quantities') {
+            $this->validate(['quantities.' . $elements[1] => ['required', 'integer', 'min:1', 'max:100']]);
             $product = Product::find($elements[1]);
             if (!is_null($product->quantity) && $product->quantity < $value) {
                 return;
@@ -47,14 +46,14 @@ class CartComponent extends Component
         $this->emit('updateBasketCount');
 
         return view('site.carts.cart-component')
-            ->extends('site.layouts.site');
+            ->extends('site.layouts.cart');
     }
 
     public function delete($key)
     {
         try {
-        Cart::delete($key);
-        } catch (\Exception $exception){
+            Cart::delete($key);
+        } catch (\Exception $exception) {
             //
         }
     }

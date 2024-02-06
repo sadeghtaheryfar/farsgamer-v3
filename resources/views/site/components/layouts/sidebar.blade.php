@@ -318,67 +318,29 @@
                 </div>
 
                 <div class="message-store-mobile">
-                    <div class="item-header-mobile open-box-category">
-                        <span>محصولات فورتنایت</span>
+                    @foreach ($categories as $item)
+                        <div class="item-header-mobile open-box-category">
+                            <span>{{ $item['title'] }}</span>
 
-                        <img src="{{ asset('site-v2/img/Vector.svg') }}"
-                            class="icon-header-store-mbile icon-category-header-store" alt="">
-                    </div>
-
-                    <div class="hide-item message-header-sore message-category-store-mobile">
-                        <ul>
-                            <a href="#">
-                                <li>ویباکس</li>
-                            </a>
-
-                            <a href="#">
-                                <li>باندل های فورتنایت</li>
-                            </a>
-
-                            <a href="#">
-                                <li>آیتم شاپ</li>
-                            </a>
-
-                            <a href="#">
-                                <li>گان سیو ده ورلد</li>
-                            </a>
-
-                            <a href="#">
-                                <li>متریال سیو ده ورلد</li>
-                            </a>
-                        </ul>
-                    </div>
-
-                    <div class="item-header-mobile open-box-category">
-                        <span>تجهیزات گیمینگ</span>
-
-                        <img src="{{ asset('site-v2/img/Vector.svg') }}"
-                            class="icon-header-store-mbile icon-category-header-store" alt="">
-                    </div>
-
-                    <div class="hide-item message-header-sore message-category-store-mobile">
-                        <ul>
-                            <a href="#">
-                                <li>ویباکس</li>
-                            </a>
-
-                            <a href="#">
-                                <li>باندل های فورتنایت</li>
-                            </a>
-
-                            <a href="#">
-                                <li>آیتم شاپ</li>
-                            </a>
-
-                            <a href="#">
-                                <li>گان سیو ده ورلد</li>
-                            </a>
-
-                            <a href="#">
-                                <li>متریال سیو ده ورلد</li>
-                            </a>
-                        </ul>
-                    </div>
+                            <img src="{{ asset('site-v2/img/Vector.svg') }}"
+                                class="icon-header-store-mbile icon-category-header-store" alt="">
+                        </div>
+                        <div class="hide-item message-header-sore message-category-store-mobile">
+                            <ul>
+                                <li>
+                                    <a href="{{ route('index.categories', $item['slug']) }}">همه محصولات این دسته</a>
+                                </li>
+                                
+                                @foreach ($item['children_recursive'] as $item2)
+                                    <li>
+                                        <a href="{{ route('index.categories', $item2['slug']) }}">
+                                            {{ $item2['title'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

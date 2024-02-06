@@ -1,13 +1,14 @@
-<header>
+<header wire:ignore.self>
     <section id="box-header">
         <section id="right-header">
-            <form class="hidden lg:block relative w-64">
+            <form class="form-submit-disable lg:block relative w-64">
                 <div id="box-search-header">
                     <label for="q" wire:click="updateSearch()">
-                        <img src="<?php echo e(asset("site-v2/img/search.svg")); ?>" id="icon-search-header" alt="">
+                        <img src="<?php echo e(asset('site-v2/img/search.svg')); ?>"
+                            id="icon-search-header" alt="">
                     </label>
 
-                    <input class="input-search-header" id="q" type="search"
+                    <input class="input-search-header" id="q" type="text"
                         placeholder="جستجو در محصولات فارس گیمر" wire:keydown.enter="updateSearch()"
                         wire:model.lazy="q">
                 </div>
@@ -17,7 +18,7 @@
         <section id="left-header">
             <div id="box-icon-notif">
                 <div id="icon-notif" class="nav-right-icon open-menu">
-                    <img src="<?php echo e(asset("site-v2/img/notification.svg")); ?>" alt="">
+                    <img src="<?php echo e(asset('site-v2/img/notification.svg')); ?>" alt="">
 
                     <?php if(count($userNotifications) + count($notifications) > 0): ?>
                         <span
@@ -30,7 +31,8 @@
                         <div id="header-box-notif">
                             <span>اعلانات</span>
 
-                            <img class="clothe-menu icon-exit-notif" src="<?php echo e(asset("site-v2/img/add.svg")); ?>" alt="">
+                            <img class="clothe-menu icon-exit-notif" src="<?php echo e(asset('site-v2/img/add.svg')); ?>"
+                                alt="">
                         </div>
 
                         <div class="message-box-notif">
@@ -76,7 +78,7 @@
                                         </div>
 
                                         <div class="box-message-notif">
-                                            <span><?php echo e($item->message); ?></span>
+                                            <span><?php echo e($item->note); ?></span>
                                         </div>
                                     </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -94,7 +96,7 @@
 
             <a href="<?php echo e(route('cart')); ?>">
                 <div class="nav-right-icon cart-icon">
-                    <img src="<?php echo e(asset("site-v2/img/shopping-cart.svg")); ?>" alt="">
+                    <img src="<?php echo e(asset('site-v2/img/shopping-cart.svg')); ?>" alt="">
 
                     <?php if($basketCount > 0): ?>
                         <span class="number-notif-cart"><?php echo e($basketCount); ?></span>
@@ -105,7 +107,7 @@
             <?php if(auth()->guard()->check()): ?>
                 <a href="<?php echo e(route('dashboard')); ?>">
                     <div class="nav-right-icon login-icon">
-                        <img src="<?php echo e(asset("site-v2/img/user.svg")); ?>" alt="">
+                        <img src="<?php echo e(asset('site-v2/img/user.svg')); ?>" alt="">
                         <span class="text-nav"><?php echo e(Auth::user()->name); ?></span>
                     </div>
                 </a>
@@ -114,7 +116,7 @@
             <?php if(auth()->guard()->guest()): ?>
                 <a href="<?php echo e(route('auth')); ?>">
                     <div class="nav-right-icon login-icon">
-                        <img src="<?php echo e(asset("site-v2/img/user.svg")); ?>" alt="">
+                        <img src="<?php echo e(asset('site-v2/img/user.svg')); ?>" alt="">
                         <span class="text-nav">ورود / ثبت نام</span>
                     </div>
                 </a>
@@ -125,16 +127,18 @@
     <div id="box-header-mobile-asli">
         <section id="box-header-mobile">
             <section id="right-header">
-                <img id="nave-menu-item-icon" class="open-menu-mobile" src="<?php echo e(asset("site-v2/img/menu.svg")); ?>" alt="">
+                <img id="nave-menu-item-icon" class="open-menu-mobile" src="<?php echo e(asset('site-v2/img/menu.svg')); ?>"
+                    alt="">
             </section>
 
             <section id="center-header">
-                <a href="<?php echo e(route("home")); ?>"><img id="logo-mobile" src="<?php echo e(asset("site-v2/img/logo-farsgamer.png")); ?>" alt="لوگو"></a>
+                <a href="<?php echo e(route('home')); ?>"><img id="logo-mobile"
+                        src="<?php echo e(asset('site-v2/img/logo-farsgamer.png')); ?>" alt="لوگو"></a>
             </section>
 
             <section id="left-header">
                 <div class="nav-right-icon-mobile clothe-menu-mobile">
-                    <img src="<?php echo e(asset("site-v2/img/notification.svg")); ?>" alt="">
+                    <img src="<?php echo e(asset('site-v2/img/notification.svg')); ?>" alt="">
 
                     <?php if(count($userNotifications) + count($notifications) > 0): ?>
                         <span
@@ -147,7 +151,8 @@
                         <div id="header-box-notif">
                             <span>اعلانات</span>
 
-                            <img class="icon-exit-notif clothe-menu-mobile" src="<?php echo e(asset("site-v2/img/add.svg")); ?>" alt="">
+                            <img class="icon-exit-notif clothe-menu-mobile" src="<?php echo e(asset('site-v2/img/add.svg')); ?>"
+                                alt="">
                         </div>
 
                         <div class="message-box-notif">
@@ -177,7 +182,7 @@
                                         </div>
 
                                         <div class="box-message-notif">
-                                            <span><?php echo e($item->message); ?></span>
+                                            <span><?php echo e($item->note); ?></span>
                                         </div>
                                     </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -216,7 +221,7 @@
                 <form class="lg:block relative">
                     <div id="box-search-header-mobile">
                         <label for="q" wire:click="updateSearch()">
-                            <img src="<?php echo e(asset("site-v2/img/search.svg")); ?>" id="icon-search-header" alt="">
+                            <img src="<?php echo e(asset('site-v2/img/search.svg')); ?>" id="icon-search-header" alt="">
                         </label>
 
                         <input class="input-search-header-mobile" id="q" type="search"
@@ -228,17 +233,17 @@
             <section id="left-header">
                 <?php if(auth()->guard()->check()): ?>
                     <a href="<?php echo e(route('dashboard')); ?>">
-                    <div class="nav-two-left-icon-mobile">
-                        <img src="<?php echo e(asset("site-v2/img/user.svg")); ?>" alt="">
-                        <span class="text-nav"><?php echo e(Auth::user()->name); ?></span>
-                    </div>
+                        <div class="nav-two-left-icon-mobile">
+                            <img src="<?php echo e(asset('site-v2/img/user.svg')); ?>" alt="">
+                            <span class="text-nav"><?php echo e(Auth::user()->name); ?></span>
+                        </div>
                     </a>
                 <?php endif; ?>
 
                 <?php if(auth()->guard()->guest()): ?>
                     <a href="<?php echo e(route('auth')); ?>">
                         <div class="nav-two-left-icon-mobile">
-                            <img src="<?php echo e(asset("site-v2/img/user.svg")); ?>" alt="">
+                            <img src="<?php echo e(asset('site-v2/img/user.svg')); ?>" alt="">
                             <span class="text-nav">ورود</span>
                         </div>
                     </a>
@@ -246,14 +251,15 @@
 
                 <a href="<?php echo e(route('cart')); ?>" class="nav-left-icon-mobile">
                     <div>
-                        <img src="<?php echo e(asset("site-v2/img/shopping-cart.svg")); ?>" alt="">
+                        <img src="<?php echo e(asset('site-v2/img/shopping-cart.svg')); ?>" alt="">
 
                         <?php if($basketCount > 0): ?>
-                            <span class="number-notif-cart"><?php echo e($basketCount); ?></span>
+                            <span class="number-notif-cart-mobile"><?php echo e($basketCount); ?></span>
                         <?php endif; ?>
                     </div>
                 </a>
             </section>
         </section>
     </div>
-</header><?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/components/layouts/header.blade.php ENDPATH**/ ?>
+</header>
+<?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/components/layouts/header.blade.php ENDPATH**/ ?>

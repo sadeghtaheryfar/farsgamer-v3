@@ -318,67 +318,30 @@
                 </div>
 
                 <div class="message-store-mobile">
-                    <div class="item-header-mobile open-box-category">
-                        <span>محصولات فورتنایت</span>
+                    <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="item-header-mobile open-box-category">
+                            <span><?php echo e($item['title']); ?></span>
 
-                        <img src="<?php echo e(asset('site-v2/img/Vector.svg')); ?>"
-                            class="icon-header-store-mbile icon-category-header-store" alt="">
-                    </div>
+                            <img src="<?php echo e(asset('site-v2/img/Vector.svg')); ?>"
+                                class="icon-header-store-mbile icon-category-header-store" alt="">
+                        </div>
+                        <div class="hide-item message-header-sore message-category-store-mobile">
+                            <ul>
+                                <li>
+                                    <a href="<?php echo e(route('index.categories', $item['slug'])); ?>">همه محصولات این دسته</a>
+                                </li>
+                                
+                                <?php $__currentLoopData = $item['children_recursive']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li>
+                                        <a href="<?php echo e(route('index.categories', $item2['slug'])); ?>">
+                                            <?php echo e($item2['title']); ?>
 
-                    <div class="hide-item message-header-sore message-category-store-mobile">
-                        <ul>
-                            <a href="#">
-                                <li>ویباکس</li>
-                            </a>
-
-                            <a href="#">
-                                <li>باندل های فورتنایت</li>
-                            </a>
-
-                            <a href="#">
-                                <li>آیتم شاپ</li>
-                            </a>
-
-                            <a href="#">
-                                <li>گان سیو ده ورلد</li>
-                            </a>
-
-                            <a href="#">
-                                <li>متریال سیو ده ورلد</li>
-                            </a>
-                        </ul>
-                    </div>
-
-                    <div class="item-header-mobile open-box-category">
-                        <span>تجهیزات گیمینگ</span>
-
-                        <img src="<?php echo e(asset('site-v2/img/Vector.svg')); ?>"
-                            class="icon-header-store-mbile icon-category-header-store" alt="">
-                    </div>
-
-                    <div class="hide-item message-header-sore message-category-store-mobile">
-                        <ul>
-                            <a href="#">
-                                <li>ویباکس</li>
-                            </a>
-
-                            <a href="#">
-                                <li>باندل های فورتنایت</li>
-                            </a>
-
-                            <a href="#">
-                                <li>آیتم شاپ</li>
-                            </a>
-
-                            <a href="#">
-                                <li>گان سیو ده ورلد</li>
-                            </a>
-
-                            <a href="#">
-                                <li>متریال سیو ده ورلد</li>
-                            </a>
-                        </ul>
-                    </div>
+                                        </a>
+                                    </li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>

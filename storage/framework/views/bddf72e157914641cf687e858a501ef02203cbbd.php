@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
-<?php echo $__env->make('site.components.layouts.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php echo $__env->make('site.components.layouts.head-v2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 <body>
 
-<?php
+    <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('site.header', [])->html();
-} elseif ($_instance->childHasBeenRendered('r1Ln6S3')) {
-    $componentId = $_instance->getRenderedChildComponentId('r1Ln6S3');
-    $componentTag = $_instance->getRenderedChildComponentTagName('r1Ln6S3');
+    $html = \Livewire\Livewire::mount('site.header2', [])->html();
+} elseif ($_instance->childHasBeenRendered('pqHTw3w')) {
+    $componentId = $_instance->getRenderedChildComponentId('pqHTw3w');
+    $componentTag = $_instance->getRenderedChildComponentTagName('pqHTw3w');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('r1Ln6S3');
+    $_instance->preserveRenderedChild('pqHTw3w');
 } else {
-    $response = \Livewire\Livewire::mount('site.header', []);
+    $response = \Livewire\Livewire::mount('site.header2', []);
     $html = $response->html();
-    $_instance->logRenderedChild('r1Ln6S3', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('pqHTw3w', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
-<?php
+    <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('site.sidebar', [])->html();
-} elseif ($_instance->childHasBeenRendered('WG8As0X')) {
-    $componentId = $_instance->getRenderedChildComponentId('WG8As0X');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WG8As0X');
+    $html = \Livewire\Livewire::mount('site.sidebar2', [])->html();
+} elseif ($_instance->childHasBeenRendered('k0iGXUl')) {
+    $componentId = $_instance->getRenderedChildComponentId('k0iGXUl');
+    $componentTag = $_instance->getRenderedChildComponentTagName('k0iGXUl');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WG8As0X');
+    $_instance->preserveRenderedChild('k0iGXUl');
 } else {
-    $response = \Livewire\Livewire::mount('site.sidebar', []);
+    $response = \Livewire\Livewire::mount('site.sidebar2', []);
     $html = $response->html();
-    $_instance->logRenderedChild('WG8As0X', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('k0iGXUl', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
-<main id="main" class="main--dashboard">
-    <?php echo $__env->yieldContent('content'); ?>
-    <?php echo $__env->make('site.components.layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-</main>
 
-<?php echo $__env->make('site.components.layouts.foot', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo e(TawkTo::widgetCode('5f2946912da87279037e4523')); ?>
+    <main style="padding: 0px !important;margin:0px !important">
+        <?php echo $__env->yieldContent('content'); ?>
+    </main>
+
+    <section class="my-footer-dashboard">
+        <?php echo $__env->make('site.components.layouts.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </section>
+
+    <div id="toast-copy">
+        <div id="show-toast-copy" class="flex-box height-max">
+            <span>متن با موفقیت کپی شد .</span>
+
+            <div id="time-toast-copy"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        ! function() {
+            var i = "0d89pV",
+                a = window,
+                d = document;
+
+            function g() {
+                var g = d.createElement("script"),
+                    s = "https://www.goftino.com/widget/" + i,
+                    l = localStorage.getItem("goftino_" + i);
+                g.async = !0, g.src = l ? s + "?o=" + l : s;
+                d.getElementsByTagName("head")[0].appendChild(g);
+            }
+            "complete" === d.readyState ? g() : a.attachEvent ? a.attachEvent("onload", g) : a.addEventListener("load", g, !
+                1);
+        }();
+    </script>
+    <script src="<?php echo e(asset('site-v2/js/script.js')); ?>"></script>
+    <?php echo \Livewire\Livewire::scripts(); ?>
 
 </body>
-</html><?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/layouts/dashboard.blade.php ENDPATH**/ ?>
+
+</html>
+<?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/layouts/dashboard.blade.php ENDPATH**/ ?>
