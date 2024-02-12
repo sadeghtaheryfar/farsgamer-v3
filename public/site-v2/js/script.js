@@ -42,7 +42,7 @@ if (decrementBtn != undefined) {
         decrementBtn.addEventListener("click", () => {
             const currentValue = parseInt(inputNumber[index].value);
             inputNumber[index].value = currentValue - 1;
-            inputNumber[index].dispatchEvent(new Event('input'));
+            inputNumber[index].dispatchEvent(new Event("input"));
         });
     });
 
@@ -50,7 +50,7 @@ if (decrementBtn != undefined) {
         incrementBtn.addEventListener("click", () => {
             const currentValue = parseInt(inputNumber[index].value);
             inputNumber[index].value = currentValue + 1;
-            inputNumber[index].dispatchEvent(new Event('input'));
+            inputNumber[index].dispatchEvent(new Event("input"));
         });
     });
 }
@@ -669,8 +669,11 @@ if (mainpagesearch != undefined) {
 if (document.getElementById("btn-detalist-prudect-page") != undefined) {
     window.addEventListener("scroll", function () {
         var userposition = Math.floor(this.scrollY);
+        var DetalistPrudectPage  = document.getElementById("detalist-prudect-page").getBoundingClientRect().top - 100;
+        var CommentsPrudectPage  = document.getElementById("comments-prudect-page").getBoundingClientRect().top - 100;
+        var QuestionPrudectPage  = document.getElementById("question-prudect-page").getBoundingClientRect().top - 100;
 
-        if (userposition <= 1265) {
+        if (DetalistPrudectPage < 0 ) {
             document
                 .getElementById("btn-detalist-prudect-page")
                 .classList.add("menu-message-detalist-product-active");
@@ -682,7 +685,7 @@ if (document.getElementById("btn-detalist-prudect-page") != undefined) {
                 .classList.remove("menu-message-detalist-product-active");
         }
 
-        if (userposition >= 1265) {
+        if (CommentsPrudectPage < 0 && DetalistPrudectPage < 0 ) {
             document
                 .getElementById("btn-detalist-prudect-page")
                 .classList.remove("menu-message-detalist-product-active");
@@ -694,7 +697,7 @@ if (document.getElementById("btn-detalist-prudect-page") != undefined) {
                 .classList.remove("menu-message-detalist-product-active");
         }
 
-        if (userposition >= 1817) {
+        if (QuestionPrudectPage < 0  && DetalistPrudectPage < 0  && CommentsPrudectPage < 0) {
             document
                 .getElementById("btn-detalist-prudect-page")
                 .classList.remove("menu-message-detalist-product-active");
@@ -866,6 +869,22 @@ for (var xy = 0; xy < toggleboxacaredonfaq.length; xy++) {
 
 //  sliders script   ................................................................
 
+var mySwiper_img_prudect_more = new Swiper(".mySwiper-img-prudect-more", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    grabCursor: true,
+});
+var swiper02 = new Swiper(".mySwiper-img-prudect", {
+    spaceBetween: 10,
+    slidesPerView: 1,
+    grabCursor: true,
+    thumbs: {
+        swiper: mySwiper_img_prudect_more,
+    },
+});
+
 var swiper = new Swiper(".mySwiper-main-home", {
     loop: true,
     slidesPerView: "auto",
@@ -1031,21 +1050,5 @@ var swiper = new Swiper(".mySwiper-header-product", {
     pagination: {
         el: ".swiper-pagination-page-prudect",
         clickable: true,
-    },
-});
-
-var swiper = new Swiper(".mySwiper-img-prudect-more", {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    grabCursor: true,
-});
-var swiper2 = new Swiper(".mySwiper-img-prudect", {
-    spaceBetween: 10,
-    slidesPerView: 1,
-    grabCursor: true,
-    thumbs: {
-        swiper: swiper,
     },
 });

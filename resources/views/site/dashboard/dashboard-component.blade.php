@@ -33,7 +33,7 @@
 
             <form class="col-span-full w-full xl:max-w-88" wire:submit.prevent="chargeWallet()">
                 <div class="left-header-dashboard width-max">
-                    <input type="number" placeholder="مبلغ به تومان" name="amount" wire:model.defer="amount" min="0">
+                    <input class="input-hover" type="number" placeholder="مبلغ به تومان" name="amount" wire:model.defer="amount" min="0">
                     <input type="submit" value="شارژ کیف پول">
                 </div>
 

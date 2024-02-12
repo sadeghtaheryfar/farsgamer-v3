@@ -13,7 +13,7 @@
 <script src="{{asset('site/library/countdown/countdown.js?v=1.0.1')}}"></script>
 <script src="{{asset('site/library/plyr/plyr.polyfilled.js?v=1.0.1')}}"></script>
 
- <script src="{{asset('site/js/index_new.js')}}"></script>
+<script src="{{asset('site/js/index_new.js')}}"></script>
     
 @livewireScripts
 <script src="{{asset('site/js/index.js?v=1.0.1')}}"></script>

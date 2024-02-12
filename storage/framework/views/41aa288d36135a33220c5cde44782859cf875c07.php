@@ -2,10 +2,9 @@
     <section id="box-header">
         <section id="right-header">
             <form class="form-submit-disable lg:block relative w-64">
-                <div id="box-search-header">
+                <div id="box-search-header" class="input-hover">
                     <label for="q" wire:click="updateSearch()">
-                        <img src="<?php echo e(asset('site-v2/img/search.svg')); ?>"
-                            id="icon-search-header" alt="">
+                        <img src="<?php echo e(asset('site-v2/img/search.svg')); ?>" id="icon-search-header" alt="">
                     </label>
 
                     <input class="input-search-header" id="q" type="text"
@@ -86,7 +85,7 @@
                         </div>
 
                         <div id="box3-notif">
-                            <a href="dash-notifications.html"><span>دیدن همه اعلانات</span></a>
+                            <a href="<?php echo e(route("dashboard.notifications")); ?>"><span>دیدن همه اعلانات</span></a>
                         </div>
                     </div>
                 </div>
@@ -206,11 +205,9 @@
                             </div>
                         </div>
 
-                        <?php if(auth()->guard()->check()): ?>
-                            <div id="box3-notif">
-                                <a href="dash-notifications.html"><span>دیدن همه اعلانات</span></a>
-                            </div>
-                        <?php endif; ?>
+                        <div id="box3-notif">
+                            <a href="<?php echo e(route("dashboard.notifications")); ?>"><span>دیدن همه اعلانات</span></a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -219,7 +216,7 @@
         <section id="box2-header-mobile">
             <section id="right-header-mobile">
                 <form class="lg:block relative">
-                    <div id="box-search-header-mobile">
+                    <div id="box-search-header-mobile" class="input-hover">
                         <label for="q" wire:click="updateSearch()">
                             <img src="<?php echo e(asset('site-v2/img/search.svg')); ?>" id="icon-search-header" alt="">
                         </label>

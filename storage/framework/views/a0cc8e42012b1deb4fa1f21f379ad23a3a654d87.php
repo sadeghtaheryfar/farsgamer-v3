@@ -13,7 +13,7 @@
 <script src="<?php echo e(asset('site/library/countdown/countdown.js?v=1.0.1')); ?>"></script>
 <script src="<?php echo e(asset('site/library/plyr/plyr.polyfilled.js?v=1.0.1')); ?>"></script>
 
- <script src="<?php echo e(asset('site/js/index_new.js')); ?>"></script>
+<script src="<?php echo e(asset('site/js/index_new.js')); ?>"></script>
     
 <?php echo \Livewire\Livewire::scripts(); ?>
 

@@ -81,9 +81,13 @@
                             <span class="text-nav-menu">فروشگاه</span>
                         </div>
 
-                        <img id="icon-menu19" src="site-v2/img/Vector.svg" alt="" class="icon-nav-menu1">
-                        <img id="icon-menu20" src="site-v2/img/Vector-dark.svg" alt=""
-                            class="icon-nav-menu1 hide-item">
+                        <svg width="9" height="18" viewBox="0 0 9 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.99984 16.9201L1.47984 10.4001C0.709844 9.63008 0.709844 8.37008 1.47984 7.60008L7.99984 1.08008"
+                                stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
                     </li>
                 </a>
 
@@ -330,7 +334,7 @@
                                 <li>
                                     <a href="<?php echo e(route('index.categories', $item['slug'])); ?>">همه محصولات این دسته</a>
                                 </li>
-                                
+
                                 <?php $__currentLoopData = $item['children_recursive']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item2): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <li>
                                         <a href="<?php echo e(route('index.categories', $item2['slug'])); ?>">

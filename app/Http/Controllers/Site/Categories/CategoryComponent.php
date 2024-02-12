@@ -130,7 +130,7 @@ class CategoryComponent extends Component
 	 	$link = $products->links('site.components.pagination');
 		
         return view('site.categories.category-component',['range' => $range , 'max' => $max,'products' => $products,'link' => $link])
-            ->extends('site.layouts.site2');
+            ->extends('site.layouts.category');
     }
 
     public function loadMore($pageName)

@@ -32,7 +32,7 @@ class ProductComponent extends Component
     public $avg , $start_lottery  ;
     public $quantity = 1;
     public $questionsCount = 0, $commentsCount = 5 ;
-    public $prePageComment = 15, $prePageQuestion = 15;
+    public $prePageComment = 6, $prePageQuestion = 6;
 
     public $relatedProducts ;
     public $banners , $detail_display;
@@ -187,7 +187,7 @@ class ProductComponent extends Component
             'questions' => $this->readyToLoad ? ($questions ?? []) : [],
 			'law' => $law
 			])
-            ->extends('site.layouts.site');
+            ->extends('site.layouts.product');
     }
 
     public function loadMore($pageName)

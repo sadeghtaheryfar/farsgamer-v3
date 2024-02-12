@@ -10,7 +10,7 @@
                     <div>
                         <label for="number-order-faqs">کد سفارش :</label>
 
-                        <input class="input-style" name="tracking-code" type="text" id="number-order-faqs"
+                        <input class="input-style input-hover" name="tracking-code" type="text" id="number-order-faqs"
                             placeholder="کد سفارش" wire:model="code" wire:keydown.enter="showOrder()">
                     </div>
 
@@ -23,7 +23,7 @@
                     <div>
                         <label for="number-phone-faqs">شماره همراه :</label>
 
-                        <input dir="ltr" class="input-style" name="phone" type="text" id="number-phone-faqs"
+                        <input dir="ltr" class="input-style input-hover" name="phone" type="text" id="number-phone-faqs"
                             wire:model="phoneNumber" wire:keydown.enter="showOrder()" placeholder="09*********">
                     </div>
 
