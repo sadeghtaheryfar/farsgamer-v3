@@ -23,6 +23,7 @@ class SettingComponent extends BaseComponent
     public $email;
     public $phone , $lottery, $subject = [], $i = 1 , $start_lottery , $depot_password;
     public $contact_us_description;
+    public $cooperation_request_description;
     public $contact_us_slider,$site_close , $passwords = '' , $auth_image_pattern , $auth_description , $admin_numbers;
 
     public function mount()
@@ -37,6 +38,7 @@ class SettingComponent extends BaseComponent
         $this->email = Setting::where('name', 'email')->first()->value ?? '';
         $this->phone = Setting::where('name', 'phone')->first()->value ?? '';
         $this->contact_us_description = Setting::where('name', 'contact_us_description')->first()->value ?? '';
+        $this->cooperation_request_description = Setting::where('name', 'cooperation_request_description')->first()->value ?? '';
         $this->contact_us_slider = Setting::where('name', 'contact_us_slider')->first()->value ?? '';
 		$this->site_close = Setting::where('name', 'site_close')->first()->value ?? '';
 		$this->lottery = Setting::where('name', 'lottery')->first()->value ?? '';
@@ -73,6 +75,7 @@ class SettingComponent extends BaseComponent
             'email' => ['required', 'string', 'max:250'],
             'phone' => ['required', 'string', 'max:250'],
             'contact_us_description' => ['required', 'string', 'max:6500'],
+            'cooperation_request_description' => ['required', 'string', 'max:6500'],
             'contact_us_slider' => ['required', 'string', 'max:250'],
 			'site_close' => ['string', 'max:1'],
 			'passwords' => ['nullable','string', 'max:250'],
@@ -109,6 +112,7 @@ class SettingComponent extends BaseComponent
         Setting::updateOrCreate(['name' => 'email'], ['value' => $this->email]);
         Setting::updateOrCreate(['name' => 'phone'], ['value' => $this->phone]);
         Setting::updateOrCreate(['name' => 'contact_us_description'], ['value' => $this->contact_us_description]);
+        Setting::updateOrCreate(['name' => 'cooperation_request_description'], ['value' => $this->cooperation_request_description]);
         Setting::updateOrCreate(['name' => 'contact_us_slider'], ['value' => $this->contact_us_slider]);
 		Setting::updateOrCreate(['name' => 'site_close'], ['value' => $this->site_close]);
 		Setting::updateOrCreate(['name' => 'lottery'], ['value' => $this->lottery]);

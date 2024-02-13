@@ -55,6 +55,9 @@
                 <x-admin.forms.input type="text" id="email" label="ایمیل" required="true" wire:model.defer="email"/>
                 <x-admin.forms.input type="text" id="phone" label="تلفن" required="true" wire:model.defer="phone"/>
                 <x-admin.forms.separator/>
+                <x-admin.forms.header title="درخواست همکاری"/>
+                <x-admin.forms.textarea id="cooperation_request_description" label="توضیحات درخواست همکاری با ما" required="true" wire:model="cooperation_request_description"/>
+                <x-admin.forms.separator/>
                 <x-admin.forms.header title="درباره ما"/>
                 <x-admin.forms.textarea id="contant_us_description" label="توضیحات درباره ما" required="true" wire:model="contact_us_description"/>
                 <x-admin.forms.lfm-standalone id="contact_us_slider" label="اسلایدر درباره ما" :image="$contact_us_slider"

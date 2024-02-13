@@ -13,56 +13,7 @@
 
             <section id="left-main-product-tablet" class="left-main-product">
                 <div class="box-form-product">
-                    <form>
-                        <div>
-                            <label for="activition-prudect">ریجن اکانت خود را انتخاب کنید : </label>
-
-                            <div class="box-radio-form-product">
-                                <input label="اکتیویژن" type="radio" id="activition-prudect" name="gender"
-                                    value="اکتیویژن" checked="checked">
-                                <input label="فیسبوک" type="radio" id="facbook-prudect" name="gender" value="فیسبوک">
-                                <input label="گوگل" type="radio" id="google-prudect" name="gender" value="گوگل">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="email-product">ایمیل خود را وارد نمایید : </label>
-
-                            <input class="input-style-text-product" id="email-product" type="text"
-                                placeholder="ترجیحا اکانت اکتیوژن">
-                        </div>
-
-                        <div>
-                            <label for="passwoard-product">رمز خود را وارد نمایید : </label>
-
-                            <input class="input-style-text-product" id="passwoard-product" type="text"
-                                placeholder="ترجیحا اکانت اکتیوژن">
-                        </div>
-
-                        <div>
-                            <label for="sppedplus-form-product">آیا مایل به دریافت سریع تر سفارش خود هستید؟</label>
-
-                            <div class="box-sppedplus-form-product flex-box flex-right">
-                                <input type="radio" checked id="sppedplus-form-product" name="sppedplus">
-
-                                <label for="sppedplus-form-product">بله ( 14,900+ تومان )</label>
-
-                                <input type="radio" id="no-sppedplus-form-product" name="sppedplus">
-
-                                <label for="no-sppedplus-form-product">خیر</label>
-                            </div>
-                        </div>
-
-                        <div class="price-form-product flex-box flex-column flex-aling-left">
-                            <span>26,600</span>
-
-                            <span>تومان</span>
-                        </div>
-
-                        <div>
-                            <input class="input-submit-style" type="submit" value="افزودن به سبد خرید">
-                        </div>
-                    </form>
+                    @include('site.components.products.form')
                 </div>
 
                 <div class="box-trainings-product">
@@ -520,25 +471,4 @@
     </section>
 
     @include('site.components.products.content-mobile')
-
-    <div class="hide-item-mobile">
-        <section class="box-add-cart-mobile-prudect flex-box flex-justify-space">
-            <div class="btn-add-cart-mobile-prudect flex-box">
-                <a class="flex-box" href="#left-main-product-tablet">افزودن به سبد خرید</a>
-            </div>
-
-            <div class="price-add-cart-mobile-prudect flex-box flex-column flex-left flex-aling-left">
-                <div>
-                    <span>قیمت</span>
-                </div>
-
-                <div>
-                    <span>100،000</span>
-
-                    <span>تومان</span>
-                </div>
-            </div>
-        </section>
-    </div>
-
 </div>

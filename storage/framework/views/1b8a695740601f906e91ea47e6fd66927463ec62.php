@@ -45,7 +45,6 @@ unset($__errorArgs, $__bag); ?>
         <?php endif; ?>
     <?php endif; ?>
 
-
     <div>
         <?php if(
             $product->status == \App\Models\Product::STATUS_AVAILABLE ||
@@ -69,5 +68,43 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+
+
+
+    <div class="hide-item-mobile">
+        <section class="box-add-cart-mobile-prudect flex-box flex-justify-space">
+            <div class="btn-add-cart-mobile-prudect flex-box">
+                <a class="flex-box" href="#left-main-product-tablet">افزودن به سبد خرید</a>
+            </div>
+
+            <div class="price-add-cart-mobile-prudect flex-box flex-column flex-left flex-aling-left">
+                <div>
+                    <span>قیمت</span>
+                </div>
+
+                <?php if($product->is_active_discount): ?>
+                    <div>
+                        <span><?php echo e(number_format($priceWithDiscount)); ?></span>
+
+                        <span>تومان</span>
+
+                        <div class="flex">
+                            <p class="line-through text-gray2-700 flex items-center justify-end ml-2">
+                                <?php echo e(number_format($price)); ?></p>
+                            <div
+                                class="bg-red text-white rounded-full py-0.5 px-2 text-xs flex items-center width-auto">
+                                <?php echo e($product->discount_percentage); ?>%</div>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div>
+                        <span><?php echo e(number_format($priceWithDiscount)); ?></span>
+
+                        <span>تومان</span>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </section>
+    </div>
 </form>
 <?php /**PATH C:\Users\Asian\Documents\GitHub\farsgamer-v3\resources\views/site/components/products/form.blade.php ENDPATH**/ ?>

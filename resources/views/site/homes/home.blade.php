@@ -49,8 +49,7 @@
 
     @include('site.homes.recent-comments')
 
-
-
+    @include('site.homes.categories')
 
     @include('site.homes.social')
 

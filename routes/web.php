@@ -31,6 +31,7 @@ Route::get('/lottery', \App\Http\Controllers\Site\Settings\LotteryComponent::cla
 Route::get('/faq', \App\Http\Controllers\Site\Settings\FaqsComponent::class)->name('faq');
 Route::get('/rules', \App\Http\Controllers\Site\Settings\RuleComponent::class)->name('rules');
 Route::get('/contact-us', \App\Http\Controllers\Site\Settings\ContactUsComponent::class)->name('contact-us');
+Route::get('/cooperation-request', \App\Http\Controllers\Site\Settings\CooperationRequestComponent::class)->name('cooperation-request');
 Route::get('/why-farsgamer', \App\Http\Controllers\Site\Settings\WhyUsComponent::class)->name('why-us');
 
 Route::get('/order-detail', \App\Http\Controllers\Site\Settings\OrdersDetailComponent::class)->name('order-detail');

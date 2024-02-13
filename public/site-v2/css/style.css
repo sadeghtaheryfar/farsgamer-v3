@@ -806,6 +806,11 @@ header{
 }
 
 
+$box-search-header label{
+    margin-bottom: 0rem !important;
+}
+
+
 #box-search-header-mobile{
     display: flex;
     justify-content: center;
@@ -1699,6 +1704,7 @@ footer{
     top: auto !important;
     bottom: 35px !important;
     right: auto !important;
+    z-index: 1 !important;
 }
 
 
@@ -6931,6 +6937,10 @@ input[type="range"]::-moz-range-thumb{
 
     .swiper-pagination-page-prudect{
         position: static;
+        margin-bottom: 0rem;
+    }
+
+    .box-more-img-detalist-product{
         margin-bottom: 1rem;
     }
 

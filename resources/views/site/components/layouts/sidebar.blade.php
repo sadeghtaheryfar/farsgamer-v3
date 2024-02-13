@@ -245,7 +245,7 @@
                     </li>
                 </a>
 
-                <a href="request.html">
+                <a href="{{ route('cooperation-request') }}">
                     <li class="nav-menu-item {{ request()->routeIs('request') ? 'nav-menu-item-active' : '' }}"
                         id="menu10">
                         <svg id="icon-menu15" width="24" height="24" viewBox="0 0 24 24" fill="none"

@@ -803,53 +803,53 @@ if (counterrulesitemnumber != undefined) {
 
 //  page cart script .....................................................................
 
-if (document.getElementById("time-time-detalist-pay")) {
-    const countDownDate = new Date().getTime() + 8 * 60 * 60 * 1000;
+// if (document.getElementById("time-time-detalist-pay")) {
+//     const countDownDate = new Date().getTime() + 8 * 60 * 60 * 1000;
 
-    const timedetalistcart = setInterval(function () {
-        const now = new Date().getTime();
+//     const timedetalistcart = setInterval(function () {
+//         const now = new Date().getTime();
 
-        const distance = countDownDate - now;
+//         const distance = countDownDate - now;
 
-        const hours = Math.floor(distance / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//         const hours = Math.floor(distance / (1000 * 60 * 60));
+//         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("time-time-detalist-pay").innerHTML =
-            hours + ":" + minutes + ":" + seconds;
+//         document.getElementById("time-time-detalist-pay").innerHTML =
+//             hours + ":" + minutes + ":" + seconds;
 
-        if (distance < 0) {
-            clearInterval(x);
-        }
-    }, 1000);
+//         if (distance < 0) {
+//             clearInterval(x);
+//         }
+//     }, 1000);
 
-    var copytextclipboard = document.querySelectorAll(".copy-text-clipboard");
-    var itemtextclipboard = document.querySelectorAll(".item-text-clipboard");
+//     var copytextclipboard = document.querySelectorAll(".copy-text-clipboard");
+//     var itemtextclipboard = document.querySelectorAll(".item-text-clipboard");
 
-    copytextclipboard.forEach((copytextclipboard, index) => {
-        copytextclipboard.addEventListener(
-            "click",
-            function handleClick(event) {
-                navigator.clipboard.writeText(
-                    itemtextclipboard[index].innerHTML
-                );
-                var x = document.getElementById("toast-copy");
-                var timetoastcopy = document.getElementById("time-toast-copy");
-                x.className = "show";
-                timetoastcopy.className = "time-toast-copy";
-                setTimeout(function () {
-                    x.className = x.className.replace("show", "");
-                }, 5000);
-                setTimeout(function () {
-                    timetoastcopy.className = timetoastcopy.className.replace(
-                        "time-toast-copy",
-                        ""
-                    );
-                }, 5000);
-            }
-        );
-    });
-}
+//     copytextclipboard.forEach((copytextclipboard, index) => {
+//         copytextclipboard.addEventListener(
+//             "click",
+//             function handleClick(event) {
+//                 navigator.clipboard.writeText(
+//                     itemtextclipboard[index].innerHTML
+//                 );
+//                 var x = document.getElementById("toast-copy");
+//                 var timetoastcopy = document.getElementById("time-toast-copy");
+//                 x.className = "show";
+//                 timetoastcopy.className = "time-toast-copy";
+//                 setTimeout(function () {
+//                     x.className = x.className.replace("show", "");
+//                 }, 5000);
+//                 setTimeout(function () {
+//                     timetoastcopy.className = timetoastcopy.className.replace(
+//                         "time-toast-copy",
+//                         ""
+//                     );
+//                 }, 5000);
+//             }
+//         );
+//     });
+// }
 
 //   script faqs page  .......................................................
 
