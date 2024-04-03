@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Models\Setting;
 use Livewire\Component;
-use App\Models\Category;
 use App\Models\OrderDetail;
-
 class Sidebar extends Component
 {
     public $search , $ordersOnlines = 15 , $ordersLasts = 20;
@@ -51,7 +49,6 @@ class Sidebar extends Component
 
     public function render()
     {
-		$categories = Category::with('childrenRecursive')->where('parent_id',null)->get()->toArray();
         $streams = Setting::where('name', 'streams')->get()->pluck('value', 'id');
 
 			
@@ -88,7 +85,7 @@ class Sidebar extends Component
 				$i++;
 			}
 		
-        return view('site.components.layouts.sidebar', ['streams' => $streamers , 'categories' => $categories])
+        return view('site.components.layouts.sidebar', ['streams' => $streamers])
             ->extends('site.layouts.site');
     }
 }

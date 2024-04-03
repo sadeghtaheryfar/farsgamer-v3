@@ -1,185 +1,126 @@
-<section class="margin-vetical-2 section-home">
-    <div>
-        <div id="box-header-best-sellers">
-            <div class="swiper mySwiper-main-best-sellers">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide-best-sellers">
-                        <div class="item-best-sellers width-max">
-                            <div class="header-item-best-sellers width-max flex-box flex-justify-space">
-                                <span>پر فروش ها</span>
+<section class="mt-8">
 
-                                <a class="link-header-best-sellers" href="{{ route('products') }}">
-                                    <span>مشاهده بیشتر</span>
-                                </a>
+    <div class="flex items-center justify-between mb-4 mt-8 lg:mb-6 lg:mt-10">
+        <div class="flex gap-2 items-center">
+            <img class="w-6 h-6" src="{{asset('site/svg/fire.svg')}}" alt="آتش">
+            <h2 class="font-bold text-lg">تخفیفات ویژه</h2>
+        </div>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-7 xl:flex">
+
+        @if($specialDiscountOne)
+            <a href="{{route('products.show', $specialDiscountOne->slug)}}" class="relative flex mb-4 md:col-span-3 md:order-2 md:mb-0 xl:max-w-md">
+                <img class="rounded-2xl object-cover" src="{{asset($imageSpecialDiscount)}}" alt="">
+                <time class="w-full absolute bottom-0 inset-x-center flex items-center rounded-2xl justify-center gap-8 pt-24 pb-4 px-4 text-red bg-gradient-to-b from-transparent to-white">
+                    <div class="grid text-center">
+                                <span class="font-bold text-3xl"
+                                      data-countdown-seconds="{{$specialDiscountOne->discount_expires_at ?? '3030-03-03'}}"></span>
+                        <span class="font-semibold">ثانیه</span>
+                    </div>
+                    <div class="grid text-center">
+                                <span class="font-bold text-3xl"
+                                      data-countdown-minute="{{$specialDiscountOne->discount_expires_at ?? '3030-03-03'}}"></span>
+                        <span class="font-semibold">دقیقه</span>
+                    </div>
+                    <div class="grid text-center">
+                                <span class="font-bold text-3xl"
+                                      data-countdown-hour="{{$specialDiscountOne->discount_expires_at ?? '3030-03-03'}}"></span>
+                        <span class="font-semibold">ساعت</span>
+                    </div>
+                </time>
+            </a>
+        @endif
+
+        <div class="grid gap-4 md:col-span-4 md:order-1 xl:w-full 3xl:grid-cols-2">
+            @if($specialDiscountTwo)
+                <div>
+                    <a href="{{route('products.show', $specialDiscountTwo->slug)}}"
+                       class="w-full grid gap-4 2xs:row-span-full bg-white p-2 rounded-2xl 2xs:grid-cols-2 2xs:items-center 2xs:justify-between">
+                        <img class="justify-self-end rounded-2xl 2xs:col-start-2 2xs:col-end-3 2xs:row-span-full max-w-50 xl2:max-w-64 2xl:max-w-68"
+                             src="{{asset($specialDiscountTwo->image)}}" alt="">
+
+                        <div class="py-2 text-center 2xs:col-start-1 2xs:col-end-2">
+                            <span class="inline-block bg-gray2-100 rounded-full py-2 px-3 font-medium text-red text-xs">تخفیف ویژه</span>
+                            <h3 class="font-semibold my-4 md:text-xl 2xl:text-2xl px-2 flex justify-center overflow-hidden">{{$specialDiscountTwo->title}}</h3>
+
+                            <div class="h-14 inline-block mx-auto">
+                                <div class="bg-gray-100 py-1 px-6 rounded-xl">
+                                    @if($specialDiscountTwo->price_with_discount == 0)
+                                        <p class="text-center inline-block gap-0.5 {{$specialDiscountTwo->is_active_discount ? '' : 'py-2' }}">
+                                            <span class="text-sm">قیمت متغیر</span>
+                                        </p>
+                                    @else
+                                        <p class="text-center inline-block gap-0.5 {{$specialDiscountTwo->is_active_discount ? '' : 'py-2' }}">
+                                            <span class="font-semibold">{{number_format($specialDiscountTwo->price_with_discount)}}</span>
+                                            <span class="text-sm">تومان</span>
+                                        </p>
+                                    @endif
+
+                                    @if($specialDiscountTwo->is_active_discount)
+                                        <div class="flex items-center justify-center gap-2">
+                                            {{--price after discount--}}
+                                            <span class="font-semibold line-through text-gray2-700">{{number_format($specialDiscountTwo->price)}}</span>
+                                            {{--discount precedence--}}
+                                            <div class="bg-red text-white rounded-full py-0.5 px-2 text-xs">{{$specialDiscountTwo->discount_percentage}}%</div>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
 
-                            <div class="message-item-best-sellers width-max">
-                                @foreach ($BestSellersNew as $product)
-                                    <a href="{{ route('products.show', $product->slug) }}">
-                                        <div class="item-message-item-best-sellers flex-box flex-justify-space">
-                                            <div class="img-item-message-sellers">
-                                                <img src="{{ asset($product->image) }}" alt="">
-                                            </div>
-
-                                            <div
-                                                class="text-item-message-sellers width-max flex-box flex-right flex-column">
-                                                <div class="header-item-message-sellers">
-                                                    {{ $product->title }}
-                                                </div>
-
-                                                @if ($product->price_with_discount == 0)
-                                                    <div class="price-item-message-sellers">
-                                                        <span>قیمت متغییر</span>
-                                                    </div>
-                                                @else
-                                                    @if ($product->is_active_discount)
-                                                        <div class="price-off-item-message-sellers flex-box">
-                                                            <span>{{ $product->discount_percentage }}%</span>
-
-                                                            <div class="box-price-item-message-sellers">
-                                                                <span>{{ number_format($product->price) }}</span>
-                                                                <span>تومان</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price_with_discount) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @else
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @endif
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
+                            <div class="mt-4 flex w-full justify-center items-center gap-1">
+                                <div data-countdown="{{$specialDiscountTwo->discount_expires_at ?? '3030-03-03'}}"></div>
+                                <i class="icon-clock"></i>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="swiper-slide swiper-slide-best-sellers">
-                        <div class="item-best-sellers width-max swiper-slide-best-sellers-center">
-                            <div class="header-item-best-sellers width-max flex-box flex-justify-space">
-                                <span>تخفیفات ویژه</span>
-
-                                <a class="link-header-best-sellers" href="{{ route('products') }}">
-                                    <span>مشاهده بیشتر</span>
-                                </a>
-                            </div>
-
-                            <div class="message-item-best-sellers width-max">
-                                @foreach ($SpecialDiscountsNew as $product)
-                                    <a href="{{ route('products.show', $product->slug) }}">
-                                        <div class="item-message-item-best-sellers flex-box flex-justify-space">
-                                            <div class="img-item-message-sellers">
-                                                <img src="{{ asset($product->image) }}" alt="">
-                                            </div>
-
-                                            <div
-                                                class="text-item-message-sellers width-max flex-box flex-right flex-column">
-                                                <div class="header-item-message-sellers">
-                                                    {{ $product->title }}
-                                                </div>
-
-                                                @if ($product->price_with_discount == 0)
-                                                    <div class="price-item-message-sellers">
-                                                        <span>قیمت متغییر</span>
-                                                    </div>
-                                                @else
-                                                    @if ($product->is_active_discount)
-                                                        <div class="price-off-item-message-sellers flex-box">
-                                                            <span>{{ $product->discount_percentage }}%</span>
-
-                                                            <div class="box-price-item-message-sellers">
-                                                                <span>{{ number_format($product->price) }}</span>
-                                                                <span>تومان</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price_with_discount) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @else
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @endif
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide swiper-slide-best-sellers">
-                        <div class="item-best-sellers width-max">
-                            <div class="header-item-best-sellers width-max flex-box flex-justify-space">
-                                <span>گیفت کارت ها</span>
-
-                                <a class="link-header-best-sellers" href="{{ route('products') }}">
-                                    <span>مشاهده بیشتر</span>
-                                </a>
-                            </div>
-
-                            <div class="message-item-best-sellers width-max">
-                                @foreach ($GiftCardsNew as $product)
-                                    <a href="{{ route('products.show', $product->slug) }}">
-                                        <div class="item-message-item-best-sellers flex-box flex-justify-space">
-                                            <div class="img-item-message-sellers">
-                                                <img src="{{ asset($product->image) }}" alt="">
-                                            </div>
-
-                                            <div
-                                                class="text-item-message-sellers width-max flex-box flex-right flex-column">
-                                                <div class="header-item-message-sellers">
-                                                    {{ $product->title }}
-                                                </div>
-
-                                                @if ($product->price_with_discount == 0)
-                                                    <div class="price-item-message-sellers">
-                                                        <span>قیمت متغییر</span>
-                                                    </div>
-                                                @else
-                                                    @if ($product->is_active_discount)
-                                                        <div class="price-off-item-message-sellers flex-box">
-                                                            <span>{{ $product->discount_percentage }}%</span>
-
-                                                            <div class="box-price-item-message-sellers">
-                                                                <span>{{ number_format($product->price) }}</span>
-                                                                <span>تومان</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price_with_discount) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @else
-                                                        <div class="price-item-message-sellers">
-                                                            <span>{{ number_format($product->price) }}</span>
-                                                            <span>تومان</span>
-                                                        </div>
-                                                    @endif
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
+            @endif
 
-                <div class="swiper-pagination swiper-pagination-best-sellers flex-box"></div>
-            </div>
+            @if($specialDiscountThree)
+                <div>
+                    <a href="{{route('products.show', $specialDiscountThree->slug)}}"
+                       class="w-full grid gap-4 2xs:row-span-full bg-white p-2 rounded-2xl 2xs:grid-cols-2 2xs:items-center 2xs:justify-between">
+                        <img class="justify-self-end rounded-2xl 2xs:col-start-2 2xs:col-end-3 2xs:row-span-full max-w-50 xl2:max-w-64 2xl:max-w-68"
+                             src="{{asset($specialDiscountThree->image)}}" alt="">
+
+                        <div class="py-2 text-center 2xs:col-start-1 2xs:col-end-2">
+                            <span class="inline-block bg-gray2-100 rounded-full py-2 px-3 font-medium text-red text-xs">تخفیف ویژه</span>
+                            <h3 class="font-semibold my-4 md:text-xl 2xl:text-2xl px-2 flex justify-center overflow-hidden">{{$specialDiscountThree->title}}</h3>
+
+                            <div class="h-14 inline-block mx-auto">
+                                <div class="bg-gray-100 py-1 px-6 rounded-xl">
+
+                                    @if($specialDiscountThree->price_with_discount == 0)
+                                        <p class="text-center inline-block gap-0.5 {{$specialDiscountThree->is_active_discount ? '' : 'py-2' }}">
+                                            <span class="text-sm">قیمت متغیر</span>
+                                        </p>
+                                    @else
+                                        <p class="text-center inline-block gap-0.5 {{$specialDiscountThree->is_active_discount ? '' : 'py-2' }}">
+                                            <span class="font-semibold">{{number_format($specialDiscountThree->price_with_discount)}}</span>
+                                            <span class="text-sm">تومان</span>
+                                        </p>
+                                    @endif
+
+                                    @if($specialDiscountThree->is_active_discount)
+                                        <div class="flex items-center justify-center gap-2">
+                                            {{--price after discount--}}
+                                            <span class="font-semibold line-through text-gray2-700">{{number_format($specialDiscountThree->price)}}</span>
+                                            {{--discount precedence--}}
+                                            <div class="bg-red text-white rounded-full py-0.5 px-2 text-xs">{{$specialDiscountThree->discount_percentage}}%</div>
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex w-full justify-center items-center gap-1">
+                                <div data-countdown="{{$specialDiscountThree->discount_expires_at ?? '3030-03-03'}}"></div>
+                                <i class="icon-clock"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endif
         </div>
     </div>
 </section>

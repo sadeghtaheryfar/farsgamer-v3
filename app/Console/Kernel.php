@@ -77,7 +77,7 @@ class Kernel extends ConsoleKernel
 			}
         })->monthlyOn(29,'00:00');
 
-
+		
     }
 
     /**

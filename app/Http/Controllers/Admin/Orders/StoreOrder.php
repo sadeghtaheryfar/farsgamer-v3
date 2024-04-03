@@ -29,7 +29,7 @@ class StoreOrder extends BaseComponent
     public $notes, $sendNote, $noteType, $sms, $sendSms, $payment , $admin_phone;
     public $orderStatus, $orderSms;
 	public $allow = false;
-	public $user_in_order , $hash = true , $desc;
+	public $user_in_order , $hash = true , $desc , $depotId;
 
     public function mount($action, $id = null)
     {
@@ -126,6 +126,10 @@ class StoreOrder extends BaseComponent
 		$user_online = $this->model->user_online;
 		$last_online_time = $this->model->online_time;
 
+		$this->depotId = Depot::where('track_id',Order::CHANGE_ID  + $this->model->order->id)->first();
+
+		// dd($this->depotId);
+
 		if (!empty($user_online)) {
 			if ($user_online == Auth()->user()->id)
 			{
@@ -179,6 +183,79 @@ class StoreOrder extends BaseComponent
         $this->reset('orderSms');
         $this->emitNotify('سفارش با موفقیت ویرایش شد');
     }
+
+	public function sendFactor()
+	{
+		$orderDetail = $this->model;
+
+		$check = DepotItem::where('product_id',$orderDetail->product->id)->first();
+		$price = 0;
+		$eneter = Depot::latest('id')->where('action',Depot::ENTER)->whereHas('depotItem',function($q) use ($orderDetail){
+			return $q->where('product_id',$orderDetail->product->id);
+		})->select('price','count')->get();
+		$exit_count = Depot::latest('id')->where('action',Depot::EXIT)->whereHas('depotItem',function($q) use ($orderDetail){
+			return $q->where('product_id',$orderDetail->product->id);
+		})->sum('count');
+
+		$eneter_count = (int)$eneter->sum('count');
+		$diff = $eneter_count - (int)$exit_count;
+
+				foreach($eneter as $item) {
+					if ($eneter_count - (int)$item->count < $diff) {
+						$price = $item->price;
+						break;
+					} else {
+						$eneter_count = $eneter_count - (int)$item->count;
+					}
+				}
+				if (is_null($check)){
+					$check = DepotItem::create([
+						'product_id' => $orderDetail->product->id,
+						'category' => $orderDetail->product->category_id,
+						'status' => $orderDetail->product->status,
+						'image' => $orderDetail->product->image ?? '',
+						'type' => Depot::DIGITAL
+					]);
+					$this->depotId = Depot::create([
+						'depot_items_id' => $check->id,
+						'count' => $orderDetail->quantity,
+						'action' => Depot::EXIT,
+						'user_id' => auth()->id(),
+						'price' => $price ,
+						'category' => $orderDetail->product->category_id ,
+						'exit_price' => $orderDetail->product->price,
+						'description' => 'ثبت سفارش',
+						'image' => $orderDetail->product->image ?? '',
+						'track_id' => (int)$orderDetail->order->id + Order::CHANGE_ID,
+						'order_detail_id' => $orderDetail->id,
+						'type' => Depot::DIGITAL,
+						'licenses' => $this->orderSms
+					]);
+				} else {
+					$check_depot = Depot::where('order_detail_id',$orderDetail->id)->whereNull('licenses')->first();
+					if (is_null($check_depot)){
+						$this->depotId = Depot::create([
+							'depot_items_id' => $check->id,
+							'count' => $orderDetail->quantity,
+							'action' => Depot::EXIT,
+							'user_id' => auth()->id(),
+							'price' => $price ,
+							'category' => $orderDetail->product->category_id ,
+							'exit_price' => $orderDetail->product->price,
+							'description' => 'ثبت سفارش',
+							'image' => $orderDetail->product->image ?? '',
+							'track_id' => (int)$orderDetail->order->id + Order::CHANGE_ID,
+							'order_detail_id' => $orderDetail->id,
+							'type' => Depot::DIGITAL,
+							'licenses' => $this->orderSms
+						]);
+					}
+				}
+
+
+				redirect()->route('admin.factor',[$this->depotId->id]);
+					
+	}
 
     private function saveInDatabase(OrderDetail $orderDetail)
     {

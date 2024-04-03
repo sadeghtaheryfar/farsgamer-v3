@@ -92,7 +92,7 @@ class CartCheckoutComponent extends Component
     public function render()
     {
 		if ($this->data->partner_id == 0)
-			return view('site.carts.cart-checkout-component')->extends('site.layouts.cart');
+			return view('site.carts.cart-checkout-component')->extends('site.layouts.site');
 		else 
 			return view('partner.carts.cart-checkout-component')->extends('admin.layouts.admin');
     }

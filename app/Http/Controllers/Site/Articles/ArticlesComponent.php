@@ -35,8 +35,7 @@ class ArticlesComponent extends Component
     public function render()
     {
         $articles = Article::latest()->paginate($this->perPage);
-        $LastArticles = Article::latest()->take(5)->get();
-        return view('site.articles.articles-component', ['articles' => $articles, 'LastArticles' => $LastArticles])
+        return view('site.articles.articles-component', ['articles' => $articles])
             ->extends('site.layouts.site');
     }
 }

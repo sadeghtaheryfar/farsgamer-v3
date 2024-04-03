@@ -1,52 +1,27 @@
-<section class="main-style-page">
-    <div class="header-page-rules flex-box flex-justify-space">
-        <div class="item-header-page-rules">
-            <img class="img-item-page-rules" src="{{ asset("site-v2/img/img1-ruls.svg") }}" alt="">
-            <img class="img-mo-item-page-rules" src="{{ asset("site-v2/img/img1-ruls-mobile.svg") }}" alt="">
-        </div>
-
-        <div class="detalit-page-rules">
-            <div class="header-item-page-rules">
-                <span>قوانین</span>
-
-                <span class="color-blue">فارس گیمر</span>
-            </div>
-
-            <div class="message-item-page-rules">
-                <span>{!! $description !!}</span>
-            </div>
-        </div>
+<section class="bg-white p-4 xs:p-6 rounded-2xl text-gray-700 font-light leading-7">
+    <div class="text-center">
+        <h1 class="text-lg bg-light-green p-2 rounded-xl inline-block font-medium">* استفاده از سایت به منزله پذیرش این توافق نامه است *</h1>
     </div>
 
-    <div class="message-page-rules">
-        @foreach ($rules as $rule)
-            <div class="item-page-rules flex-box flex-justify-space flex-right">
-                <div class="counter-item-rules flex-box">
-                    <!-- اعداد این قسمت خودشون وارد میشن و نیاز به بک اند نداره -->
-                    <span class="counter-rules-item-number"></span>
-                </div>
+    {!! $description !!}
 
-                <div class="message-item-rules flex-box">
-                    <span>{!! $rule->value !!}</span>
-                </div>
-            </div>
+    <ul class="bg-gray-50 mt-8 divide-y divide-gray-200 rounded-2xl text-black">
+        @foreach($rules as $rule)
+            <li class="px-2 py-6 flex gap-4">
+                <div class="bg-light-green min-w-8 h-8 rounded-lg leading-none flex items-center justify-center">{{$loop->iteration}}</div>
+                <div>{!! $rule->value !!}</div>
+            </li>
         @endforeach
+    </ul>
 
-        <div class="my-2">
-            {!! $physicalDescription !!}
-        </div>
+    {!! $physicalDescription !!}
 
-        @foreach ($physicalRules as $rule)
-            <div class="item-page-rules flex-box flex-justify-space flex-right">
-                <div class="counter-item-rules flex-box">
-                    <!-- اعداد این قسمت خودشون وارد میشن و نیاز به بک اند نداره -->
-                    <span class="counter-rules-item-number"></span>
-                </div>
-
-                <div class="message-item-rules flex-box">
-                    <span>{!! $rule->value !!}</span>
-                </div>
-            </div>
+    <ul class="bg-gray-50 mt-8 divide-y divide-gray-200 rounded-2xl text-black">
+        @foreach($physicalRules as $rule)
+            <li class="px-2 py-6 flex gap-4">
+                <div class="bg-light-green min-w-8 h-8 rounded-lg leading-none flex items-center justify-center">{{$loop->iteration}}</div>
+                <div>{!! $rule->value !!}</div>
+            </li>
         @endforeach
-    </div>
+    </ul>
 </section>

@@ -52,6 +52,11 @@ class OrderDetail extends Model
         return $this->belongsTo(Product::class);
     }
 
+	public function depot()
+	{
+		return $this->hasOne(Depot::class,'order_detail_id');
+	}
+
     public function order()
     {
         return $this->belongsTo(Order::class);

@@ -71,7 +71,6 @@
                         <button type="button" class="btn btn-link" wire:click="addForm('textArea')">textArea</button>
                         <button type="button" class="btn btn-link" wire:click="addForm('text')">text</button>
 						<button type="button" class="btn btn-link" wire:click="addForm('range')">range</button>
-						<button type="button" class="btn btn-link" wire:click="addForm('help')">help</button>
                     </div>
                 </x-admin.forms.header>
 

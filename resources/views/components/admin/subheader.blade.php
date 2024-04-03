@@ -1,4 +1,4 @@
-@props(['title', 'mode' => false, 'create'=> false])
+@props(['title', 'mode' => false, 'create'=> false,'factor'=> false])
 
 <div id="kt_subheader" class="subheader py-2 py-lg-6 subheader-solid">
     <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
@@ -26,7 +26,10 @@
                 @break
 
             @endswitch
-		@endif	
+		@endif
+		@if($factor)
+		  <div class="btn btn-light-primary mx-2 font-weight-bolder btn-sm" wire:click="sendFactor()">صدور فاکتور</div>
+		@endif
         </div>
     </div>
 </div>

@@ -120,7 +120,7 @@ class CartPaymentComponent extends Component
 		$this->voucherAmountShow = $this->voucherAmount;
 		$this->walletAmountShow = $this->walletAmount;
         return view('site.carts.cart-payment-component')
-            ->extends('site.layouts.cart');
+            ->extends('site.layouts.site');
     }
 
     public function payment()
@@ -194,9 +194,9 @@ class CartPaymentComponent extends Component
             return;
         }
 
-		// if ( $this->getLocation() != "IR" ) {
-		// 	return $this->addError('gateway', 'کاربر گرامی لطفا قبل از پرداخت از قطع بودن اتصال vpn خود اطمینان حاصل فرمایید.');
-		// }
+		if ( $this->getLocation() != "IR" ) {
+			return $this->addError('gateway', 'کاربر گرامی لطفا قبل از پرداخت از قطع بودن اتصال vpn خود اطمینان حاصل فرمایید.');
+		}
 
 
 		// if ($this->getLocation() != "IR") {

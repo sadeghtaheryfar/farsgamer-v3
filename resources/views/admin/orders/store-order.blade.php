@@ -1,5 +1,5 @@
-<div wire:poll.40s = "updateTime()" class="overflow-hidden">
-<x-admin.subheader title="سفارش" :mode="$mode" :create="false"/>
+<div wire:poll.40s = "updateTime()"  class="overflow-hidden">
+<x-admin.subheader title="سفارش" :mode="$mode" :factor="true" :create="false"/>
 	<div class="row">
     	<div class="col-12 col-xl-8">
 			<div class="content d-flex flex-column-fluid">
@@ -320,9 +320,11 @@
 									</table>
 								</div>
 							@endforeach
+							
 						</div>
 
 						</x-admin.forms.form>
+						
 					</div>
 				</div>
 					</div>
@@ -442,6 +444,7 @@
 						</div>
 					</div>
 					@endif
+					
 				</div>
 				
 

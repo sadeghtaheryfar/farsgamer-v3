@@ -39,9 +39,9 @@
                         @include('site.components.products.comment')
                     @endforeach
 
-                    {{-- @if(method_exists($comments, 'links'))
+                    @if(method_exists($comments, 'links'))
                         {{ $comments->links('site.components.load-more') }}
-                    @endif --}}
+                    @endif
 
                     <livewire:site.articles.article-create-comment :article="$article"/>
                 </div>
